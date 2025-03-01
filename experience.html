@@ -71,6 +71,8 @@
             margin-bottom: 30px;
             position: relative;
             padding-left: 25px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
         }
         
         .item:before {
@@ -96,11 +98,33 @@
             font-size: 14px;
         }
         
+        .certificate-item {
+            cursor: pointer;
+        }
+        
+        .certificate-item:hover {
+            transform: scale(1.03);
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+            padding: 15px;
+            margin-left: -15px;
+        }
+        
+        .certificate-item:hover .certificate-image {
+            transform: scale(1.1);
+        }
+        
+        .non-certificate {
+            transition: opacity 0.3s ease;
+        }
+        
         .certificate-image {
             display: block;
             max-width: 120px;
             margin: 10px 0;
             border-radius: 5px;
+            transition: transform 0.3s ease;
         }
         
         .scroll-to-top {
@@ -140,19 +164,19 @@
                 <h2>CERTIFICATES & PROFESSIONAL DEVELOPMENT</h2>
             </div>
             
-            <div class="item">
+            <div class="item certificate-item">
                 <h3>AWS Certified Solutions Architect - Associate</h3>
                 <p>Issue Date: January 2024</p>
                 <img src="/api/placeholder/120/120" alt="AWS Solutions Architect Certificate" class="certificate-image">
             </div>
             
-            <div class="item">
+            <div class="item certificate-item">
                 <h3>AWS Certified Developer - Associate</h3>
                 <p>Issue Date: February 2024</p>
                 <img src="/api/placeholder/120/120" alt="AWS Developer Certificate" class="certificate-image">
             </div>
             
-            <div class="item">
+            <div class="item certificate-item">
                 <h3>AWS Certified Cloud Practitioner</h3>
                 <p>Issue Date: December 2023</p>
                 <img src="/api/placeholder/120/120" alt="AWS Cloud Practitioner Certificate" class="certificate-image">
@@ -167,23 +191,23 @@
                 <h2>EDUCATION</h2>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>Web Developer Bootcamp - JSIB University of Applied Sciences</h3>
                 <p>2022 - 2023</p>
                 <p>Full-stack developer program: HTML, CSS, React, Node.js, practical development project</p>
             </div>
             
-            <div class="item">
+            <div class="item certificate-item">
                 <h3>AWS Cloud Practitioner Essentials - Coursera Training Inc</h3>
                 <img src="/api/placeholder/120/120" alt="AWS Cloud Training" class="certificate-image">
             </div>
             
-            <div class="item">
+            <div class="item certificate-item">
                 <h3>Terraform Engineer Essentials - Coursera Training Inc</h3>
                 <img src="/api/placeholder/120/120" alt="Terraform Training" class="certificate-image">
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>MSc in Computing and Business Administration - University of Eastern Finland</h3>
                 <p>2018 - 2021</p>
                 <p>Master's Program in Cloud Science</p>
@@ -196,48 +220,79 @@
                 <h2>SKILLS</h2>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>JavaScript, TypeScript</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>AWS</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>Node.js</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>Terraform</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>MongoDB</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>SQL</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>React.js</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>Git</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>HTML/CSS</h3>
             </div>
             
-            <div class="item">
+            <div class="item non-certificate">
                 <h3>Cypress</h3>
             </div>
         </div>
     </div>
     
     <a href="#" class="scroll-to-top">↑</a>
+    
+    <script>
+        // Add focus effect when hovering over certificates
+        const certificateItems = document.querySelectorAll('.certificate-item');
+        const nonCertificateItems = document.querySelectorAll('.non-certificate');
+        
+        certificateItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                nonCertificateItems.forEach(nonItem => {
+                    nonItem.style.opacity = '0.4';
+                });
+                
+                // Make other certificates also fade slightly
+                certificateItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.style.opacity = '0.6';
+                    }
+                });
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                nonCertificateItems.forEach(nonItem => {
+                    nonItem.style.opacity = '1';
+                });
+                
+                certificateItems.forEach(otherItem => {
+                    otherItem.style.opacity = '1';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
