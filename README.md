@@ -1,4 +1,4 @@
-[ABOUT](about.html) &nbsp;&nbsp; [PROJECTS](project.html) &nbsp;&nbsp; [EDUCATION & EXPERIENCE](experience.html) &nbsp;&nbsp; [CONTACT](contact.md) &nbsp;&nbsp; [BLOG](blog.md)
+[ABOUT](about.html) &nbsp;&nbsp; [PROJECTS](project.html) &nbsp;&nbsp; [EDUCATION & EXPERIENCE](experience.html) &nbsp;&nbsp; [CONTACT](contact.html) &nbsp;&nbsp; 
 
 <div align="center">
   <img src="/assets/cloud.png" alt="Cloud Background" width="100%">
