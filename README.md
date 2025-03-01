@@ -1,48 +1,43 @@
-# Cloud Portfolio
+# Hi, I'm YOUR NAME
 
-Welcome to my personal portfolio! I'm a cloud technology enthusiast passionate about building scalable and efficient cloud solutions.
+## Cloud Enthusiast
 
-## Navigation
+[About](#about) | [Projects](#projects) | [Education & Experience](#education--experience) | [Contact](#contact) | [Blog](#blog)
 
-- [Home](#home)
-- [About](#about)
-- [Projects](#projects)
-- [Education & Experience](#education--experience)
-- [Blog](#blog)
-- [Contact](#contact)
+I'm passionate about cloud technologies and building scalable solutions.
 
-## Home
-
-My name is [Your Name] and I'm a Cloud Enthusiast.
+<img src="https://images.unsplash.com/photo-1536514072410-5019a3c69182?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" align="right" width="50%" style="margin-left: 20px;" alt="Cloud background">
 
 ## About
+I'm a cloud technology enthusiast with expertise in [your specific cloud skills]. I enjoy [your interests related to cloud computing].
 
-Learn more about my background, skills, and passion for cloud technologies [here](about.html).
+[Read more about me](about.md)
 
 ## Projects
+Here are some of my notable cloud projects:
+- [Project 1](#): Brief description
+- [Project 2](#): Brief description
 
-Explore the cloud-based projects I've worked on:
-- [View all projects](projects.html)
+[View all projects](projects.md)
 
 ## Education & Experience
+- **[Your Current/Recent Position]** | [Company] | [Dates]
+- **[Your Degree]** | [University] | [Dates]
 
-My academic background and professional journey in the cloud computing space:
-- [View education and work history](experience.html)
-
-## Blog
-
-Read my thoughts and insights on cloud technologies:
-- [Check out my blog posts](blog.html)
+[View full resume](experience.md)
 
 ## Contact
+- Email: your.email@example.com
+- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- GitHub: [github.com/yourusername](https://github.com/yourusername)
 
-Interested in connecting or collaborating? Reach out to me:
-- [Contact information](contact.html)
+[Contact me](contact.md)
 
-## Setup
+## Blog
+Read my thoughts on cloud technologies and industry trends.
 
-This portfolio is hosted using GitHub Pages. The site is built with [technology stack details].
+[Browse my articles](blog.md)
 
 ---
 
-© [Year] [Your Name]. All Rights Reserved.
+© 2025 YOUR NAME
