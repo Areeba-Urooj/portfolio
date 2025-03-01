@@ -19,17 +19,3 @@
   </a>
 </div>
 
-<div class="hero">
-        <p>Hi, I'm</p>
-        <h1>YOUR NAME</h1>
-        <h2>Cloud Enthusiast</h2>
-        
-        <div class="social-icons">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/yourusername" target="_blank">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-            </a>
-        </div>
-    </div>
