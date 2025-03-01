@@ -1,7 +1,7 @@
 [ABOUT](about.md) &nbsp;&nbsp; [PROJECTS](projects.md) &nbsp;&nbsp; [EDUCATION & EXPERIENCE](experience.md) &nbsp;&nbsp; [CONTACT](contact.md) &nbsp;&nbsp; [BLOG](blog.md)
 
 <div align="center">
-  <img src="/assets/cloud.PNG" alt="Cloud Background" width="100%">
+  <img src="/assets/_cloud.PNG" alt="Cloud Background" width="100%">
 </div>
 </div>
 
