@@ -1,0 +1,132 @@
+Portfolio Home Page (index.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio | Cloud Enthusiast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 100;
+        }
+        
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #777;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #0099cc;
+        }
+        
+        nav a.active {
+            color: #0099cc;
+        }
+        
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1536514072410-5019a3c69182?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 120px;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+        
+        .hero p {
+            font-size: 30px;
+            margin-top: -20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-icons img {
+            width: 25px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="active">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="experience.html">EDUCATION & EXPERIENCE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="blog.html">BLOG</a>
+    </nav>
+    
+    <div class="hero">
+        <p>Hi, I'm</p>
+        <h1>YOUR NAME</h1>
+        <h2>Cloud Enthusiast</h2>
+        
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/yourusername" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
