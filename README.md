@@ -10,11 +10,11 @@
   <h1>AREEBA UROOJ</h1>
   <h3>DevOps & Cloud Enthusiast</h3>
   
-  <a href="https://linkedin.com/in/yourprofile">
+  <a href="https://linkedin.com/in/Areeba Urooj">
     <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="40" height="40">
   </a>
   &nbsp;&nbsp;
-  <a href="https://github.com/yourusername">
+  <a href="https://github.com/Areeba-Urooj">
     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40">
   </a>
 </div>
