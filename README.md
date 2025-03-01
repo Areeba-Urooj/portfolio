@@ -36,8 +36,3 @@ Here are some of my notable cloud projects:
 ## Blog
 Read my thoughts on cloud technologies and industry trends.
 
-[Browse my articles](blog.md)
-
----
-
-© 2025 YOUR NAME
