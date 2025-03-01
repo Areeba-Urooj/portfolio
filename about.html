@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Your Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #0099cc;
+        }
+        
+        nav a.active {
+            color: #0099cc;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 42px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #0099cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        
+        .scroll-top:hover {
+            background-color: #007baa;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html" class="active">ABOUT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="experience.html">EDUCATION & EXPERIENCE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="blog.html">BLOG</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Hello!</h1>
+        
+        <p>
+            I'm willing to consider any notion for sharing information that comes my way. However, I am a Python and Powershell enthusiast who also has interests in machine learning, artificial intelligence, AWS, and Azure.
+        </p>
+        
+        <p>
+            10+ years of IT, communication is the strength, working in support across all regions APAC, EMEA, ANZ, and the US regions. Team player and individual contributor. Poised in a project transitioning and maintaining support documentation.
+        </p>
+        
+        <p>
+            Has experience working on simple projects including Containers, Microservices, and BigData with Hive, and has a solid understanding of AWS services.
+        </p>
+        
+        <p>
+            Enrolling in Great Lakes' PG program in cloud computing, which offers practical projects and a thorough grasp of the Multi-Cloud (AWS, Azure, and GCP) environments.
+        </p>
+        
+        <p>
+            <strong>Areas of Interests:</strong> AWS, Azure, Python, Powershell, Machine Learning, Microsoft Azure, AWS, Cybersecurity and Hacking methodologies, Networking(IT), Database systems, Photography
+        </p>
+        
+        <p>
+            Please see below some of the things I have built and my resume - and visit my blog to explore my technical writing and insights.
+        </p>
+    </div>
+    
+    <a href="#" class="scroll-top">↑</a>
+    
+    <script>
+        // Scroll to top functionality
+        document.querySelector('.scroll-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
