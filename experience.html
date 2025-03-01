@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education & Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .navbar {
+            background-color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .navbar a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .navbar a.active {
+            color: #00B9D0;
+        }
+        
+        .content {
+            display: flex;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .column {
+            flex: 1;
+            padding: 0 15px;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .circle-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #00B9D0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        
+        .section-title h2 {
+            color: #666;
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #00B9D0;
+            border-radius: 50%;
+        }
+        
+        .item h3 {
+            color: #444;
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .item p {
+            color: #777;
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+        
+        .certificate-image {
+            display: block;
+            max-width: 120px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #00B9D0;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="education.html" class="active">EDUCATION & EXPERIENCE</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="blog.html">BLOG</a>
+    </div>
+    
+    <div class="content">
+        <div class="column">
+            <div class="section-title">
+                <div class="circle-icon">
+                    <i>C</i>
+                </div>
+                <h2>CERTIFICATES & PROFESSIONAL DEVELOPMENT</h2>
+            </div>
+            
+            <div class="item">
+                <h3>AWS Certified Solutions Architect - Associate</h3>
+                <p>Issue Date: January 2024</p>
+                <img src="/api/placeholder/120/120" alt="AWS Solutions Architect Certificate" class="certificate-image">
+            </div>
+            
+            <div class="item">
+                <h3>AWS Certified Developer - Associate</h3>
+                <p>Issue Date: February 2024</p>
+                <img src="/api/placeholder/120/120" alt="AWS Developer Certificate" class="certificate-image">
+            </div>
+            
+            <div class="item">
+                <h3>AWS Certified Cloud Practitioner</h3>
+                <p>Issue Date: December 2023</p>
+                <img src="/api/placeholder/120/120" alt="AWS Cloud Practitioner Certificate" class="certificate-image">
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="section-title">
+                <div class="circle-icon">
+                    <i>E</i>
+                </div>
+                <h2>EDUCATION</h2>
+            </div>
+            
+            <div class="item">
+                <h3>Web Developer Bootcamp - JSIB University of Applied Sciences</h3>
+                <p>2022 - 2023</p>
+                <p>Full-stack developer program: HTML, CSS, React, Node.js, practical development project</p>
+            </div>
+            
+            <div class="item">
+                <h3>AWS Cloud Practitioner Essentials - Coursera Training Inc</h3>
+                <img src="/api/placeholder/120/120" alt="AWS Cloud Training" class="certificate-image">
+            </div>
+            
+            <div class="item">
+                <h3>Terraform Engineer Essentials - Coursera Training Inc</h3>
+                <img src="/api/placeholder/120/120" alt="Terraform Training" class="certificate-image">
+            </div>
+            
+            <div class="item">
+                <h3>MSc in Computing and Business Administration - University of Eastern Finland</h3>
+                <p>2018 - 2021</p>
+                <p>Master's Program in Cloud Science</p>
+            </div>
+            
+            <div class="section-title" style="margin-top: 40px;">
+                <div class="circle-icon">
+                    <i>S</i>
+                </div>
+                <h2>SKILLS</h2>
+            </div>
+            
+            <div class="item">
+                <h3>JavaScript, TypeScript</h3>
+            </div>
+            
+            <div class="item">
+                <h3>AWS</h3>
+            </div>
+            
+            <div class="item">
+                <h3>Node.js</h3>
+            </div>
+            
+            <div class="item">
+                <h3>Terraform</h3>
+            </div>
+            
+            <div class="item">
+                <h3>MongoDB</h3>
+            </div>
+            
+            <div class="item">
+                <h3>SQL</h3>
+            </div>
+            
+            <div class="item">
+                <h3>React.js</h3>
+            </div>
+            
+            <div class="item">
+                <h3>Git</h3>
+            </div>
+            
+            <div class="item">
+                <h3>HTML/CSS</h3>
+            </div>
+            
+            <div class="item">
+                <h3>Cypress</h3>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" class="scroll-to-top">↑</a>
+</body>
+</html>
