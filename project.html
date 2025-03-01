@@ -57,6 +57,13 @@
             padding: 25px;
             width: 300px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .project-card h2 {
@@ -92,6 +99,12 @@
             font-size: 20px;
             text-decoration: none;
         }
+        
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -109,46 +122,61 @@
     </div>
     
     <div class="projects-container">
-        <div class="project-card">
-            <h2>Cloud Native k8s Application</h2>
-            <p>Developed a highly scalable microservices application deployed on Kubernetes. The project implements auto-scaling, self-healing capabilities, and utilizes a service mesh for inter-service communication. Includes comprehensive monitoring and logging infrastructure for observability.</p>
-            <div class="tech-stack">
-                Frontend: React, Material UI<br>
-                Backend: Spring Boot, Go<br>
-                Database: PostgreSQL, Redis<br>
-                Infrastructure: Kubernetes, Helm, Istio<br>
-                CI/CD: ArgoCD, Tekton<br>
-                Monitoring: Prometheus, Grafana
+        <a href="https://github.com/yourusername/cloud-native-k8s-app" class="project-link">
+            <div class="project-card">
+                <h2>Cloud Native k8s Application</h2>
+                <p>Developed a highly scalable microservices application deployed on Kubernetes. The project implements auto-scaling, self-healing capabilities, and utilizes a service mesh for inter-service communication. Includes comprehensive monitoring and logging infrastructure for observability.</p>
+                <div class="tech-stack">
+                    Frontend: React, Material UI<br>
+                    Backend: Spring Boot, Go<br>
+                    Database: PostgreSQL, Redis<br>
+                    Infrastructure: Kubernetes, Helm, Istio<br>
+                    CI/CD: ArgoCD, Tekton<br>
+                    Monitoring: Prometheus, Grafana
+                </div>
             </div>
-        </div>
+        </a>
         
-        <div class="project-card">
-            <h2>Scripting Solutions</h2>
-            <p>Created a suite of automation scripts that streamline DevOps workflows and infrastructure management. These scripts handle everything from environment provisioning to backup procedures and security compliance checks, reducing manual effort and minimizing human error.</p>
-            <div class="tech-stack">
-                Languages: Python, Bash, PowerShell<br>
-                Cloud: AWS CLI, Azure CLI, GCP SDK<br>
-                Configuration Management: Ansible<br>
-                Version Control: Git<br>
-                Testing: pytest, shellcheck<br>
-                Documentation: Sphinx
+        <a href="https://github.com/yourusername/scripting-solutions" class="project-link">
+            <div class="project-card">
+                <h2>Scripting Solutions</h2>
+                <p>Created a suite of automation scripts that streamline DevOps workflows and infrastructure management. These scripts handle everything from environment provisioning to backup procedures and security compliance checks, reducing manual effort and minimizing human error.</p>
+                <div class="tech-stack">
+                    Languages: Python, Bash, PowerShell<br>
+                    Cloud: AWS CLI, Azure CLI, GCP SDK<br>
+                    Configuration Management: Ansible<br>
+                    Version Control: Git<br>
+                    Testing: pytest, shellcheck<br>
+                    Documentation: Sphinx
+                </div>
             </div>
-        </div>
+        </a>
         
-        <div class="project-card">
-            <h2>GitLab CI/CD Project</h2>
-            <p>Implemented a comprehensive CI/CD pipeline using GitLab for a multi-environment application deployment. The pipeline includes automated testing, security scanning, artifact management, and deployment with approval gates. Reduced deployment time by 80% while improving code quality.</p>
-            <div class="tech-stack">
-                CI/CD: GitLab CI<br>
-                Infrastructure as Code: Terraform<br>
-                Containerization: Docker, Docker Compose<br>
-                Security: SAST, DAST, Secret Detection<br>
-                Deployment: GitLab Environments<br>
-                Testing: Integration, E2E with Selenium
+        <a href="https://github.com/yourusername/gitlab-cicd-project" class="project-link">
+            <div class="project-card">
+                <h2>GitLab CI/CD Project</h2>
+                <p>Implemented a comprehensive CI/CD pipeline using GitLab for a multi-environment application deployment. The pipeline includes automated testing, security scanning, artifact management, and deployment with approval gates. Reduced deployment time by 80% while improving code quality.</p>
+                <div class="tech-stack">
+                    CI/CD: GitLab CI<br>
+                    Infrastructure as Code: Terraform<br>
+                    Containerization: Docker, Docker Compose<br>
+                    Security: SAST, DAST, Secret Detection<br>
+                    Deployment: GitLab Environments<br>
+                    Testing: Integration, E2E with Selenium
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     
     <a href="#" class="scroll-to-top">↑</a>
+    
+    <script>
+        // Make the entire project card clickable
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                window.location.href = card.parentElement.href;
+            });
+        });
+    </script>
 </body>
 </html>
