@@ -1,7 +1,7 @@
 [ABOUT](about.md) &nbsp;&nbsp; [PROJECTS](projects.md) &nbsp;&nbsp; [EDUCATION & EXPERIENCE](experience.md) &nbsp;&nbsp; [CONTACT](contact.md) &nbsp;&nbsp; [BLOG](blog.md)
 
 <div align="center">
-  <img src="/assets/_cloud.PNG" alt="Cloud Background" width="100%">
+  <img src="/assets/cloud.png" alt="Cloud Background" width="100%">
 </div>
 </div>
 
@@ -18,4 +18,3 @@
     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40">
   </a>
 </div>
-
