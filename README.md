@@ -1,74 +1,48 @@
-# Cloud & DevOps Engineer:
+# Cloud Portfolio
 
-### About Me
+Welcome to my personal portfolio! I'm a cloud technology enthusiast passionate about building scalable and efficient cloud solutions.
 
-Hi! I'm always open to learning and sharing knowledge with others. As someone who loves working with Python and PowerShell, I spend a lot of time exploring machine learning, AI, and AWS technologies.
+## Navigation
 
-I enjoy both working independently and as part of a team, especially when it comes to managing projects and keeping documentation up to date. I've worked on some interesting projects involving Containers, Microservices, and Oracle Cloud, and I've built up a good understanding of AWS services along the way.
+- [Home](#home)
+- [About](#about)
+- [Projects](#projects)
+- [Education & Experience](#education--experience)
+- [Blog](#blog)
+- [Contact](#contact)
 
-Right now, I'm expanding my knowledge through Great Lakes' PG program in cloud computing. It's giving me hands-on experience with multi-cloud environments including AWS, Azure, and GCP.
+## Home
 
-#####Areas of Interest:
-When I'm not coding or working with cloud technologies, you might find me exploring photography. I'm particularly interested in AWS, Azure, Python, PowerShell, CI/CD, Microservices, Oracle Cloud, IT Networking, and Database systems.
+My name is [Your Name] and I'm a Cloud Enthusiast.
 
-#####Other then that I've;
-- Professional background in Python and PowerShell
-- Experience with AWS technologies
-- Current enrollment in Great Lakes' PG program in cloud computing
+## About
 
-### Professional Experience
-- AWS infrastructure management
-- Infrastructure as Code (IaC)
-- Kubernetes/K8s
-- Terraform
-- Docker and ContainerD
-- Jenkins
-- Service mesh architecture
+Learn more about my background, skills, and passion for cloud technologies [here](about.html).
 
-### Technical Skills
+## Projects
 
-#### DevOps & Automation
-- CI/CD implementation
-- Shell scripting
-- Automation scripting
-- NGINX configuration
-- Version control (Git)
-- Infrastructure monitoring
+Explore the cloud-based projects I've worked on:
+- [View all projects](projects.html)
 
-#### Configuration & Service Management
-- Configuration management setup
-- Service discovery
-- Load balancing
-- Scaling solutions
-- Resource management
+## Education & Experience
 
-#### Programming & Scripting
-- Python development
-- Shell scripting expertise
+My academic background and professional journey in the cloud computing space:
+- [View education and work history](experience.html)
 
-### Certifications
+## Blog
 
-- Harvard CS50P Python Programming Certification
-- Oracle Cloud Infrastructure Kubernetes Service Specialist
-- Oracle Cloud Infrastructure Solution Architect Professional
+Read my thoughts and insights on cloud technologies:
+- [Check out my blog posts](blog.html)
 
-## Technology Stack
-<p align="left">
- <img src="https://github.com/user-attachments/assets/9f4184db-9824-47c9-968e-b2315cd45d83" alt="aws" width="130" height="130"/>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="docker" width="130" height="130"/>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="kubernetes" width="130" height="130"/>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="130" height="130"/>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg" alt="jenkins" width="130" height="130"/>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="130" height="130"/>
- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg" alt="ansible" width="130" height="130"/>
-</p>
+## Contact
 
-## Contact Information
-- Phone: 0305 8558671
-- Feel free to reach out if you'd like to collaborate on projects or discuss DevOps practices!
+Interested in connecting or collaborating? Reach out to me:
+- [Contact information](contact.html)
 
+## Setup
 
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github)](https://github.com/Areeba-Urooj)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/areeba-urooj-8a1606279/)
-[![Email](https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail)](mailto:cmy61677@gmail.com)
+This portfolio is hosted using GitHub Pages. The site is built with [technology stack details].
 
+---
+
+© [Year] [Your Name]. All Rights Reserved.
