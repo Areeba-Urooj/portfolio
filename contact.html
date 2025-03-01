@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Information</title>
+    <title>Experience - Personal Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,184 +15,173 @@
         .navbar {
             background-color: white;
             padding: 15px 0;
-            text-align: center;
+            text-align: right;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .navbar a {
-            margin: 0 20px;
+            margin: 0 15px;
             text-decoration: none;
             color: #666;
             font-weight: bold;
         }
         
         .navbar a.active {
-            color: #00B9D0;
+            color: #00bcd4;
         }
         
-        .content {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
+        .contact-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
         }
         
-        .section-title {
+        .contact-title {
+            font-size: 28px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            padding: 10px 0;
+        }
+        
+        .contact-row {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin: 15px 0;
         }
         
-        .circle-icon {
+        .icon {
             width: 40px;
             height: 40px;
-            background-color: #00B9D0;
+            background-color: #00bcd4;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 20px;
             margin-right: 15px;
         }
         
-        .section-title h2 {
+        .icon i {
+            color: white;
+            font-size: 20px;
+        }
+        
+        .contact-text {
             color: #666;
-            margin: 0;
-            font-size: 18px;
         }
         
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
         }
         
-        .contact-item {
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .visitor-counter {
+            margin: 20px 0;
         }
         
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .social-icons {
+            margin: 20px 0;
         }
         
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #f5f5f5;
-            border-radius: 50%;
-            display: flex;
+        .social-icon {
+            display: inline-flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-icon i {
-            font-size: 24px;
-            color: #00B9D0;
-        }
-        
-        .contact-item h3 {
-            color: #444;
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        
-        .contact-item p, .contact-item a {
-            color: #777;
-            margin: 5px 0;
-            font-size: 16px;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .contact-item a:hover {
-            color: #00B9D0;
-        }
-        
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #00B9D0;
-            color: white;
             width: 40px;
             height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #00bcd4;
+            color: white;
             border-radius: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            font-size: 20px;
             text-decoration: none;
         }
-        
-        /* Basic FontAwesome-like icons using Unicode */
-        .fa-envelope:before {
-            content: "✉";
-        }
-        
-        .fa-linkedin:before {
-            content: "in";
-        }
-        
-        .fa-github:before {
-            content: "G";
-        }
     </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <div class="navbar">
+    <nav class="navbar">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
         <a href="projects.html">PROJECTS</a>
-        <a href="education.html">EDUCATION & EXPERIENCE</a>
-        <a href="contact.html" class="active">CONTACT</a>
+        <a href="experience.html" class="active">EDUCATION & EXPERIENCE</a>
+        <a href="contact.html">CONTACT</a>
         <a href="blog.html">BLOG</a>
+    </nav>
+    
+    <div class="contact-container">
+        <h2 class="contact-title">Education & Experience</h2>
+        
+        <div class="contact-info">
+            <div class="contact-row">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    contact@example.com
+                </div>
+            </div>
+            
+            <div class="contact-row">
+                <div class="icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="contact-text">
+                    linkedin.com/in/yourprofile
+                </div>
+            </div>
+            
+            <div class="contact-row">
+                <div class="icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-text">
+                    github.com/yourusername
+                </div>
+            </div>
+        </div>
     </div>
     
-    <div class="content">
-        <div class="section-title">
-            <div class="circle-icon">
-                <i>C</i>
-            </div>
-            <h2>CONTACT INFORMATION</h2>
+    <footer>
+        <div class="visitor-counter">
+            <p>You are visitor number:</p>
+            <p>11541</p>
         </div>
         
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fa-envelope"></i>
-                </div>
-                <h3>Email</h3>
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
-                <p>Feel free to reach out anytime!</p>
-            </div>
-            
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fa-linkedin"></i>
-                </div>
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
-                <p>Connect with me professionally</p>
-            </div>
-            
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fa-github"></i>
-                </div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
-                <p>Check out my code repositories</p>
-            </div>
+        <div class="social-icons">
+            <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in" style="color: #222;"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-github" style="color: #222;"></i>
+            </a>
         </div>
-    </div>
+        
+        <p>Copyright © 2018 Uldeck All Right Reserved</p>
+    </footer>
     
-    <a href="#" class="scroll-to-top">↑</a>
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 </body>
 </html>
