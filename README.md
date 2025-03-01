@@ -1,7 +1,8 @@
 [ABOUT](about.md) &nbsp;&nbsp; [PROJECTS](projects.md) &nbsp;&nbsp; [EDUCATION & EXPERIENCE](experience.md) &nbsp;&nbsp; [CONTACT](contact.md) &nbsp;&nbsp; [BLOG](blog.md)
 
 <div align="center">
-  <img src="![cloud-computing](https://github.com/user-attachments/assets/f423864f-a76a-4a19-a1b2-2a4d5069783f)" alt="Cloud Background" width="100%">
+  <img src="/assets/cloud-computing.gif" alt="Cloud Background" width="100%">
+</div>
 </div>
 
 <div align="center">
