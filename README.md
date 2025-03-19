@@ -1,5 +1,13 @@
-[ABOUT](about.html) &nbsp;&nbsp; [PROJECTS](project.html) &nbsp;&nbsp; [EDUCATION & EXPERIENCE](experience.html) &nbsp;&nbsp; [CONTACT](contact.html) &nbsp;&nbsp; 
-
+<nav>
+  <a href="about.html" style="font-weight: bold; color: blue;">ABOUT</a> 
+  &nbsp;&nbsp; 
+  <a href="project.html">PROJECTS</a> 
+  &nbsp;&nbsp; 
+  <a href="experience.html">EDUCATION & EXPERIENCE</a> 
+  &nbsp;&nbsp; 
+  <a href="contact.html">CONTACT</a> 
+  &nbsp;&nbsp; 
+</nav>
 <div align="center">
   <img src="./assets/cloud.png" alt="Cloud Background" width="100%">
 </div>
