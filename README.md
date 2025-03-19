@@ -1,12 +1,12 @@
 <div style="text-align: center; width: 100%; margin: 20px auto;">
   <a href="about.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">ABOUT</a>
-  &nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp;&nbsp;
   <a href="project.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">PROJECTS</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;
   <a href="experience.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">EDUCATION & EXPERIENCE</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;
   <a href="contact.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">CONTACT</a>
-  &nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp;&nbsp;
   <a href="blog.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">BLOG</a> 
 </div>
 <div align="center">
