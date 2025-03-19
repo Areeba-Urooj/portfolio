@@ -1,11 +1,11 @@
 <nav>
   <a href="about.html" style="font-weight: bold; color: blue;">ABOUT</a> 
   &nbsp;&nbsp; 
-  <a href="project.html">PROJECTS</a> 
+  <a href="project.html" style="font-weight: bold; color: blue;">PROJECTS</a> 
   &nbsp;&nbsp; 
-  <a href="experience.html">EDUCATION & EXPERIENCE</a> 
+  <a href="experience.html" style="font-weight: bold; color: blue;">EDUCATION & EXPERIENCE</a> 
   &nbsp;&nbsp; 
-  <a href="contact.html">CONTACT</a> 
+  <a href="contact.html" style="font-weight: bold; color: blue;">CONTACT</a> 
   &nbsp;&nbsp; 
 </nav>
 <div align="center">
