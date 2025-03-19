@@ -1,13 +1,14 @@
-<nav>
-  <a href="about.html" style="font-weight: bold; color: blue;">ABOUT</a> 
-  &nbsp;&nbsp; 
-  <a href="project.html" style="font-weight: bold; color: blue;">PROJECTS</a> 
-  &nbsp;&nbsp; 
-  <a href="experience.html" style="font-weight: bold; color: blue;">EDUCATION & EXPERIENCE</a> 
-  &nbsp;&nbsp; 
-  <a href="contact.html" style="font-weight: bold; color: blue;">CONTACT</a> 
-  &nbsp;&nbsp; 
-</nav>
+<div style="text-align: center; width: 100%; margin: 20px auto;">
+  <a href="about.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">ABOUT</a>
+  &nbsp;&nbsp;&nbsp;&nbsp; 
+  <a href="project.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">PROJECTS</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="experience.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">EDUCATION & EXPERIENCE</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="contact.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">CONTACT</a>
+  &nbsp;&nbsp;&nbsp;&nbsp; 
+  <a href="blog.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 20px;">BLOG</a> 
+</div>
 <div align="center">
   <img src="./assets/cloud.png" alt="Cloud Background" width="100%">
 </div>
