@@ -1,20 +1,17 @@
-/* Add this to your assets/css/style.scss file */
----
----
-
-@import "{{ site.theme }}";
+// style.scss
+@import "site/theme"; // Make sure this points to your theme file
 
 /* Hide the URL under the profile picture */
-header p:first-of-type {
+header .profile-text:first-of-type {
   display: none;
 }
 
 /* Hide the download section */
-section #downloads {
+section .downloads {
   display: none;
 }
 
 /* Hide the "This project is maintained by..." text */
-footer p:first-of-type {
+footer .maintained-by {
   display: none;
 }
