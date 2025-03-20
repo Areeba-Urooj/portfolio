@@ -1,0 +1,19 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Hide the URL under the profile picture */
+header p:first-of-type {
+  display: none;
+}
+
+/* Hide the download section */
+section #downloads {
+  display: none;
+}
+
+/* Hide the "This project is maintained by..." text */
+footer p:first-of-type {
+  display: none;
+}
