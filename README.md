@@ -3,11 +3,11 @@
   <a href="projects.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 10px; font-size: 18px;">PROJECTS</a>
   <a href="experience.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 10px; font-size: 18px;">EDUCATION & EXPERIENCE</a>
   <a href="contact.html" style="color: #4682B4; font-weight: bold; text-decoration: none; margin: 0 10px; font-size: 18px;">CONTACT</a>
-  
+</div>
+
 <div align="center">
   <img src="./assets/cloud.png" alt="Cloud Background" width="100%">
 </div>
-
 <div align="center">
   <h2>Hi, I'm</h2>
   <h1>AREEBA UROOJ</h1>
