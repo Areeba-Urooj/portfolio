@@ -136,6 +136,13 @@
             <div class="project-card">
                 <h2>Cloud-Native Microservices on Kubernetes</h2>
                 <p>Engineered a highly scalable microservices application for deployment on **Kubernetes**. The project implements **auto-scaling**, **self-healing**, and utilizes a service mesh for secure inter-service communication. Includes comprehensive **monitoring** and **logging** for full observability.</p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**High Availability**: Deployed a resilient microservices architecture on a Kubernetes cluster.</li>
+                        <li>**Automated Scaling**: Implemented auto-scaling for efficient resource utilization and high availability.</li>
+                        <li>**Enhanced Observability**: Integrated comprehensive monitoring and logging systems for real-time performance insights.</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <ul class="tech-list">
                         <li>**Frontend**: React</li>
@@ -153,6 +160,13 @@
             <div class="project-card">
                 <h2>DevOps Scripting & Automation Solutions</h2>
                 <p>Created a robust suite of automation scripts that streamline **DevOps workflows** and infrastructure management. These scripts handle everything from environment provisioning to security compliance and backup procedures, significantly **reducing manual effort** and human error.</p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**Efficiency Boost**: Reduced manual effort by automating routine and error-prone tasks.</li>
+                        <li>**Improved Consistency**: Ensured consistent environment provisioning and maintenance across all systems.</li>
+                        <li>**Enhanced Security**: Automated security and compliance checks to maintain a secure infrastructure.</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <ul class="tech-list">
                         <li>**Languages**: Python, Bash, PowerShell</li>
@@ -169,6 +183,13 @@
             <div class="project-card">
                 <h2>Automated React Deployment with GitLab CI/CD to AWS S3</h2>
                 <p>Engineered a comprehensive CI/CD pipeline using **GitLab** to automate the build, test, and deployment of a React application. The pipeline includes automated testing, security scanning, and deployment with approval gates for seamless delivery to both staging and production environments on **AWS S3**.</p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**80% Reduction in Deployment Time**: Transformed a manual, multi-step process into a fully automated pipeline.</li>
+                        <li>**Enhanced Code Quality**: Integrated automated testing and security scans to improve code quality and reliability.</li>
+                        <li>**Secure & Controlled Releases**: Implemented approval gates to ensure safe and controlled deployments to production.</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <ul class="tech-list">
                         <li>**CI/CD**: GitLab CI, GitLab Environments</li>
@@ -184,6 +205,13 @@
             <div class="project-card">
                 <h2>Terraform for Multi-Environment AWS Applications</h2>
                 <p>Developed **Infrastructure as Code (IaC)** solutions using **Terraform** to provision and manage AWS resources for scalable applications. Implemented modular configurations with state management and automated deployments, ensuring consistent infrastructure across development, staging, and production environments.</p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**Consistent Environments**: Ensured uniform infrastructure across all environments using a single source of truth.</li>
+                        <li>**Automated Provisioning**: Minimized manual configuration and human error through full automation.</li>
+                        <li>**Version-Controlled Infrastructure**: Managed infrastructure like code, allowing for easy tracking, auditing, and rollback of changes.</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <ul class="tech-list">
                         <li>**IaC**: Terraform</li>
@@ -200,6 +228,13 @@
             <div class="project-card">
                 <h2>Terraform-Powered DevOps Infrastructure</h2>
                 <p>Created comprehensive **DevOps infrastructure** solutions using **Terraform** for automated deployment pipelines, monitoring systems, and scalable application architectures. Streamlined DevOps workflows and achieved a **70% reduction in infrastructure deployment time**.</p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**70% Reduction in Deployment Time**: Drastically accelerated infrastructure deployment and provisioning.</li>
+                        <li>**Scalable Architecture**: Built modular and scalable components to support evolving application needs.</li>
+                        <li>**End-to-End Automation**: Automated infrastructure provisioning to enable faster and more reliable deployments.</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <ul class="tech-list">
                         <li>**IaC**: Terraform</li>
@@ -216,12 +251,69 @@
             <div class="project-card">
                 <h2>Secure AWS VPC with Terraform</h2>
                 <p>Designed and implemented a secure, scalable **AWS VPC infrastructure** using **Terraform** for testing and development environments. Created a multi-tier network architecture with public/private subnets, **NAT gateways**, and security groups to ensure best practices for network segmentation and security.</p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**Enhanced Security**: Implemented robust security controls using security groups and NACLs.</li>
+                        <li>**High Availability**: Designed a multi-AZ VPC to ensure resilience and prevent single points of failure.</li>
+                        <li>**Reproducible Infrastructure**: Codified the entire network, making it easily reproducible for other projects.</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <ul class="tech-list">
                         <li>**IaC**: Terraform</li>
                         <li>**Networking**: AWS VPC, Subnets, Route Tables, NAT Gateway</li>
                         <li>**Security**: Security Groups, NACLs, IAM</li>
                         <li>**High Availability**: Multi-AZ Deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+        
+        <a href="[Link to GitOps Project]" class="project-link">
+            <div class="project-card">
+                <h2>Go Microservices CI/CD with GitOps on AWS EKS</h2>
+                <p>Engineered an advanced **GitOps** pipeline for a Go microservice using **Argo CD** for declarative, automated deployments on an **AWS EKS** cluster. This project leverages **Infrastructure as Code (IaC)** with **Terraform** and a **two-repository model** for a secure and self-healing workflow.
+                </p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**Self-Healing Deployment:** Argo CD continuously monitors the cluster, automatically correcting any drift from the desired state in Git.</li>
+                        <li>**Streamlined Workflow:** Automated CI pipeline with **GitHub Actions** runs tests, security scans, and triggers the deployment without any manual intervention.</li>
+                        <li>**Full Automation:** From a single `git push` to a live update on Kubernetes, the entire process is automated and auditable.</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-section">
+                    <h3 class="tech-stack-title">Technologies Used:</h3>
+                    <ul class="tech-list">
+                        <li>**IaC/Orchestration:** Terraform, Kubernetes, Helm</li>
+                        <li>**CI/CD:** GitHub Actions, Argo CD, GitOps</li>
+                        <li>**Cloud:** AWS EKS, AWS VPC</li>
+                        <li>**Security:** Gitleaks, Trivy</li>
+                        <li>**Languages:** Go, Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+
+        <a href="[Link to First Go Project]" class="project-link">
+            <div class="project-card">
+                <h2>Go API CI/CD Pipeline on AWS EKS</h2>
+                <p>Designed and implemented an end-to-end **CI/CD pipeline** for a Go backend API, automating the lifecycle from code commit to deployment. This project uses **GitHub Actions** and a custom GitOps model to deploy a containerized application on a production-grade **AWS EKS** cluster.
+                </p>
+                <div class="project-metrics">
+                    <ul>
+                        <li>**Automated & Error-Free Deployments:** Eliminated manual, error-prone steps for a reliable, automated release process.</li>
+                        <li>**Integrated Security:** Performed static analysis and container image scanning with **Trivy** and **Gitleaks** to catch vulnerabilities early.</li>
+                        <li>**IaC Foundation:** Provisioned a secure and scalable AWS infrastructure, including a custom VPC and EKS cluster, using **Terraform**.</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-section">
+                    <h3 class="tech-stack-title">Technologies Used:</h3>
+                    <ul class="tech-list">
+                        <li>**CI/CD:** GitHub Actions, Git</li>
+                        <li>**Cloud:** AWS EKS, AWS CLI</li>
+                        <li>**IaC:** Terraform</li>
+                        <li>**Security:** Gitleaks, Trivy</li>
+                        <li>**Languages:** Go, Docker</li>
                     </ul>
                 </div>
             </div>
