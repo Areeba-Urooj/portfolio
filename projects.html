@@ -3,306 +3,639 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Areeba's Portfolio</title>
+    <title>Projects - Areeba Urooj | DevOps Engineer Portfolio</title>
+    <meta name="description" content="Explore Areeba Urooj's DevOps and Cloud Engineering projects including Kubernetes, AWS EKS, CI/CD pipelines, Terraform, and microservices architecture.">
+    <meta name="keywords" content="DevOps, AWS, Kubernetes, EKS, CI/CD, Terraform, Docker, Jenkins, GitHub Actions, Cloud Engineering">
+    <meta name="author" content="Areeba Urooj">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Projects - Areeba Urooj | DevOps Engineer">
+    <meta property="og:description" content="Explore cutting-edge DevOps and Cloud Engineering projects showcasing expertise in Kubernetes, AWS, and automation.">
+    <meta property="og:type" content="website">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            box-sizing: border-box;
         }
         
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+        
+        /* Navigation */
         .navbar {
-            background-color: white;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .navbar a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #666;
-            font-weight: bold;
-        }
-        
-        .navbar a.active {
-            color: #00B9D0;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 70px 0;
-        }
-        
-        .header h1 {
-            color: #666;
-            font-size: 40px;
-            letter-spacing: 2px;
-        }
-        
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 0 20px 50px 20px;
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 5px;
-            padding: 25px;
-            width: 300px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-card h2 {
-            color: #666;
-            font-size: 18px;
-            margin-top: 0;
-        }
-        
-        .project-card p {
-            color: #777;
-            line-height: 1.5;
-        }
-        
-        .tech-stack {
-            margin-top: 20px;
-            color: #888;
-            font-family: monospace;
-        }
-
-        .tech-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .tech-list li {
-            margin-bottom: 5px;
-        }
-        
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #00B9D0;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
-            font-size: 20px;
+            padding: 0 2rem;
+        }
+        
+        .navbar a {
             text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            margin: 0 1.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar a:hover,
+        .navbar a.active {
+            color: #00B9D0;
+            border-bottom-color: #00B9D0;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #00B9D0 0%, #0891b2 100%);
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Projects Container */
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Project Cards */
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00B9D0, #0891b2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+        }
+        
+        .project-card:hover::before {
+            transform: scaleX(1);
         }
         
         .project-link {
             text-decoration: none;
             color: inherit;
-            display: block;
         }
+        
+        /* Card Content */
+        .project-title {
+            color: #1e293b;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .project-description {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-highlights {
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-highlights h4 {
+            color: #334155;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .highlights-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .highlights-list li {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        
+        .highlights-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        /* Tech Stack */
+        .tech-stack {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+        
+        .tech-stack h4 {
+            color: #334155;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .tech-tag.primary {
+            background: #e6f7ff;
+            color: #00B9D0;
+            border-color: #b3ecff;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #00B9D0 0%, #0891b2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,185,208,0.3);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .scroll-to-top:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,185,208,0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .navbar a {
+                margin: 0.5rem;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
+                padding: 0 1rem 2rem;
+                gap: 1.5rem;
+            }
+            
+            .project-card {
+                padding: 1.5rem;
+            }
+            
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .navbar a {
+                font-size: 0.8rem;
+                margin: 0.25rem;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .project-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Stagger animation for cards */
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="projects.html" class="active">PROJECTS</a>
-        <a href="experience.html">EDUCATION & EXPERIENCE</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="projects.html" class="active">PROJECTS</a>
+            <a href="experience.html">EDUCATION & EXPERIENCE</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
     
-    <div class="header">
+    <header class="header">
         <h1>PROJECTS</h1>
-    </div>
+        <p>Innovative DevOps and Cloud Engineering solutions that drive scalability, automation, and reliability</p>
+    </header>
     
-    <div class="projects-container">
-        <a href="https://github.com/Areeba-Urooj/CloudNative-k8s-Architecture" class="project-link">
-            <div class="project-card">
-                <h2>Cloud-Native Microservices on Kubernetes</h2>
-                <p>Engineered a highly scalable microservices application for deployment on **Kubernetes**. The project implements **auto-scaling**, **self-healing**, and utilizes a service mesh for secure inter-service communication. Includes comprehensive **monitoring** and **logging** for full observability.</p>
+    <main class="projects-container">
+        <a href="https://github.com/Areeba-Urooj/CloudNative-k8s-Architecture" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Cloud-Native Microservices on Kubernetes</h2>
+                <p class="project-description">
+                    Engineered a highly scalable microservices application for deployment on Kubernetes. The project implements auto-scaling, self-healing capabilities, and utilizes a service mesh for secure inter-service communication with comprehensive monitoring and logging for full observability.
+                </p>
                 <div class="tech-stack">
-                    <ul class="tech-list">
-                        <li>**Frontend**: React</li>
-                        <li>**Backend**: Node.js, HTML</li>
-                        <li>**Database**: MongoDB</li>
-                        <li>**Infrastructure**: Kubernetes, Helm</li>
-                        <li>**CI/CD**: ArgoCD, Tekton</li>
-                        <li>**Storage**: OpenEBS</li>
-                    </ul>
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Kubernetes</span>
+                        <span class="tech-tag primary">React</span>
+                        <span class="tech-tag primary">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Helm</span>
+                        <span class="tech-tag">ArgoCD</span>
+                        <span class="tech-tag">Tekton</span>
+                        <span class="tech-tag">OpenEBS</span>
+                    </div>
                 </div>
-            </div>
+            </article>
         </a>
 
-        <a href="[Your EKS Project GitHub Link]" class="project-link">
-            <div class="project-card">
-                <h2>Scalable EKS Deployment with GitHub Actions</h2>
-                    <p>Engineered and deployed a production-grade Kubernetes cluster on AWS using EKS. The project features a robust, end-to-end DevOps pipeline managed by GitHub Actions that automates infrastructure provisioning, application deployment, and scaling. I leveraged Infrastructure as Code (IaC) with Terraform to provision the core cluster and demonstrated a practical understanding of hybrid IaC by using CloudFormation to manage the EBS CSI driver for persistent storage.</p>
-                    <p>This project highlights expertise in container orchestration, cloud-native architecture, and the full software delivery lifecycle.</p>
-            <div class="tech-stack">
-                    Orchestration: Kubernetes (EKS)<br>
-                    IaC: Terraform, CloudFormation<br>
-                    CI/CD: GitHub Actions<br>
-                    Containerization: Docker<br>
-                    Cloud: AWS<br>
-                    Tools: EBS CSI Driver
-                </div>
-            </div>
-        </a>
-        
-        <a href="https://github.com/Areeba-Urooj/ScriptingSolutions" class="project-link">
-            <div class="project-card">
-                <h2>DevOps Scripting & Automation Solutions</h2>
-                <p>Created a robust suite of automation scripts that streamline **DevOps workflows** and infrastructure management. These scripts handle everything from environment provisioning to security compliance and backup procedures, significantly **reducing manual effort** and human error.</p>
-                <div class="tech-stack">
-                    <ul class="tech-list">
-                        <li>**Languages**: Python, Bash, PowerShell</li>
-                        <li>**Cloud/CLI**: AWS CLI, Azure CLI</li>
-                        <li>**OS**: Ubuntu VM</li>
-                        <li>**Version Control**: Git</li>
-                        <li>**Testing**: pytest, shellcheck</li>
+        <a href="https://medium.com/@cmy61677/github-actions-ci-cd-for-a-3-tier-app-on-eks-2d4fc5237a92" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Full-Stack CI/CD on EKS with GitHub Actions</h2>
+                <p class="project-description">
+                    Architected and automated a complete DevOps pipeline for a 3-tier web application using GitHub Actions. This end-to-end pipeline handles everything from code commit to deployment on Amazon EKS, resulting in a 90% reduction in deployment time.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Achievements</h4>
+                    <ul class="highlights-list">
+                        <li>90% reduction in deployment time with full automation</li>
+                        <li>Integrated DevSecOps with SonarQube, Trivy, and Gitleaks</li>
+                        <li>Advanced IaC combining Terraform and CloudFormation</li>
                     </ul>
                 </div>
-            </div>
-        </a>
-        
-        <a href="https://github.com/Areeba-Urooj/GitLab-CI-CD-Project" class="project-link">
-            <div class="project-card">
-                <h2>Automated React Deployment with GitLab CI/CD to AWS S3</h2>
-                <p>Engineered a comprehensive CI/CD pipeline using **GitLab** to automate the build, test, and deployment of a React application. The pipeline includes automated testing, security scanning, and deployment with approval gates for seamless delivery to both staging and production environments on **AWS S3**.</p>
                 <div class="tech-stack">
-                    <ul class="tech-list">
-                        <li>**CI/CD**: GitLab CI, GitLab Environments</li>
-                        <li>**Containerization**: Docker, Docker Compose</li>
-                        <li>**Security**: SAST, DAST, Secret Detection</li>
-                        <li>**Cloud**: AWS S3, AWS CLI</li>
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">AWS EKS</span>
+                        <span class="tech-tag primary">GitHub Actions</span>
+                        <span class="tech-tag primary">Terraform</span>
+                        <span class="tech-tag">CloudFormation</span>
+                        <span class="tech-tag">SonarQube</span>
+                        <span class="tech-tag">Trivy</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">React</span>
                     </ul>
                 </div>
-            </div>
+            </article>
         </a>
-        
-        <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-link">
-            <div class="project-card">
-                <h2>Terraform for Multi-Environment AWS Applications</h2>
-                <p>Developed **Infrastructure as Code (IaC)** solutions using **Terraform** to provision and manage AWS resources for scalable applications. Implemented modular configurations with state management and automated deployments, ensuring consistent infrastructure across development, staging, and production environments.</p>
-                <div class="tech-stack">
-                    <ul class="tech-list">
-                        <li>**IaC**: Terraform</li>
-                        <li>**Cloud Services**: AWS (EC2, VPC, S3, IAM)</li>
-                        <li>**State Management**: Terraform Remote State</li>
-                        <li>**Automation**: Terraform Modules</li>
-                        <li>**Version Control**: Git, GitHub</li>
-                    </ul>
-                </div>
-            </div>
-        </a>
-        
-        <a href="https://github.com/Areeba-Urooj/terraform-devops-projects" class="project-link">
-            <div class="project-card">
-                <h2>Terraform-Powered DevOps Infrastructure</h2>
-                <p>Created comprehensive **DevOps infrastructure** solutions using **Terraform** for automated deployment pipelines, monitoring systems, and scalable application architectures. Streamlined DevOps workflows and achieved a **70% reduction in infrastructure deployment time**.</p>
-                <div class="tech-stack">
-                    <ul class="tech-list">
-                        <li>**IaC**: Terraform</li>
-                        <li>**DevOps**: CI/CD Pipelines, Jenkins, GitLab</li>
-                        <li>**Containerization**: Docker, Kubernetes</li>
-                        <li>**Monitoring**: CloudWatch, Prometheus</li>
-                        <li>**Cloud/Storage**: AWS, S3, EBS</li>
-                    </ul>
-                </div>
-            </div>
-        </a>
-        
-        <a href="https://github.com/Areeba-Urooj/terraform-aws-areebaurooj-test-vpc" class="project-link">
-            <div class="project-card">
-                <h2>Secure AWS VPC with Terraform</h2>
-                <p>Designed and implemented a secure, scalable **AWS VPC infrastructure** using **Terraform** for testing and development environments. Created a multi-tier network architecture with public/private subnets, **NAT gateways**, and security groups to ensure best practices for network segmentation and security.</p>
-                <div class="tech-stack">
-                    <ul class="tech-list">
-                        <li>**IaC**: Terraform</li>
-                        <li>**Networking**: AWS VPC, Subnets, Route Tables, NAT Gateway</li>
-                        <li>**Security**: Security Groups, NACLs, IAM</li>
-                        <li>**High Availability**: Multi-AZ Deployment</li>
-                    </ul>
-                </div>
-            </div>
-        </a>
-    </div>
-    <a href="[Link to GitOps Project]" class="project-link">
-    <div class="project-card">
-        <h2>Go Microservices CI/CD with GitOps on AWS EKS</h2>
-        <p>Engineered an advanced **GitOps** pipeline for a Go microservice using **Argo CD** for declarative, automated deployments on an **AWS EKS** cluster. This project leverages **Infrastructure as Code (IaC)** with **Terraform** and a **two-repository model** for a secure and self-healing workflow.
-        </p>
-        <div class="project-metrics">
-            <ul>
-                <li>**Self-Healing Deployment:** Argo CD continuously monitors the cluster, automatically correcting any drift from the desired state in Git.</li>
-                <li>**Streamlined Workflow:** Automated CI pipeline with **GitHub Actions** runs tests, security scans, and triggers the deployment without any manual intervention.</li>
-                <li>**Full Automation:** From a single `git push` to a live update on Kubernetes, the entire process is automated and auditable.</li>
-            </ul>
-        </div>
-        <div class="tech-stack-section">
-            <h3 class="tech-stack-title">Technologies Used:</h3>
-            <ul class="tech-list">
-                <li>**IaC/Orchestration:** Terraform, Kubernetes, Helm</li>
-                <li>**CI/CD:** GitHub Actions, Argo CD, GitOps</li>
-                <li>**Cloud:** AWS EKS, AWS VPC</li>
-                <li>**Security:** Gitleaks, Trivy</li>
-                <li>**Languages:** Go, Docker</li>
-            </ul>
-        </div>
-    </div>
-</a>
 
-<a href="[Link to First Go Project]" class="project-link">
-    <div class="project-card">
-        <h2>Go API CI/CD Pipeline on AWS EKS</h2>
-        <p>Designed and implemented an end-to-end **CI/CD pipeline** for a Go backend API, automating the lifecycle from code commit to deployment. This project uses **GitHub Actions** and a custom GitOps model to deploy a containerized application on a production-grade **AWS EKS** cluster.
-        </p>
-        <div class="project-metrics">
-            <ul>
-                <li>**Automated & Error-Free Deployments:** Eliminated manual, error-prone steps for a reliable, automated release process.</li>
-                <li>**Integrated Security:** Performed static analysis and container image scanning with **Trivy** and **Gitleaks** to catch vulnerabilities early.</li>
-                <li>**IaC Foundation:** Provisioned a secure and scalable AWS infrastructure, including a custom VPC and EKS cluster, using **Terraform**.</li>
-            </ul>
-        </div>
-        <div class="tech-stack-section">
-            <h3 class="tech-stack-title">Technologies Used:</h3>
-            <ul class="tech-list">
-                <li>**CI/CD:** GitHub Actions, Git</li>
-                <li>**Cloud:** AWS EKS, AWS CLI</li>
-                <li>**IaC:** Terraform</li>
-                <li>**Security:** Gitleaks, Trivy</li>
-                <li>**Languages:** Go, Docker</li>
-            </ul>
-        </div>
-    </div>
-</a>
+        <a href="https://medium.com/@cmy61677/building-a-production-ready-devops-pipeline-from-manual-processes-to-automated-excellence-4743b0d71679" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Production-Ready DevOps Pipeline with Jenkins & EKS</h2>
+                <p class="project-description">
+                    Transformed a manual deployment workflow into a fully automated, production-ready DevOps pipeline. This end-to-end solution, orchestrated by Jenkins, integrates an AWS EKS cluster with robust monitoring and security.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Achievements</h4>
+                    <ul class="highlights-list">
+                        <li>90% reduction in deployment time</li>
+                        <li>99.9% application availability</li>
+                        <li>Zero manual intervention required</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Jenkins</span>
+                        <span class="tech-tag primary">AWS EKS</span>
+                        <span class="tech-tag primary">Terraform</span>
+                        <span class="tech-tag">Prometheus</span>
+                        <span class="tech-tag">Grafana</span>
+                        <span class="tech-tag">SonarQube</span>
+                        <span class="tech-tag">Nexus</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+        <a href="https://github.com/Areeba-Urooj/ScriptingSolutions" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">DevOps Scripting & Automation Solutions</h2>
+                <p class="project-description">
+                    Created a robust suite of automation scripts that streamline DevOps workflows and infrastructure management. These scripts handle everything from environment provisioning to security compliance and backup procedures.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Features</h4>
+                    <ul class="highlights-list">
+                        <li>Significant reduction in manual effort and human error</li>
+                        <li>Cross-platform compatibility (Linux, Windows)</li>
+                        <li>Comprehensive testing and validation</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Python</span>
+                        <span class="tech-tag primary">Bash</span>
+                        <span class="tech-tag primary">PowerShell</span>
+                        <span class="tech-tag">AWS CLI</span>
+                        <span class="tech-tag">Azure CLI</span>
+                        <span class="tech-tag">pytest</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+        <a href="https://medium.com/@cmy61677/gitlab-ci-cd-seamlessly-deploying-react-to-aws-s3-f42b0f7612b4" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Automated React Deployment with GitLab CI/CD</h2>
+                <p class="project-description">
+                    Engineered a comprehensive CI/CD pipeline using GitLab to automate the build, test, and deployment of a React application. The pipeline includes automated testing, security scanning, and deployment with approval gates.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Features</h4>
+                    <ul class="highlights-list">
+                        <li>Automated testing and security scanning</li>
+                        <li>Seamless deployment to staging and production</li>
+                        <li>Approval gates for controlled releases</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">GitLab CI</span>
+                        <span class="tech-tag primary">React</span>
+                        <span class="tech-tag primary">AWS S3</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">SAST</span>
+                        <span class="tech-tag">DAST</span>
+                        <span class="tech-tag">AWS CLI</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+        <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Terraform Multi-Environment AWS Applications</h2>
+                <p class="project-description">
+                    Developed Infrastructure as Code solutions using Terraform to provision and manage AWS resources for scalable applications. Implemented modular configurations with state management and automated deployments.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Features</h4>
+                    <ul class="highlights-list">
+                        <li>Consistent infrastructure across all environments</li>
+                        <li>Modular and reusable Terraform configurations</li>
+                        <li>Automated state management and deployments</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Terraform</span>
+                        <span class="tech-tag primary">AWS</span>
+                        <span class="tech-tag">EC2</span>
+                        <span class="tech-tag">VPC</span>
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">IAM</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+        <a href="https://medium.com/aws-in-plain-english/go-api-ci-cd-pipeline-with-github-actions-and-aws-eks-44bc62274856" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Go API CI/CD Pipeline on AWS EKS</h2>
+                <p class="project-description">
+                    Designed and implemented an end-to-end CI/CD pipeline for a Go backend API, automating the lifecycle from code commit to deployment using GitHub Actions and a custom GitOps model on AWS EKS.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Achievements</h4>
+                    <ul class="highlights-list">
+                        <li>Automated and error-free deployments</li>
+                        <li>Integrated security with Trivy and Gitleaks</li>
+                        <li>Secure and scalable AWS infrastructure with Terraform</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Go</span>
+                        <span class="tech-tag primary">GitHub Actions</span>
+                        <span class="tech-tag primary">AWS EKS</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Trivy</span>
+                        <span class="tech-tag">Gitleaks</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+        <a href="https://github.com/Areeba-Urooj/terraform-aws-areebaurooj-test-vpc" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card">
+                <h2 class="project-title">Secure AWS VPC with Terraform</h2>
+                <p class="project-description">
+                    Designed and implemented a secure, scalable AWS VPC infrastructure using Terraform for testing and development environments. Created a multi-tier network architecture with best practices for network segmentation.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Features</h4>
+                    <ul class="highlights-list">
+                        <li>Multi-tier network architecture</li>
+                        <li>High availability with multi-AZ deployment</li>
+                        <li>Comprehensive security with NACLs and Security Groups</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Terraform</span>
+                        <span class="tech-tag primary">AWS VPC</span>
+                        <span class="tech-tag">NAT Gateway</span>
+                        <span class="tech-tag">Security Groups</span>
+                        <span class="tech-tag">Route Tables</span>
+                        <span class="tech-tag">IAM</span>
+                        <span class="tech-tag">Multi-AZ</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+    </main>
     
-    <a href="#" class="scroll-to-top">↑</a>
+    <a href="#" class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Scroll to top">↑</a>
     
     <script>
-        // Make the entire project card clickable
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                window.location.href = card.parentElement.href;
+        // Smooth scrolling for all internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show/hide scroll to top button
+            const scrollButton = document.querySelector('.scroll-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollButton.style.opacity = '0.8';
+                } else {
+                    scrollButton.style.opacity = '0';
+                }
+            });
+            
+            // Add loading animation to cards
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                }
+            );
+            
+            // Initially hide cards for animation
+            document.querySelectorAll('.project-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
             });
         });
+        
+        // Add click analytics (optional - you can remove if not needed)
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // You can add analytics tracking here
+                console.log('Project clicked:', this.querySelector('.project-title').textContent);
+            });
+        });
+        
+        // Performance optimization: Lazy loading for project cards
+        if ('IntersectionObserver' in window) {
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('loaded');
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.project-card').forEach(card => {
+                cardObserver.observe(card);
+            });
+        }
     </script>
 </body>
 </html>
-
