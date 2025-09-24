@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Areeba's Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,6 +82,17 @@
             color: #888;
             font-family: monospace;
         }
+
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .tech-list li {
+            margin-bottom: 5px;
+        }
         
         .scroll-to-top {
             position: fixed;
@@ -123,89 +134,98 @@
     <div class="projects-container">
         <a href="https://github.com/Areeba-Urooj/CloudNative-k8s-Architecture" class="project-link">
             <div class="project-card">
-                <h2>Cloud Native k8s Application</h2>
-                <p>Developed a highly scalable microservices application deployed on Kubernetes. The project implements auto-scaling, self-healing capabilities, and utilizes a service mesh for inter-service communication. Includes comprehensive monitoring and logging infrastructure for observability.</p>
+                <h2>Cloud-Native Microservices on Kubernetes</h2>
+                <p>Engineered a highly scalable microservices application for deployment on **Kubernetes**. The project implements **auto-scaling**, **self-healing**, and utilizes a service mesh for secure inter-service communication. Includes comprehensive **monitoring** and **logging** for full observability.</p>
                 <div class="tech-stack">
-                    Frontend: React<br>
-                    Backend: node.js, html<br>
-                    Database: MongoDB<br>
-                    Infrastructure: Kubernetes, Helm<br>
-                    CI/CD: ArgoCD, Tekton<br>
-                    Storage: OpenEBS
+                    <ul class="tech-list">
+                        <li>**Frontend**: React</li>
+                        <li>**Backend**: Node.js, HTML</li>
+                        <li>**Database**: MongoDB</li>
+                        <li>**Infrastructure**: Kubernetes, Helm</li>
+                        <li>**CI/CD**: ArgoCD, Tekton</li>
+                        <li>**Storage**: OpenEBS</li>
+                    </ul>
                 </div>
             </div>
         </a>
         
         <a href="https://github.com/Areeba-Urooj/ScriptingSolutions" class="project-link">
             <div class="project-card">
-                <h2>Scripting Solutions</h2>
-                <p>Created a suite of automation scripts that streamline DevOps workflows and infrastructure management. These scripts handle everything from environment provisioning to backup procedures and security compliance checks, reducing manual effort and minimizing human error.</p>
+                <h2>DevOps Scripting & Automation Solutions</h2>
+                <p>Created a robust suite of automation scripts that streamline **DevOps workflows** and infrastructure management. These scripts handle everything from environment provisioning to security compliance and backup procedures, significantly **reducing manual effort** and human error.</p>
                 <div class="tech-stack">
-                    Languages: Python, Bash, PowerShell<br>
-                    Cloud: AWS CLI, Azure CLI, Ubuntu VM<br>
-                    Version Control: Git<br>
-                    Testing: pytest, shellcheck<br>
-                    Documentation: Readme.md
+                    <ul class="tech-list">
+                        <li>**Languages**: Python, Bash, PowerShell</li>
+                        <li>**Cloud/CLI**: AWS CLI, Azure CLI</li>
+                        <li>**OS**: Ubuntu VM</li>
+                        <li>**Version Control**: Git</li>
+                        <li>**Testing**: pytest, shellcheck</li>
+                    </ul>
                 </div>
             </div>
         </a>
         
         <a href="https://github.com/Areeba-Urooj/GitLab-CI-CD-Project" class="project-link">
             <div class="project-card">
-                <h2>GitLab CI/CD Project</h2>
-                <p>Implemented a comprehensive CI/CD pipeline using GitLab for a multi-environment application deployment. The pipeline includes automated testing, security scanning, and deployment with approval gates plus uses environments i:e;Staging and Production Environments. Reduced deployment time by 80% while improving code quality.</p>
+                <h2>Automated React Deployment with GitLab CI/CD to AWS S3</h2>
+                <p>Engineered a comprehensive CI/CD pipeline using **GitLab** to automate the build, test, and deployment of a React application. The pipeline includes automated testing, security scanning, and deployment with approval gates for seamless delivery to both staging and production environments on **AWS S3**.</p>
                 <div class="tech-stack">
-                    CI/CD: GitLab CI<br>
-                    Containerization: Docker, Docker Compose<br>
-                    Security: SAST, DAST, Secret Detection<br>
-                    Deployment: GitLab Environments<br>
-                    Testing: Integration 
-                    Cloud: s3 Buckets for deployment
+                    <ul class="tech-list">
+                        <li>**CI/CD**: GitLab CI, GitLab Environments</li>
+                        <li>**Containerization**: Docker, Docker Compose</li>
+                        <li>**Security**: SAST, DAST, Secret Detection</li>
+                        <li>**Cloud**: AWS S3, AWS CLI</li>
+                    </ul>
                 </div>
             </div>
         </a>
-         <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-link">
-   <div class="project-card">
-       <h2>Terraform AWS Applications</h2>
-       <p>Developed Infrastructure as Code solutions using Terraform to provision and manage AWS resources for scalable applications. Implemented modular Terraform configurations with state management, automated deployments, and multi-environment support. Achieved consistent infrastructure provisioning across development, staging, and production environments.</p>
-       <div class="tech-stack">
-           Infrastructure: Terraform, AWS CLI<br>
-           Cloud Services: EC2, VPC, S3, IAM<br>
-           State Management: Terraform Remote State<br>
-           Automation: Terraform Modules, Variables<br>
-           Environments: Dev, Staging, Production<br>
-           Version Control: Git, GitHub
-       </div>
-   </div>
-</a>
+        
+        <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-link">
+            <div class="project-card">
+                <h2>Terraform for Multi-Environment AWS Applications</h2>
+                <p>Developed **Infrastructure as Code (IaC)** solutions using **Terraform** to provision and manage AWS resources for scalable applications. Implemented modular configurations with state management and automated deployments, ensuring consistent infrastructure across development, staging, and production environments.</p>
+                <div class="tech-stack">
+                    <ul class="tech-list">
+                        <li>**IaC**: Terraform</li>
+                        <li>**Cloud Services**: AWS (EC2, VPC, S3, IAM)</li>
+                        <li>**State Management**: Terraform Remote State</li>
+                        <li>**Automation**: Terraform Modules</li>
+                        <li>**Version Control**: Git, GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+        
         <a href="https://github.com/Areeba-Urooj/terraform-devops-projects" class="project-link">
-   <div class="project-card">
-       <h2>Terraform DevOps Projects</h2>
-       <p>Created comprehensive DevOps infrastructure solutions using Terraform for automated deployment pipelines and cloud resource management. Built modular infrastructure components including CI/CD environments, monitoring systems, and scalable application architectures. Streamlined DevOps workflows and reduced infrastructure deployment time by 70%.</p>
-       <div class="tech-stack">
-           Infrastructure: Terraform, AWS <br>
-           DevOps: CI/CD Pipelines, Jenkins, GitLab<br>
-           Containerization: Docker, Kubernetes<br>
-           Monitoring: CloudWatch, Prometheus<br>
-           Automation: Terraform Modules <br>
-           Storage: S3, EBS, Database Management
-       </div>
-   </div>
-</a>
+            <div class="project-card">
+                <h2>Terraform-Powered DevOps Infrastructure</h2>
+                <p>Created comprehensive **DevOps infrastructure** solutions using **Terraform** for automated deployment pipelines, monitoring systems, and scalable application architectures. Streamlined DevOps workflows and achieved a **70% reduction in infrastructure deployment time**.</p>
+                <div class="tech-stack">
+                    <ul class="tech-list">
+                        <li>**IaC**: Terraform</li>
+                        <li>**DevOps**: CI/CD Pipelines, Jenkins, GitLab</li>
+                        <li>**Containerization**: Docker, Kubernetes</li>
+                        <li>**Monitoring**: CloudWatch, Prometheus</li>
+                        <li>**Cloud/Storage**: AWS, S3, EBS</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+        
         <a href="https://github.com/Areeba-Urooj/terraform-aws-areebaurooj-test-vpc" class="project-link">
-   <div class="project-card">
-       <h2>Terraform AWS VPC Infrastructure</h2>
-       <p>Designed and implemented a secure, scalable AWS VPC infrastructure using Terraform for testing and development environments. Created multi-tier network architecture with public/private subnets, NAT gateways, and security groups. Established best practices for network segmentation and security controls across multiple availability zones.</p>
-       <div class="tech-stack">
-           Infrastructure: Terraform, AWS VPC<br>
-           Networking: Subnets, Route Tables, NAT Gateway<br>
-           Security: Security Groups, NACLs, IAM<br>
-           High Availability: Multi-AZ Deployment<br>
-           Resources: Internet Gateway, Elastic IPs<br>
-           Management: Terraform State, AWS CLI
-       </div>
-   </div>
-</a>
+            <div class="project-card">
+                <h2>Secure AWS VPC with Terraform</h2>
+                <p>Designed and implemented a secure, scalable **AWS VPC infrastructure** using **Terraform** for testing and development environments. Created a multi-tier network architecture with public/private subnets, **NAT gateways**, and security groups to ensure best practices for network segmentation and security.</p>
+                <div class="tech-stack">
+                    <ul class="tech-list">
+                        <li>**IaC**: Terraform</li>
+                        <li>**Networking**: AWS VPC, Subnets, Route Tables, NAT Gateway</li>
+                        <li>**Security**: Security Groups, NACLs, IAM</li>
+                        <li>**High Availability**: Multi-AZ Deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
     </div>
     
     <a href="#" class="scroll-to-top">↑</a>
