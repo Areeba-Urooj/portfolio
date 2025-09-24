@@ -3,138 +3,605 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Your Portfolio</title>
+    <title>About Me | Areeba Urooj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-        
+
         body {
-            background-color: #f8f8f8;
-            color: #555;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #00B9D0 0%, #0099cc 100%);
+            min-height: 100vh;
+            line-height: 1.7;
+            color: #333;
         }
-        
-        nav {
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar a {
+            margin: 0 30px;
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #00B9D0, #0099cc);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        .navbar a.active {
+            color: #00B9D0;
+        }
+
+        .hero-section {
+            padding: 80px 20px 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: -40px auto 0;
+            padding: 0 20px 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 60px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: slideInUp 1s ease 0.4s both;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 15px 35px rgba(0, 185, 208, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 185, 208, 0.4);
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .profile-title {
+            color: #00B9D0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
             display: flex;
             justify-content: center;
-            padding: 20px 0;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            gap: 15px;
+            margin-top: 20px;
         }
-        
-        nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #555;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-        
-        nav a:hover {
-            color: #0099cc;
-        }
-        
-        nav a.active {
-            color: #0099cc;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        
-        h1 {
-            font-size: 42px;
-            color: #333;
-            margin-bottom: 30px;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            color: #666;
-            font-size: 16px;
-        }
-        
-        .scroll-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #0099cc;
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            border: none;
-            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 185, 208, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.4);
+        }
+
+        .content-section {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #00B9D0, #0099cc);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 25px;
+        }
+
+        .about-text.intro {
+            font-size: 1.2rem;
+            color: #2d3748;
+            font-weight: 500;
+            margin-bottom: 35px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 185, 208, 0.1) 0%, rgba(0, 185, 208, 0.2) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #00B9D0;
+        }
+
+        .interests-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(0, 185, 208, 0.05);
+            border-radius: 16px;
+            border-left: 4px solid #00B9D0;
+        }
+
+        .interests-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .interests-title i {
+            margin-right: 10px;
+            color: #00B9D0;
+            font-size: 1.4rem;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .interest-tag {
+            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 185, 208, 0.2);
+        }
+
+        .interest-tag:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.4);
+        }
+
+        .cta-section {
+            margin-top: 50px;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0, 185, 208, 0.1), rgba(0, 153, 204, 0.1));
+            border-radius: 20px;
+            border: 2px solid rgba(0, 185, 208, 0.2);
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 185, 208, 0.4);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
+            cursor: pointer;
+            font-size: 20px;
             text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(100px);
         }
-        
-        .scroll-top:hover {
-            background-color: #007baa;
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(0, 185, 208, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .content-card {
+                padding: 40px 30px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .navbar a {
+                margin: 0 15px;
+                font-size: 12px;
+            }
+
+            .interests-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating elements animation */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
     </style>
 </head>
 <body>
-    <nav>
+    <!-- Floating background elements -->
+    <div class="floating-element" style="font-size: 4rem; color: rgba(255,255,255,0.1);">
+        <i class="fas fa-cloud"></i>
+    </div>
+    <div class="floating-element" style="font-size: 3rem; color: rgba(255,255,255,0.1);">
+        <i class="fas fa-code"></i>
+    </div>
+    <div class="floating-element" style="font-size: 3.5rem; color: rgba(255,255,255,0.1);">
+        <i class="fas fa-server"></i>
+    </div>
+
+    <div class="navbar">
         <a href="index.html">HOME</a>
         <a href="about.html" class="active">ABOUT</a>
         <a href="projects.html">PROJECTS</a>
-        <a href="experience.html">EDUCATION & EXPERIENCE</a>
+        <a href="education.html">EDUCATION & EXPERIENCE</a>
         <a href="contact.html">CONTACT</a>
-    </nav>
-    
-    <div class="container">
-        <h1>Hello!</h1>
-        
-        <p>
-            Hi, I'm Areeba, a DevOps Engineer passionate about transforming manual processes into automated, secure, and scalable solutions. With over 3 years of experience, I've had the privilege of working across the full DevOps lifecycle, from code to production.
-        </p>
-        
-        <p>
-            My expertise lies in building resilient cloud infrastructure on AWS and Azure.
-        </p>
-        
-        <p>
-             I leverage Infrastructure as Code (IaC) with Terraform to manage complex environments and use containerization with Docker and Kubernetes to ensure application portability.
-        </p>
-        
-        <p>
-            My background in Python and PowerShell allows me to script custom automations that streamline deployment and maintenance.
-        </p>
-        
-        <p>
-            <strong>Areas of Interests:</strong> AWS, Azure, Python, Powershell, Microsoft Azure, Machine Learning, AWS, Cybersecurity, Photography
-        </p>
-        
-        <p>
-            This portfolio showcases my work in building end-to-end CI/CD pipelines, demonstrating how I apply my skills to deliver real-world results. I'm always looking for opportunities to collaborate and innovate. 
-            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/">Let's connect!</a>! 
-            Let's create something amazing together.
-        </p>
     </div>
     
-    <a href="#" class="scroll-top">↑</a>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Hello there!</h1>
+            <p class="hero-subtitle">I'm Areeba Urooj, a passionate DevOps Engineer transforming ideas into scalable cloud solutions</p>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="content-card">
+            <div class="about-grid">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        AU
+                    </div>
+                    <h2 class="profile-name">Areeba Urooj</h2>
+                    <p class="profile-title">DevOps Engineer</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:areeba@example.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2 class="section-title">About Me</h2>
+                    
+                    <p class="about-text intro">
+                        Welcome to my digital space! I'm a <span class="highlight">DevOps Engineer</span> passionate about transforming manual processes into automated, secure, and scalable solutions.
+                    </p>
+                    
+                    <p class="about-text">
+                        With over <span class="highlight">3 years of experience</span>, I've had the privilege of working across the full DevOps lifecycle, from code to production. My journey has been driven by a simple belief: technology should empower teams to focus on innovation, not infrastructure headaches.
+                    </p>
+                    
+                    <p class="about-text">
+                        My expertise lies in building <span class="highlight">resilient cloud infrastructure</span> on AWS and Azure. I leverage Infrastructure as Code (IaC) with Terraform to manage complex environments and use containerization with Docker and Kubernetes to ensure application portability.
+                    </p>
+                    
+                    <p class="about-text">
+                        My background in <span class="highlight">Python and PowerShell</span> allows me to script custom automations that streamline deployment and maintenance, turning hours of manual work into minutes of automated excellence.
+                    </p>
+                    
+                    <div class="interests-section">
+                        <div class="interests-title">
+                            <i class="fas fa-heart"></i>
+                            Areas of Interest
+                        </div>
+                        
+                        <div class="interests-grid">
+                            <div class="interest-tag">AWS</div>
+                            <div class="interest-tag">Azure</div>
+                            <div class="interest-tag">Python</div>
+                            <div class="interest-tag">PowerShell</div>
+                            <div class="interest-tag">Machine Learning</div>
+                            <div class="interest-tag">Cybersecurity</div>
+                            <div class="interest-tag">Photography</div>
+                            <div class="interest-tag">Kubernetes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <p class="cta-text">
+                            This portfolio showcases my work in building end-to-end CI/CD pipelines, demonstrating how I apply my skills to deliver real-world results. I'm always looking for opportunities to collaborate and innovate.
+                        </p>
+                        
+                        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="cta-button" target="_blank">
+                            <i class="fas fa-handshake"></i>
+                            Let's Connect & Create Something Amazing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     
     <script>
         // Scroll to top functionality
-        document.querySelector('.scroll-top').addEventListener('click', function(e) {
+        const scrollToTop = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTop.classList.add('visible');
+            } else {
+                scrollToTop.classList.remove('visible');
+            }
+        });
+        
+        scrollToTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
+
+        // Interest tags click animation
+        const interestTags = document.querySelectorAll('.interest-tag');
+        
+        interestTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.style.animation = 'none';
+                tag.offsetHeight; // Trigger reflow
+                tag.style.animation = 'pulse 0.6s ease';
+            });
+        });
+
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.content-card, .interest-tag').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
-
