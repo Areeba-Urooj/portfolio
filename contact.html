@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience - Personal Portfolio</title>
+    <title>Contact - Personal Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
+            color: #333;
         }
         
         .navbar {
             background-color: white;
             padding: 15px 0;
-            text-align: right;
+            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .navbar a {
-            margin: 0 15px;
+            margin: 0 30px;
             text-decoration: none;
             color: #666;
             font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            color: #00bcd4;
         }
         
         .navbar a.active {
@@ -33,79 +41,130 @@
         .contact-container {
             max-width: 800px;
             margin: 60px auto;
-            padding: 20px;
+            padding: 40px;
             border: 1px solid #ddd;
             background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .contact-title {
-            font-size: 28px;
+            font-size: 32px;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: normal;
         }
         
         .contact-info {
-            padding: 10px 0;
+            padding: 20px 0;
         }
         
         .contact-row {
             display: flex;
             align-items: center;
-            margin: 15px 0;
+            margin: 25px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-row:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-row a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
         }
         
         .icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-color: #00bcd4;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 15px;
+            margin-right: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .icon:hover {
+            background-color: #00acc1;
+            transform: scale(1.05);
         }
         
         .icon i {
             color: white;
-            font-size: 20px;
+            font-size: 22px;
         }
         
         .contact-text {
             color: #666;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .contact-text:hover {
+            color: #00bcd4;
         }
         
         footer {
             background-color: #222;
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
+            margin-top: 60px;
         }
         
         .visitor-counter {
             margin: 20px 0;
         }
         
+        .visitor-counter p:first-child {
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+        
+        .visitor-counter p:last-child {
+            color: #00bcd4;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
         .social-icons {
-            margin: 20px 0;
+            margin: 30px 0;
         }
         
         .social-icon {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background-color: white;
             border-radius: 50%;
-            margin: 0 5px;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+        }
+        
+        .social-icon i {
+            color: #222;
+            font-size: 20px;
         }
         
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-color: #00bcd4;
             color: white;
             border-radius: 5px;
@@ -114,18 +173,31 @@
             align-items: center;
             cursor: pointer;
             text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,188,212,0.3);
+        }
+        
+        .back-to-top:hover {
+            background-color: #00acc1;
+            transform: translateY(-2px);
+        }
+        
+        .footer-copyright {
+            color: #ccc;
+            margin-top: 20px;
+            font-size: 14px;
         }
     </style>
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-   <nav class="navbar" style="text-align: center;">
+   <nav class="navbar">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="projects.html">PROJECTS</a>
     <a href="experience.html">EDUCATION & EXPERIENCE</a>
-    <a href="contact.html">CONTACT</a>
+    <a href="contact.html" class="active">CONTACT</a>
    </nav>
     
     <div class="contact-container">
@@ -133,19 +205,21 @@
         
         <div class="contact-info">
             <div class="contact-row">
-                <a href="cmy61677@gmail.com">  <div class="icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
+                <a href="mailto:cmy61677@gmail.com">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div class="contact-text">
-                        email me
+                        email me: cmy61677@gmail.com
                     </div>
                 </a>
             </div>
 
             <div class="contact-row">
-                <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/"> <div class="icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </div>
+                <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">
+                    <div class="icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
                     <div class="contact-text">
                         LinkedIn
                     </div>
@@ -153,11 +227,23 @@
             </div>
 
             <div class="contact-row">
-                <a href="https://github.com/Areeba-Urooj">  <div class="icon">
-                    <i class="fab fa-github"></i>
-                </div>
+                <a href="https://github.com/Areeba-Urooj" target="_blank">
+                    <div class="icon">
+                        <i class="fab fa-github"></i>
+                    </div>
                     <div class="contact-text">
                         Github
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-row">
+                <a href="https://twitter.com/your_username" target="_blank">
+                    <div class="icon">
+                        <i class="fab fa-x-twitter"></i>
+                    </div>
+                    <div class="contact-text">
+                        Follow me on X (Twitter)
                     </div>
                 </a>
             </div>
@@ -171,15 +257,18 @@
         </div>
         
         <div class="social-icons">
-            <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in" style="color: #222;"></i>
+            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-github" style="color: #222;"></i>
+            <a href="https://github.com/Areeba-Urooj" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/areeba_uro86219" target="_blank" class="social-icon">
+                <i class="fab fa-x-twitter"></i>
             </a>
         </div>
         
-        <p>Copyright © 2018 Uldeck All Right Reserved</p>
+        <p class="footer-copyright">Copyright © 2024 Areeba Urooj. All Rights Reserved</p>
     </footer>
     
     <a href="#" class="back-to-top">
