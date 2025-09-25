@@ -207,6 +207,18 @@
             background: #059669;
         }
 
+        .experience-item {
+            border-left-color: #f59e0b;
+        }
+
+        .experience-item::before {
+            background: #f59e0b;
+        }
+
+        .experience-item:hover::before {
+            background: #d97706;
+        }
+
         .item-header {
             display: flex;
             justify-content: space-between;
@@ -392,6 +404,7 @@
         .timeline-item:nth-child(2) { animation-delay: 0.2s; }
         .timeline-item:nth-child(3) { animation-delay: 0.3s; }
         .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
@@ -409,6 +422,30 @@
     </div>
     
     <div class="content">
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Technical Writer</div>
+                            <div class="item-organization">AWS in Plain English (Medium Publication)</div>
+                        </div>
+                        <div class="item-date">September 2025 - Present</div>
+                    </div>
+                    <div class="item-description">
+                        Contributing technical articles to a leading cloud computing publication with 3M+ monthly views. Writing in-depth guides on AWS services, DevOps practices, and cloud architecture patterns to help developers understand complex topics in simple terms.
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -446,7 +483,9 @@
                 </div>
             </div>
         </div>
-        
+    </div>
+
+    <div class="content">
         <div class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -496,9 +535,7 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="content" style="grid-template-columns: 1fr;">
         <div class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -652,4 +689,3 @@
     </script>
 </body>
 </html>
-
