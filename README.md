@@ -405,8 +405,8 @@
                 <a href="https://github.com/Areeba-Urooj" target="_blank" class="social-link">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://twitter.com/your_username" target="_blank" class="social-link">
-                    <i class="fab fa-x-twitter"></i>
+                <a href="#" class="social-link" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
                 </a>
             </div>
 
