@@ -346,6 +346,17 @@
             box-shadow: 0 12px 24px rgba(0, 185, 208, 0.4);
         }
 
+        .badge-inprogress {
+            background: rgba(251, 191, 36, 0.15);
+            color: #f59e0b;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
@@ -372,7 +383,6 @@
             }
         }
 
-        /* Loading animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -392,6 +402,7 @@
         .timeline-item:nth-child(2) { animation-delay: 0.2s; }
         .timeline-item:nth-child(3) { animation-delay: 0.3s; }
         .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
@@ -438,7 +449,7 @@
                 <div class="section-icon">
                     <i class="fas fa-certificate"></i>
                 </div>
-                <h2 class="section-title">Certificates & Professional Development</h2>
+                <h2 class="section-title">Certifications</h2>
             </div>
 
             <div class="timeline">
@@ -451,11 +462,42 @@
                         <div class="item-date">February 2025</div>
                     </div>
                     <div class="item-description">
-                        Advanced certification in container orchestration and Kubernetes management on Oracle Cloud.
+                        Advanced certification in container orchestration and Kubernetes management on Oracle Cloud Infrastructure.
                     </div>
                     <img src="assets/oci-badge.png" alt="OCI Kubernetes Certificate" class="certificate-image">
                 </div>
-                
+
+                <div class="timeline-item certificate-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">
+                                AWS Certified Cloud Practitioner (CLF-C02)
+                                <span class="badge-inprogress">In Progress</span>
+                            </div>
+                            <div class="item-organization">Amazon Web Services - Udemy</div>
+                        </div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <div class="item-description">
+                        Comprehensive preparation course covering cloud concepts, AWS services, security, architecture, and billing. Includes 6 full-length practice tests with 715 unique questions simulating the actual exam experience.
+                    </div>
+                </div>
+
+                <div class="timeline-item certificate-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">
+                                AWS Certified Solutions Architect Associate (SAA-C03)
+                                <span class="badge-inprogress">In Progress</span>
+                            </div>
+                            <div class="item-organization">Amazon Web Services - Udemy</div>
+                        </div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <div class="item-description">
+                        Advanced course focusing on designing distributed systems, selecting appropriate AWS services, and implementing scalable, highly available, and fault-tolerant infrastructure on AWS.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -609,7 +651,6 @@
     </a>
     
     <script>
-        // Scroll to top functionality
         const scrollToTop = document.getElementById('scrollToTop');
         
         window.addEventListener('scroll', () => {
@@ -628,7 +669,6 @@
             });
         });
 
-        // Interactive hover effects for timeline items
         const timelineItems = document.querySelectorAll('.timeline-item');
         
         timelineItems.forEach(item => {
@@ -641,18 +681,16 @@
             });
         });
 
-        // Skill tag click animation
         const skillTags = document.querySelectorAll('.skill-tag');
         
         skillTags.forEach(tag => {
             tag.addEventListener('click', () => {
                 tag.style.animation = 'none';
-                tag.offsetHeight; // Trigger reflow
+                tag.offsetHeight;
                 tag.style.animation = 'pulse 0.6s ease';
             });
         });
 
-        // Add pulse animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes pulse {
@@ -665,4 +703,3 @@
     </script>
 </body>
 </html>
-
