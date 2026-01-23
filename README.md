@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Areeba Urooj - DevOps & Cloud Enthusiast</title>
+
+    <title>Areeba Urooj — AIOps Engineer | AI Automation & Cloud Infrastructure</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Arial', sans-serif;
@@ -141,7 +139,6 @@
             font-size: 24px;
             color: #666;
             margin-bottom: 10px;
-            animation: fadeIn 1s ease-out 0.5s both;
         }
 
         .name {
@@ -149,7 +146,6 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 10px;
-            animation: fadeIn 1s ease-out 0.7s both;
         }
 
         .title {
@@ -157,7 +153,6 @@
             color: #00bcd4;
             margin-bottom: 30px;
             font-weight: 500;
-            animation: fadeIn 1s ease-out 0.9s both;
         }
 
         .description {
@@ -165,15 +160,13 @@
             color: #666;
             line-height: 1.6;
             margin-bottom: 40px;
-            max-width: 500px;
-            animation: fadeIn 1s ease-out 1.1s both;
+            max-width: 520px;
         }
 
         .social-links {
             display: flex;
             gap: 20px;
             margin-bottom: 40px;
-            animation: fadeIn 1s ease-out 1.3s both;
         }
 
         .social-link {
@@ -196,14 +189,9 @@
             background-color: #00acc1;
         }
 
-        .social-link i {
-            font-size: 22px;
-        }
-
         .cta-buttons {
             display: flex;
             gap: 20px;
-            animation: fadeIn 1s ease-out 1.5s both;
         }
 
         .btn {
@@ -220,13 +208,6 @@
         .btn-primary {
             background-color: #00bcd4;
             color: white;
-            box-shadow: 0 4px 15px rgba(0,188,212,0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: #00acc1;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,188,212,0.4);
         }
 
         .btn-secondary {
@@ -234,194 +215,65 @@
             color: #00bcd4;
             border: 2px solid #00bcd4;
         }
-
-        .btn-secondary:hover {
-            background-color: #00bcd4;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-                padding-top: 100px;
-            }
-
-            .hero-content {
-                order: 2;
-            }
-
-            .hero-image {
-                order: 1;
-            }
-
-            .name {
-                font-size: 36px;
-            }
-
-            .profile-image {
-                width: 250px;
-                height: 250px;
-            }
-
-            .nav-links {
-                gap: 20px;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Floating elements for visual interest */
-        .floating-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .shape {
-            position: absolute;
-            background: rgba(0, 188, 212, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 70%;
-            left: 80%;
-            animation-delay: 2s;
-        }
-
-        .shape:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            top: 40%;
-            left: 90%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
-        }
     </style>
-    <!-- Font Awesome for icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Areeba Urooj</a>
+        <div class="nav-links">
+            <a href="about.html">ABOUT</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="experience.html">EDUCATION & EXPERIENCE</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </div>
+</nav>
+
+<main class="hero">
+    <div class="hero-content">
+        <div class="greeting">Hi, I'm</div>
+        <h1 class="name">AREEBA UROOJ</h1>
+
+        <div class="title">
+            AIOps Engineer • AI Automation • Cloud Infrastructure
+        </div>
+
+        <p class="description">
+            I transitioned from DevOps into AIOps, where I design and automate intelligent cloud systems by combining 
+            infrastructure engineering with AI-driven workflows. My work focuses on deploying reliable, cost-aware, 
+            and production-ready LLM pipelines using automation, containers, and cloud-native practices.
+        </p>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Areeba-Urooj" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="projects.html" class="btn btn-primary">View Projects</a>
+            <a href="contact.html" class="btn btn-secondary">Work With Me</a>
+        </div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Areeba Urooj</a>
-            <div class="nav-links">
-                <a href="about.html">ABOUT</a>
-                <a href="projects.html">PROJECTS</a>
-                <a href="experience.html">EDUCATION & EXPERIENCE</a>
-                <a href="contact.html">CONTACT</a>
-            </div>
+    <div class="hero-image">
+        <div class="profile-container">
+            <div class="cloud-bg"></div>
+            <img src="./assets/profile.jpg" alt="Areeba Urooj" class="profile-image">
         </div>
-    </nav>
+    </div>
+</main>
 
-    <main class="hero">
-        <div class="hero-content">
-            <div class="greeting">Hi, I'm</div>
-            <h1 class="name">AREEBA UROOJ</h1>
-            <div class="title">DevOps & Cloud Enthusiast</div>
-            <p class="description">
-                Passionate about cloud technologies, automation, and building scalable infrastructure. 
-                I love turning complex problems into elegant solutions through code and cutting-edge technology.
-            </p>
-            
-            <div class="social-links">
-                <a href="https://linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Areeba-Urooj" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="social-link" target="_blank" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-
-            <div class="cta-buttons">
-                <a href="projects.html" class="btn btn-primary">View My Work</a>
-                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <div class="profile-container">
-                <div class="cloud-bg"></div>
-                <img src="./assets/profile.jpg" alt="Areeba Urooj" class="profile-image">
-            </div>
-        </div>
-    </main>
 </body>
 </html>
