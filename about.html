@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #00B9D0 0%, #0099cc 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             line-height: 1.7;
             color: #333;
@@ -51,7 +51,7 @@
             height: 2px;
             bottom: -5px;
             left: 50%;
-            background: linear-gradient(90deg, #00B9D0, #0099cc);
+            background: linear-gradient(90deg, #667eea, #764ba2);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -62,7 +62,7 @@
         }
 
         .navbar a.active {
-            color: #00B9D0;
+            color: #667eea;
         }
 
         .hero-section {
@@ -80,7 +80,7 @@
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #e2e8f0);
+            background: linear-gradient(45deg, #fff, #00ff88);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -123,13 +123,15 @@
 
         .profile-section {
             text-align: center;
+            position: sticky;
+            top: 120px;
         }
 
         .profile-image {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             margin: 0 auto 30px;
             display: flex;
             align-items: center;
@@ -137,13 +139,32 @@
             font-size: 4rem;
             color: white;
             font-weight: bold;
-            box-shadow: 0 15px 35px rgba(0, 185, 208, 0.3);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #00ff88, #667eea);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-image:hover::before {
+            opacity: 1;
         }
 
         .profile-image:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 185, 208, 0.4);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
         }
 
         .profile-name {
@@ -154,9 +175,16 @@
         }
 
         .profile-title {
-            color: #00B9D0;
+            color: #667eea;
             font-size: 1.1rem;
             font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile-subtitle {
+            color: #718096;
+            font-size: 0.9rem;
+            font-style: italic;
             margin-bottom: 20px;
         }
 
@@ -170,7 +198,7 @@
         .social-link {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -179,12 +207,13 @@
             text-decoration: none;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 185, 208, 0.2);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
         }
 
         .social-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.4);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #00ff88, #667eea);
         }
 
         .content-section {
@@ -207,8 +236,56 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #00B9D0, #0099cc);
+            background: linear-gradient(90deg, #667eea, #00ff88);
             border-radius: 2px;
+        }
+
+        .journey-timeline {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(0, 255, 136, 0.05));
+            border-radius: 16px;
+            border-left: 4px solid #667eea;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            border: 2px solid #667eea;
+        }
+
+        .timeline-year {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
         }
 
         .about-text {
@@ -226,19 +303,19 @@
         }
 
         .highlight {
-            background: linear-gradient(120deg, rgba(0, 185, 208, 0.1) 0%, rgba(0, 185, 208, 0.2) 100%);
+            background: linear-gradient(120deg, rgba(102, 126, 234, 0.1) 0%, rgba(0, 255, 136, 0.15) 100%);
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
-            color: #00B9D0;
+            color: #667eea;
         }
 
         .interests-section {
             margin-top: 40px;
             padding: 30px;
-            background: rgba(0, 185, 208, 0.05);
+            background: rgba(102, 126, 234, 0.05);
             border-radius: 16px;
-            border-left: 4px solid #00B9D0;
+            border-left: 4px solid #00ff88;
         }
 
         .interests-title {
@@ -252,7 +329,7 @@
 
         .interests-title i {
             margin-right: 10px;
-            color: #00B9D0;
+            color: #00ff88;
             font-size: 1.4rem;
         }
 
@@ -264,7 +341,7 @@
         }
 
         .interest-tag {
-            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 12px 18px;
             border-radius: 25px;
@@ -273,21 +350,22 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 185, 208, 0.2);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
         }
 
         .interest-tag:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.4);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #00ff88, #667eea);
         }
 
         .cta-section {
             margin-top: 50px;
             text-align: center;
             padding: 40px;
-            background: linear-gradient(135deg, rgba(0, 185, 208, 0.1), rgba(0, 153, 204, 0.1));
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(0, 255, 136, 0.1));
             border-radius: 20px;
-            border: 2px solid rgba(0, 185, 208, 0.2);
+            border: 2px solid rgba(102, 126, 234, 0.2);
         }
 
         .cta-text {
@@ -301,7 +379,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 15px 35px;
             border-radius: 50px;
@@ -309,19 +387,20 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.3);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 185, 208, 0.4);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #00ff88, #667eea);
         }
 
         .scroll-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #00B9D0, #0099cc);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             width: 55px;
             height: 55px;
@@ -332,7 +411,7 @@
             cursor: pointer;
             font-size: 20px;
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(0, 185, 208, 0.3);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(100px);
@@ -345,7 +424,7 @@
 
         .scroll-to-top:hover {
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 35px rgba(0, 185, 208, 0.5);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -353,6 +432,11 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
                 text-align: center;
+            }
+
+            .profile-section {
+                position: relative;
+                top: 0;
             }
 
             .content-card {
@@ -436,27 +520,27 @@
 <body>
     <!-- Floating background elements -->
     <div class="floating-element" style="font-size: 4rem; color: rgba(255,255,255,0.1);">
-        <i class="fas fa-cloud"></i>
+        <i class="fas fa-robot"></i>
     </div>
     <div class="floating-element" style="font-size: 3rem; color: rgba(255,255,255,0.1);">
-        <i class="fas fa-code"></i>
+        <i class="fas fa-brain"></i>
     </div>
     <div class="floating-element" style="font-size: 3.5rem; color: rgba(255,255,255,0.1);">
-        <i class="fas fa-server"></i>
+        <i class="fas fa-microchip"></i>
     </div>
 
     <div class="navbar">
         <a href="index.html">HOME</a>
         <a href="about.html" class="active">ABOUT</a>
         <a href="projects.html">PROJECTS</a>
-        <a href="experience.html">EDUCATION & EXPERIENCE</a>
+        <a href="experience.html">EXPERIENCE</a>
         <a href="contact.html">CONTACT</a>
     </div>
     
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Hello there!</h1>
-            <p class="hero-subtitle">I'm Areeba Urooj, a passionate DevOps Engineer transforming ideas into scalable cloud solutions</p>
+            <h1 class="hero-title">My Journey</h1>
+            <p class="hero-subtitle">From DevOps foundations to AI-powered automation—transforming how systems think and operate</p>
         </div>
     </div>
     
@@ -468,7 +552,8 @@
                         AU
                     </div>
                     <h2 class="profile-name">Areeba Urooj</h2>
-                    <p class="profile-title">DevOps Engineer</p>
+                    <p class="profile-title">AI Automation Engineer</p>
+                    <p class="profile-subtitle">DevOps → AI Evolution</p>
                     
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="social-link" target="_blank" title="LinkedIn">
@@ -490,47 +575,69 @@
                     <h2 class="section-title">About Me</h2>
                     
                     <p class="about-text intro">
-                        Welcome to my digital space! I'm a <span class="highlight">DevOps Engineer</span> passionate about transforming manual processes into automated, secure, and scalable solutions.
+                        Welcome! I'm an <span class="highlight">AI Automation Engineer</span> who started in DevOps and discovered my passion for building intelligent, self-optimizing systems.
                     </p>
                     
                     <p class="about-text">
-                        With over <span class="highlight">2 years of experience</span>, I've had been working across the full DevOps lifecycle, from code to production. My journey has been driven by a simple belief: technology should empower teams to focus on innovation, not infrastructure headaches.
+                        My journey began with <span class="highlight">cloud infrastructure and CI/CD pipelines</span>, where I spent 2+ years mastering AWS, Azure, Docker, Kubernetes, and Infrastructure as Code. I loved the efficiency gains, but I kept asking: "What if our systems could learn and adapt on their own?"
                     </p>
                     
                     <p class="about-text">
-                        My expertise lies in building <span class="highlight">resilient cloud infrastructure</span> on AWS and Azure. I leverage Infrastructure as Code (IaC) with Terraform to manage complex environments and use containerization with Docker and Kubernetes to ensure application portability.
+                        That question led me down the path of <span class="highlight">AI and machine learning</span>. I realized that combining my DevOps foundation with AI capabilities could create something powerful—intelligent automation that doesn't just follow scripts, but actually understands context, predicts issues, and optimizes itself.
+                    </p>
+
+                    <div class="journey-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022-2024</div>
+                            <div class="timeline-title">🚀 DevOps Foundation</div>
+                            <div class="timeline-description">Built expertise in cloud infrastructure (AWS/Azure), containerization (Docker/K8s), CI/CD automation, and Infrastructure as Code with Terraform and Python scripting.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-title">🤖 The AI Pivot</div>
+                            <div class="timeline-description">Discovered AI's potential to revolutionize automation. Started integrating machine learning models into deployment pipelines and building intelligent monitoring systems.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Present</div>
+                            <div class="timeline-title">✨ AI Automation Engineering</div>
+                            <div class="timeline-description">Now building MLOps pipelines, AI-powered chatbots, intelligent process automation, and systems that leverage LLMs to solve complex infrastructure challenges.</div>
+                        </div>
+                    </div>
+                    
+                    <p class="about-text">
+                        Today, I specialize in <span class="highlight">MLOps and AI-powered automation</span>—deploying machine learning models at scale, building intelligent chatbots, creating self-healing systems, and leveraging LLMs to automate complex decision-making processes.
                     </p>
                     
                     <p class="about-text">
-                        My background in <span class="highlight">Python and PowerShell</span> allows me to script custom automations that streamline deployment and maintenance, turning hours of manual work into minutes of automated excellence.
+                        My DevOps background gives me a unique advantage: I understand how to make AI systems production-ready, scalable, and reliable. I don't just build models—I build the entire infrastructure to support them in real-world environments.
                     </p>
                     
                     <div class="interests-section">
                         <div class="interests-title">
-                            <i class="fas fa-heart"></i>
-                            Areas of Interest
+                            <i class="fas fa-rocket"></i>
+                            Current Focus Areas
                         </div>
                         
                         <div class="interests-grid">
-                            <div class="interest-tag">AWS</div>
-                            <div class="interest-tag">Azure</div>
-                            <div class="interest-tag">Python</div>
-                            <div class="interest-tag">PowerShell</div>
-                            <div class="interest-tag">Machine Learning</div>
-                            <div class="interest-tag">Cybersecurity</div>
-                            <div class="interest-tag">Photography</div>
-                            <div class="interest-tag">Kubernetes</div>
+                            <div class="interest-tag">AI Automation</div>
+                            <div class="interest-tag">MLOps</div>
+                            <div class="interest-tag">LLM Integration</div>
+                            <div class="interest-tag">Chatbot Development</div>
+                            <div class="interest-tag">AWS/Azure AI</div>
+                            <div class="interest-tag">Python/ML</div>
+                            <div class="interest-tag">RAG Systems</div>
+                            <div class="interest-tag">Agent Workflows</div>
                         </div>
                     </div>
                     
                     <div class="cta-section">
                         <p class="cta-text">
-                            This portfolio showcases my work in building end-to-end CI/CD pipelines, demonstrating how I apply my skills to deliver real-world results. I'm always looking for opportunities to collaborate and innovate.
+                            I'm passionate about sharing knowledge and collaborating on innovative AI automation projects. Whether you're looking to implement MLOps, build intelligent agents, or explore AI-powered infrastructure, I'd love to connect!
                         </p>
                         
                         <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="cta-button" target="_blank">
-                            <i class="fas fa-handshake"></i>
-                            Let's Connect & Create Something Amazing
+                            <i class="fas fa-comments"></i>
+                            Let's Build Something Intelligent Together
                         </a>
                     </div>
                 </div>
@@ -568,7 +675,7 @@
         interestTags.forEach(tag => {
             tag.addEventListener('click', () => {
                 tag.style.animation = 'none';
-                tag.offsetHeight; // Trigger reflow
+                tag.offsetHeight;
                 tag.style.animation = 'pulse 0.6s ease';
             });
         });
@@ -598,13 +705,9 @@
             });
         }, observerOptions);
 
-        // Observe elements for animation
         document.querySelectorAll('.content-card, .interest-tag').forEach(el => {
             observer.observe(el);
         });
     </script>
 </body>
 </html>
-
-
-
