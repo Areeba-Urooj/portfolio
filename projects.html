@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Areeba Urooj | DevOps Engineer Portfolio</title>
-    <meta name="description" content="Explore Areeba Urooj's DevOps and Cloud Engineering projects including Kubernetes, AWS EKS, CI/CD pipelines, Terraform, and microservices architecture.">
-    <meta name="keywords" content="DevOps, AWS, Kubernetes, EKS, CI/CD, Terraform, Docker, Jenkins, GitHub Actions, Cloud Engineering">
+    <title>Projects - Areeba Urooj | AI Automation Engineer Portfolio</title>
+    <meta name="description" content="Explore Areeba Urooj's AI Automation and DevOps projects including AI agents, LLM integration, Kubernetes, AWS EKS, CI/CD pipelines, and Terraform.">
+    <meta name="keywords" content="AI Automation, MLOps, DevOps, AWS, Kubernetes, EKS, CI/CD, Terraform, Docker, LLM, AI Agents">
     <meta name="author" content="Areeba Urooj">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Projects - Areeba Urooj | DevOps Engineer">
-    <meta property="og:description" content="Explore cutting-edge DevOps and Cloud Engineering projects showcasing expertise in Kubernetes, AWS, and automation.">
-    <meta property="og:type" content="website">
     
     <style>
         /* Reset and Base Styles */
@@ -25,12 +20,14 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8fafc;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         
         /* Navigation */
         .navbar {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -57,35 +54,72 @@
             padding: 0.5rem 0;
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
+            text-transform: uppercase;
         }
         
         .navbar a:hover,
         .navbar a.active {
-            color: #00B9D0;
-            border-bottom-color: #00B9D0;
+            color: #667eea;
+            border-bottom-color: #667eea;
         }
         
         /* Header */
         .header {
             text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #00B9D0 0%, #0891b2 100%);
+            padding: 4rem 2rem;
             color: white;
             margin-bottom: 3rem;
         }
         
         .header h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .header p {
             font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
+            opacity: 0.95;
+            max-width: 700px;
             margin: 0 auto;
+        }
+
+        /* Category Filter */
+        .category-filter {
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
         
         /* Projects Container */
@@ -100,12 +134,13 @@
         
         /* Project Cards */
         .project-card {
-            background: #fff;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
             padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -117,7 +152,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #00B9D0, #0891b2);
+            background: linear-gradient(90deg, #667eea, #00ff88);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
@@ -125,7 +160,7 @@
         
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
         }
         
         .project-card:hover::before {
@@ -136,11 +171,30 @@
             text-decoration: none;
             color: inherit;
         }
+
+        /* Category Badge */
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .category-badge.ai {
+            background: linear-gradient(135deg, #00ff88, #667eea);
+            color: #1e293b;
+        }
         
         /* Card Content */
         .project-title {
             color: #1e293b;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.3;
@@ -150,6 +204,7 @@
             color: #475569;
             line-height: 1.7;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
         
         .project-highlights {
@@ -181,7 +236,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #10b981;
+            color: #00ff88;
             font-weight: bold;
         }
         
@@ -217,9 +272,10 @@
         }
         
         .tech-tag.primary {
-            background: #e6f7ff;
-            color: #00B9D0;
-            border-color: #b3ecff;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(0, 255, 136, 0.15));
+            color: #667eea;
+            border-color: #667eea;
+            font-weight: 600;
         }
         
         /* Scroll to Top Button */
@@ -227,10 +283,10 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background: linear-gradient(135deg, #00B9D0 0%, #0891b2 100%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -238,27 +294,34 @@
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0,185,208,0.3);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
-            opacity: 0.8;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 0.9;
+            transform: translateY(0);
         }
         
         .scroll-to-top:hover {
             opacity: 1;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,185,208,0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
                 flex-wrap: wrap;
-                gap: 1rem;
+                gap: 0.5rem;
                 padding: 0 1rem;
             }
             
             .navbar a {
-                margin: 0.5rem;
+                margin: 0.25rem 0.75rem;
+                font-size: 0.8rem;
             }
             
             .header {
@@ -266,7 +329,7 @@
             }
             
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .projects-container {
@@ -280,21 +343,30 @@
             }
             
             .scroll-to-top {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
                 bottom: 1rem;
                 right: 1rem;
+            }
+
+            .category-filter {
+                padding: 0 1rem;
+            }
+
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
             }
         }
         
         @media (max-width: 480px) {
             .navbar a {
-                font-size: 0.8rem;
-                margin: 0.25rem;
+                font-size: 0.75rem;
+                margin: 0.25rem 0.5rem;
             }
             
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .header p {
@@ -328,6 +400,13 @@
         .project-card:nth-child(7) { animation-delay: 0.7s; }
         .project-card:nth-child(8) { animation-delay: 0.8s; }
         .project-card:nth-child(9) { animation-delay: 0.9s; }
+        .project-card:nth-child(10) { animation-delay: 1.0s; }
+        .project-card:nth-child(11) { animation-delay: 1.1s; }
+
+        /* Hide/Show based on filter */
+        .project-card.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -336,19 +415,90 @@
             <a href="index.html">HOME</a>
             <a href="about.html">ABOUT</a>
             <a href="projects.html" class="active">PROJECTS</a>
-            <a href="experience.html">EDUCATION & EXPERIENCE</a>
+            <a href="experience.html">EXPERIENCE</a>
             <a href="contact.html">CONTACT</a>
         </div>
     </nav>
     
     <header class="header">
         <h1>PROJECTS</h1>
-        <p>Innovative DevOps and Cloud Engineering solutions that drive scalability, automation, and reliability</p>
+        <p>AI-powered automation and cloud engineering solutions that drive intelligence, scalability, and innovation</p>
     </header>
+
+    <div class="category-filter">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ai">AI Automation</button>
+        <button class="filter-btn" data-filter="devops">DevOps & Cloud</button>
+    </div>
     
     <main class="projects-container">
+        <a href="https://github.com/Areeba-Urooj/ai-website-analyzer" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-category="ai">
+                <span class="category-badge ai">AI Automation</span>
+                <h2 class="project-title">AI-Powered Website Analyzer & Brochure Generator</h2>
+                <p class="project-description">
+                    Developed a high-performance Python-based AI agent that automates the conversion of raw web data into structured marketing collateral. By leveraging local LLMs, the system achieves near-instant synthesis of web content without external API overhead.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Achievements & Metrics</h4>
+                    <ul class="highlights-list">
+                        <li>90% Reduction in Content Research Time: Automated manual site-auditing from 20 minutes to under 30 seconds</li>
+                        <li>Zero-Cost Inference Pipeline: Optimized to run on Ollama (Llama 3.2), eliminating API costs while maintaining 95% accuracy</li>
+                        <li>Intelligent Noise Filtering: Strips 80% of redundant HTML elements, reducing token consumption significantly</li>
+                        <li>High-Fidelity Synthesis: Successfully tested across diverse domains (SaaS, Non-Profits, Academia)</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Python</span>
+                        <span class="tech-tag primary">Ollama (Llama 3.2)</span>
+                        <span class="tech-tag primary">LLM</span>
+                        <span class="tech-tag">BeautifulSoup4</span>
+                        <span class="tech-tag">Jupyter</span>
+                        <span class="tech-tag">Markdown</span>
+                        <span class="tech-tag">Async Processing</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
+        <a href="https://github.com/Areeba-Urooj/linkedin-authority-builder" class="project-link" target="_blank" rel="noopener noreferrer">
+            <article class="project-card" data-category="ai">
+                <span class="category-badge ai">AI Automation</span>
+                <h2 class="project-title">AI-Powered LinkedIn Authority Builder Platform</h2>
+                <p class="project-description">
+                    Developed an automated content generation system combining AI language models with image generation to produce professional LinkedIn posts with visuals, strengthening personal authority through intelligent workflow automation.
+                </p>
+                <div class="project-highlights">
+                    <h4>Key Technical Achievements</h4>
+                    <ul class="highlights-list">
+                        <li>Built distributed workflow automation handling 60+ second async operations with 99% success rate</li>
+                        <li>Reduced manual content effort by 85%, generating 50+ LinkedIn posts in testing</li>
+                        <li>Orchestrated 12+ node workflow including LLM and image generation APIs</li>
+                        <li>Achieved 95%+ completion rate using retry and recovery logic</li>
+                        <li>Processing time: 52–65 seconds per complete workflow</li>
+                    </ul>
+                </div>
+                <div class="tech-stack">
+                    <h4>Technologies</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">Workflow Automation</span>
+                        <span class="tech-tag primary">PHP 7.4+</span>
+                        <span class="tech-tag primary">RESTful API</span>
+                        <span class="tech-tag">MySQL 8.0</span>
+                        <span class="tech-tag">OpenRouter AI</span>
+                        <span class="tech-tag">Gemini AI</span>
+                        <span class="tech-tag">Webhooks</span>
+                        <span class="tech-tag">JavaScript ES6+</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+
         <a href="https://github.com/Areeba-Urooj/CloudNative-k8s-Architecture" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">Cloud-Native Microservices on Kubernetes</h2>
                 <p class="project-description">
                     Engineered a highly scalable microservices application for deployment on Kubernetes. The project implements auto-scaling, self-healing capabilities, and utilizes a service mesh for secure inter-service communication with comprehensive monitoring and logging for full observability.
@@ -370,7 +520,8 @@
         </a>
 
         <a href="https://medium.com/@cmy61677/github-actions-ci-cd-for-a-3-tier-app-on-eks-2d4fc5237a92" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">Full-Stack CI/CD on EKS with GitHub Actions</h2>
                 <p class="project-description">
                     Architected and automated a complete DevOps pipeline for a 3-tier web application using GitHub Actions. This end-to-end pipeline handles everything from code commit to deployment on Amazon EKS, resulting in a 90% reduction in deployment time.
@@ -400,7 +551,8 @@
         </a>
 
         <a href="https://medium.com/@cmy61677/building-a-production-ready-devops-pipeline-from-manual-processes-to-automated-excellence-4743b0d71679" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">Production-Ready DevOps Pipeline with Jenkins & EKS</h2>
                 <p class="project-description">
                     Transformed a manual deployment workflow into a fully automated, production-ready DevOps pipeline. This end-to-end solution, orchestrated by Jenkins, integrates an AWS EKS cluster with robust monitoring and security.
@@ -430,7 +582,8 @@
         </a>
 
         <a href="https://github.com/Areeba-Urooj/ScriptingSolutions" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">DevOps Scripting & Automation Solutions</h2>
                 <p class="project-description">
                     Created a robust suite of automation scripts that streamline DevOps workflows and infrastructure management. These scripts handle everything from environment provisioning to security compliance and backup procedures.
@@ -459,7 +612,8 @@
         </a>
 
         <a href="https://medium.com/@cmy61677/gitlab-ci-cd-seamlessly-deploying-react-to-aws-s3-f42b0f7612b4" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">Automated React Deployment with GitLab CI/CD</h2>
                 <p class="project-description">
                     Engineered a comprehensive CI/CD pipeline using GitLab to automate the build, test, and deployment of a React application. The pipeline includes automated testing, security scanning, and deployment with approval gates.
@@ -488,7 +642,8 @@
         </a>
 
         <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">Terraform Multi-Environment AWS Applications</h2>
                 <p class="project-description">
                     Developed Infrastructure as Code solutions using Terraform to provision and manage AWS resources for scalable applications. Implemented modular configurations with state management and automated deployments.
@@ -517,7 +672,8 @@
         </a>
 
         <a href="https://medium.com/aws-in-plain-english/go-api-ci-cd-pipeline-with-github-actions-and-aws-eks-44bc62274856" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
+            <article class="project-card" data-category="devops">
+                <span class="category-badge">DevOps & Cloud</span>
                 <h2 class="project-title">Go API CI/CD Pipeline on AWS EKS</h2>
                 <p class="project-description">
                     Designed and implemented an end-to-end CI/CD pipeline for a Go backend API, automating the lifecycle from code commit to deployment using GitHub Actions and a custom GitOps model on AWS EKS.
@@ -539,138 +695,4 @@
                         <span class="tech-tag">Terraform</span>
                         <span class="tech-tag">Docker</span>
                         <span class="tech-tag">Trivy</span>
-                        <span class="tech-tag">Gitleaks</span>
-                    </div>
-                </div>
-            </article>
-        </a>
-
-        <a href="https://github.com/Areeba-Urooj/terraform-aws-areebaurooj-test-vpc" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
-                <h2 class="project-title">Secure AWS VPC with Terraform</h2>
-                <p class="project-description">
-                    Designed and implemented a secure, scalable AWS VPC infrastructure using Terraform for testing and development environments. Created a multi-tier network architecture with best practices for network segmentation.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Features</h4>
-                    <ul class="highlights-list">
-                        <li>Multi-tier network architecture</li>
-                        <li>High availability with multi-AZ deployment</li>
-                        <li>Comprehensive security with NACLs and Security Groups</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Terraform</span>
-                        <span class="tech-tag primary">AWS VPC</span>
-                        <span class="tech-tag">NAT Gateway</span>
-                        <span class="tech-tag">Security Groups</span>
-                        <span class="tech-tag">Route Tables</span>
-                        <span class="tech-tag">IAM</span>
-                        <span class="tech-tag">Multi-AZ</span>
-                    </div>
-                </div>
-            </article>
-        </a>
-
-        <a href="https://medium.com/python-in-plain-english/go-projects-journey-to-ci-cd-with-eks-and-argo-cd-b15ac5bed2f1" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card">
-                <h2 class="project-title">Go Microservice CI/CD with EKS and Argo CD</h2>
-                <p class="project-description">
-                    Built a fully automated DevOps pipeline for a Go microservice using GitHub Actions for CI and Argo CD for GitOps-based CD. This project demonstrates advanced DevOps practices with automated deployments to AWS EKS through a GitOps workflow.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Achievements</h4>
-                    <ul class="highlights-list">
-                        <li>Fully automated CI/CD with zero manual intervention</li>
-                        <li>GitOps workflow with Argo CD for declarative deployments</li>
-                        <li>Infrastructure as Code with Terraform for AWS resources</li>
-                        <li>Integrated security scanning with Gitleaks and Trivy</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Go</span>
-                        <span class="tech-tag primary">Argo CD</span>
-                        <span class="tech-tag primary">AWS EKS</span>
-                        <span class="tech-tag">GitHub Actions</span>
-                        <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Gitleaks</span>
-                        <span class="tech-tag">Trivy</span>
-                    </div>
-                </div>
-            </article>
-        </a>
-    </main>
-    
-    <a href="#" class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Scroll to top">↑</a>
-    
-    <script>
-        // Smooth scrolling for all internal links
-        document.addEventListener('DOMContentLoaded', function() {
-            // Show/hide scroll to top button
-            const scrollButton = document.querySelector('.scroll-to-top');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollButton.style.opacity = '0.8';
-                } else {
-                    scrollButton.style.opacity = '0';
-                }
-            });
-            
-            // Add loading animation to cards
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }
-                    });
-                },
-                {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                }
-            );
-            
-            // Initially hide cards for animation
-            document.querySelectorAll('.project-card').forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                card.style.transitionDelay = `${index * 0.1}s`;
-                observer.observe(card);
-            });
-        });
-        
-        // Add click analytics (optional - you can remove if not needed)
-        document.querySelectorAll('.project-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // You can add analytics tracking here
-                console.log('Project clicked:', this.querySelector('.project-title').textContent);
-            });
-        });
-        
-        // Performance optimization: Lazy loading for project cards
-        if ('IntersectionObserver' in window) {
-            const cardObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('loaded');
-                    }
-                });
-            });
-            
-            document.querySelectorAll('.project-card').forEach(card => {
-                cardObserver.observe(card);
-            });
-        }
-    </script>
-</body>
-</html>
-
+                        <span class="tech-tag
