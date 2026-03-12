@@ -475,9 +475,12 @@
             </div>
             
             <p class="description">
-                Started my journey in DevOps and cloud infrastructure, but discovered my passion for AI automation. 
-                Now I build intelligent systems that combine the best of both worlds—scalable infrastructure 
-                powered by cutting-edge AI to automate complex workflows and solve real-world problems.
+                ✽ Provisioned Infrastructure with Terraform, AWS CDK, AWS CloudFormation, AWS CLI, Gcloud CLI, Ruby SDK, and Python Botocore.
+                ✽ Coded in Python, Typescript, Java, Ruby, NodeJS/JavaScript, BASH, Powershell, C#.
+                ✽ Experience automating with tools like GitHub Actions, GitLab, CircleCI, Ansible, Chef, Rundeck, BASH, Jenkins, Lambda, and Powershell.
+                ✽ Over 6+ years of cloud infrastructure experience.
+                ✽ Believe strongly in GitOps, CiCD, Infrastructure-as-code, DRY, and DevOps methodologies.
+                ✽ Built GitHub Action pipelines for CDK, Terraform, and Python-based applications running ECS, Fargate, and Lambda.
             </p>
             
             <div class="social-links">
