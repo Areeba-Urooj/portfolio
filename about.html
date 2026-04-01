@@ -3,711 +3,766 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Areeba Urooj</title>
+    <title>About | Areeba Urooj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg:         #faf9f7;
+            --bg-2:       #f2f0ec;
+            --ink:        #1a1814;
+            --ink-2:      #3d3a35;
+            --muted:      #8a8680;
+            --border:     #e4e1db;
+            --accent:     #1a6b3c;
+            --accent-bg:  #edf7f1;
+            --accent-mid: #2d9e5f;
+            --white:      #ffffff;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
             min-height: 100vh;
-            line-height: 1.7;
-            color: #333;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        /* ───────────────────────────
+           NAV  (Ed Donner–style: logo left, links right, sticky, very clean)
+        ─────────────────────────── */
+        .nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 200;
+            background: rgba(250,249,247,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 56px;
+            height: 66px;
         }
 
-        .navbar a {
-            margin: 0 30px;
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
             text-decoration: none;
-            color: #4a5568;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
+            letter-spacing: -0.01em;
         }
 
-        .navbar a::after {
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 38px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .nav-links a::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+            left: 0; bottom: 0;
+            width: 0; height: 1.5px;
+            background: var(--accent);
+            transition: width 0.25s ease;
         }
 
-        .navbar a:hover::after,
-        .navbar a.active::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--accent); }
 
-        .navbar a.active {
-            color: #667eea;
-        }
-
-        .hero-section {
-            padding: 80px 20px 60px;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 1000px;
+        /* ───────────────────────────
+           PAGE WRAP
+        ─────────────────────────── */
+        .page {
+            max-width: 1080px;
             margin: 0 auto;
+            padding: 0 56px 120px;
         }
 
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            animation: fadeInUp 1s ease;
+        /* ───────────────────────────
+           HERO  (editorial, no card — content lives directly on page like Ed's)
+        ─────────────────────────── */
+        .hero {
+            padding: 72px 0 52px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
         }
 
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            font-weight: 300;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease 0.2s both;
+        .hero-left h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--ink);
         }
 
-        .main-content {
-            max-width: 1200px;
-            margin: -40px auto 0;
-            padding: 0 20px 80px;
-            position: relative;
-            z-index: 10;
+        .hero-left h1 em {
+            font-style: italic;
+            color: var(--accent);
         }
 
-        .content-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 24px;
-            padding: 60px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: slideInUp 1s ease 0.4s both;
+        .hero-right {
+            text-align: right;
+            flex-shrink: 0;
+            padding-bottom: 6px;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 60px;
-            align-items: start;
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--accent-bg);
+            color: var(--accent);
+            border: 1px solid rgba(26,107,60,0.18);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
-        .profile-section {
-            text-align: center;
-            position: sticky;
-            top: 120px;
-        }
-
-        .profile-image {
-            width: 200px;
-            height: 200px;
+        .hero-pill-dot {
+            width: 6px; height: 6px;
+            background: var(--accent-mid);
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            margin: 0 auto 30px;
+            animation: pulse 2.2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .hero-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+        }
+
+        /* ───────────────────────────
+           TWO-COLUMN LAYOUT  (sidebar + main, like Ed's)
+        ─────────────────────────── */
+        .body-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 80px;
+            padding-top: 64px;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            position: sticky;
+            top: 86px;
+            height: fit-content;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: var(--bg-2);
+            border: 2px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 22px;
+            transition: border-color 0.25s;
         }
 
-        .profile-image::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: linear-gradient(135deg, #00ff88, #667eea);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .avatar:hover {
+            border-color: var(--accent);
         }
 
-        .profile-image:hover::before {
-            opacity: 1;
-        }
-
-        .profile-image:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .profile-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-
-        .profile-title {
-            color: #667eea;
+        .sid-name {
+            font-family: 'Lora', serif;
             font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            color: var(--ink);
+            margin-bottom: 5px;
         }
 
-        .profile-subtitle {
-            color: #718096;
-            font-size: 0.9rem;
+        .sid-role {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 3px;
+        }
+
+        .sid-sub {
+            font-size: 0.78rem;
+            color: var(--muted);
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
+        }
+
+        .sid-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 24px;
+        }
+
+        .sid-section-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--border);
+            margin-bottom: 12px;
         }
 
         .social-links {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            flex-direction: column;
+            gap: 2px;
         }
 
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
+        .social-links a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 400;
+            transition: all 0.18s;
         }
 
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #00ff88, #667eea);
+        .social-links a i {
+            width: 15px;
+            text-align: center;
+            font-size: 0.82rem;
         }
 
-        .content-section {
-            flex: 1;
+        .social-links a:hover {
+            background: var(--bg-2);
+            color: var(--ink);
         }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
+        /* ── MAIN BODY ── */
+        .main {}
+
+        /* intro block */
+        .intro-quote {
+            font-family: 'Lora', serif;
+            font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--ink);
+            border-left: 3px solid var(--accent);
+            padding-left: 24px;
+            margin-bottom: 36px;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #00ff88);
-            border-radius: 2px;
+        .body-p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--ink-2);
+            margin-bottom: 22px;
+            font-weight: 300;
         }
 
-        .journey-timeline {
-            margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(0, 255, 136, 0.05));
-            border-radius: 16px;
-            border-left: 4px solid #667eea;
-        }
-
-        .timeline-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            background: #00ff88;
-            border-radius: 50%;
-            border: 2px solid #667eea;
-        }
-
-        .timeline-year {
-            font-size: 0.9rem;
-            color: #667eea;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .timeline-title {
-            font-size: 1.1rem;
-            color: #2d3748;
+        .body-p strong {
+            color: var(--ink);
             font-weight: 600;
+        }
+
+        .hl {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* section headers */
+        .sec-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .sec-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ───────────────────────────
+           TIMELINE
+        ─────────────────────────── */
+        .timeline-wrap {
+            margin: 52px 0 60px;
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 0;
+        }
+
+        .tl-yr-col {
+            padding: 0 20px 44px 0;
+            text-align: right;
+        }
+
+        .tl-year {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--muted);
+            line-height: 1.4;
+            margin-top: 2px;
+        }
+
+        .tl-body-col {
+            padding: 0 0 44px 28px;
+            border-left: 1.5px solid var(--border);
+            position: relative;
+        }
+
+        .tl-body-col::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--border);
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .tl-item:hover .tl-body-col::before {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .tl-item:last-child .tl-body-col {
+            padding-bottom: 0;
+        }
+
+        .tl-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink);
             margin-bottom: 8px;
         }
 
-        .timeline-description {
-            font-size: 1rem;
-            color: #4a5568;
-            line-height: 1.6;
+        .tl-desc {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: var(--muted);
+            font-weight: 300;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4a5568;
-            margin-bottom: 25px;
+        /* ───────────────────────────
+           TAGS
+        ─────────────────────────── */
+        .tags-wrap {
+            margin-bottom: 60px;
         }
 
-        .about-text.intro {
-            font-size: 1.2rem;
-            color: #2d3748;
-            font-weight: 500;
-            margin-bottom: 35px;
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, rgba(102, 126, 234, 0.1) 0%, rgba(0, 255, 136, 0.15) 100%);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: #667eea;
-        }
-
-        .interests-section {
-            margin-top: 40px;
-            padding: 30px;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 16px;
-            border-left: 4px solid #00ff88;
-        }
-
-        .interests-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 20px;
+        .tags {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .interests-title i {
-            margin-right: 10px;
-            color: #00ff88;
-            font-size: 1.4rem;
-        }
-
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .interest-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 18px;
-            border-radius: 25px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
-        }
-
-        .interest-tag:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #00ff88, #667eea);
-        }
-
-        .cta-section {
-            margin-top: 50px;
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(0, 255, 136, 0.1));
-            border-radius: 20px;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .cta-text {
-            font-size: 1.2rem;
-            color: #2d3748;
-            margin-bottom: 25px;
+        .tag {
+            padding: 7px 16px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            font-size: 0.81rem;
             font-weight: 500;
+            color: var(--ink-2);
+            letter-spacing: 0.02em;
+            transition: all 0.18s;
+            cursor: default;
+            user-select: none;
         }
 
-        .cta-button {
+        .tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        /* ───────────────────────────
+           CTA  (like Ed's footer note — warm, personal, no flashy box)
+        ─────────────────────────── */
+        .cta-wrap {
+            border-top: 1px solid var(--border);
+            padding-top: 48px;
+            margin-top: 60px;
+        }
+
+        .cta-wrap h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--ink);
+            margin-bottom: 14px;
+        }
+
+        .cta-wrap p {
+            font-size: 0.97rem;
+            line-height: 1.8;
+            color: var(--ink-2);
+            margin-bottom: 28px;
+            max-width: 540px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
+            gap: 9px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 13px 26px;
+            border-radius: 6px;
             text-decoration: none;
+            font-size: 0.84rem;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            letter-spacing: 0.03em;
+            transition: all 0.2s;
+            box-shadow: 0 2px 12px rgba(26,107,60,0.18);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #00ff88, #667eea);
+        .cta-btn:hover {
+            background: #155730;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(26,107,60,0.25);
         }
 
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+        /* ───────────────────────────
+           FOOTER
+        ─────────────────────────── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 56px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            font-size: 20px;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(100px);
         }
 
-        .scroll-to-top.visible {
-            opacity: 1;
+        .footer-name {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color 0.18s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ───────────────────────────
+           SCROLL TOP
+        ─────────────────────────── */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px; right: 28px;
+            width: 40px; height: 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: all 0.2s;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+        }
+
+        .scroll-top.show {
+            opacity: 1; pointer-events: auto;
             transform: translateY(0);
         }
 
-        .scroll-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+        .scroll-top:hover {
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .profile-section {
-                position: relative;
-                top: 0;
-            }
-
-            .content-card {
-                padding: 40px 30px;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .navbar a {
-                margin: 0 15px;
-                font-size: 12px;
-            }
-
-            .interests-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 10px;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
-                font-size: 3rem;
-            }
+        /* ───────────────────────────
+           ANIMATIONS
+        ─────────────────────────── */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(22px);
+            animation: reveal 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        [data-reveal="1"] { animation-delay: 0.05s; }
+        [data-reveal="2"] { animation-delay: 0.15s; }
+        [data-reveal="3"] { animation-delay: 0.25s; }
+        [data-reveal="4"] { animation-delay: 0.35s; }
+        [data-reveal="5"] { animation-delay: 0.42s; }
+        [data-reveal="6"] { animation-delay: 0.49s; }
+
+        @keyframes reveal {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Floating elements animation */
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+        /* ───────────────────────────
+           RESPONSIVE
+        ─────────────────────────── */
+        @media (max-width: 860px) {
+            .nav { padding: 0 24px; }
+            .page { padding: 0 24px 80px; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 48px 0 36px; gap: 20px; }
+            .hero-right { text-align: left; }
+            .body-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+            .sidebar { position: static; display: grid; grid-template-columns: auto 1fr; gap: 20px 28px; align-items: start; }
+            .sid-divider { display: none; }
+            .social-links { flex-direction: row; flex-wrap: wrap; }
+            .social-links a { padding: 6px 8px; }
+            .footer { flex-direction: column; gap: 10px; padding: 24px; text-align: center; }
+            .nav-links { gap: 18px; }
+            .nav-links a { font-size: 0.75rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating background elements -->
-    <div class="floating-element" style="font-size: 4rem; color: rgba(255,255,255,0.1);">
-        <i class="fas fa-robot"></i>
-    </div>
-    <div class="floating-element" style="font-size: 3rem; color: rgba(255,255,255,0.1);">
-        <i class="fas fa-brain"></i>
-    </div>
-    <div class="floating-element" style="font-size: 3.5rem; color: rgba(255,255,255,0.1);">
-        <i class="fas fa-microchip"></i>
-    </div>
 
-    <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="about.html" class="active">ABOUT</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="experience.html">EXPERIENCE</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
-    
-    <div class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">My Journey</h1>
-            <p class="hero-subtitle">From DevOps foundations to AI-powered automation—transforming how systems think and operate</p>
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Areeba <span>Urooj</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact</a>
         </div>
-    </div>
-    
-    <div class="main-content">
-        <div class="content-card">
-            <div class="about-grid">
-                <div class="profile-section">
-                    <div class="profile-image">
-                        AU
-                    </div>
-                    <h2 class="profile-name">Areeba Urooj</h2>
-                    <p class="profile-title">AI Automation Engineer</p>
-                    <p class="profile-subtitle">DevOps → AI Evolution</p>
-                    
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="social-link" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/Areeba-Urooj" class="social-link" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://x.com/areeba_uro86219" class="social-link" target="_blank" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="mailto:areeba@example.com" class="social-link" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="content-section">
-                    <h2 class="section-title">About Me</h2>
-                    
-                    <p class="about-text intro">
-                        Welcome! I'm an <span class="highlight">AI Automation Engineer</span> who started in DevOps and discovered my passion for building intelligent, self-optimizing systems.
-                    </p>
-                    
-                    <p class="about-text">
-                        My journey began with <span class="highlight">cloud infrastructure and CI/CD pipelines</span>, where I spent 2+ years mastering AWS, Azure, Docker, Kubernetes, and Infrastructure as Code. I loved the efficiency gains, but I kept asking: "What if our systems could learn and adapt on their own?"
-                    </p>
-                    
-                    <p class="about-text">
-                        That question led me down the path of <span class="highlight">AI and machine learning</span>. I realized that combining my DevOps foundation with AI capabilities could create something powerful—intelligent automation that doesn't just follow scripts, but actually understands context, predicts issues, and optimizes itself.
-                    </p>
+    </nav>
 
-                    <div class="journey-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-year">2022-2024</div>
-                            <div class="timeline-title">🚀 DevOps Foundation</div>
-                            <div class="timeline-description">Built expertise in cloud infrastructure (AWS/Azure), containerization (Docker/K8s), CI/CD automation, and Infrastructure as Code with Terraform and Python scripting.</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2024</div>
-                            <div class="timeline-title">🤖 The AI Pivot</div>
-                            <div class="timeline-description">Discovered AI's potential to revolutionize automation. Started integrating machine learning models into deployment pipelines and building intelligent monitoring systems.</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">Present</div>
-                            <div class="timeline-title">✨ AI Automation Engineering</div>
-                            <div class="timeline-description">Now building MLOps pipelines, AI-powered chatbots, intelligent process automation, and systems that leverage LLMs to solve complex infrastructure challenges.</div>
-                        </div>
-                    </div>
-                    
-                    <p class="about-text">
-                        Today, I specialize in <span class="highlight">MLOps and AI-powered automation</span>—deploying machine learning models at scale, building intelligent chatbots, creating self-healing systems, and leveraging LLMs to automate complex decision-making processes.
-                    </p>
-                    
-                    <p class="about-text">
-                        My DevOps background gives me a unique advantage: I understand how to make AI systems production-ready, scalable, and reliable. I don't just build models—I build the entire infrastructure to support them in real-world environments.
-                    </p>
-                    
-                    <div class="interests-section">
-                        <div class="interests-title">
-                            <i class="fas fa-rocket"></i>
-                            Current Focus Areas
-                        </div>
-                        
-                        <div class="interests-grid">
-                            <div class="interest-tag">AI Automation</div>
-                            <div class="interest-tag">MLOps</div>
-                            <div class="interest-tag">LLM Integration</div>
-                            <div class="interest-tag">Chatbot Development</div>
-                            <div class="interest-tag">AWS/Azure AI</div>
-                            <div class="interest-tag">Python/ML</div>
-                            <div class="interest-tag">RAG Systems</div>
-                            <div class="interest-tag">Agent Workflows</div>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-section">
-                        <p class="cta-text">
-                            I'm passionate about sharing knowledge and collaborating on innovative AI automation projects. Whether you're looking to implement MLOps, build intelligent agents, or explore AI-powered infrastructure, I'd love to connect!
-                        </p>
-                        
-                        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="cta-button" target="_blank">
-                            <i class="fas fa-comments"></i>
-                            Let's Build Something Intelligent Together
-                        </a>
-                    </div>
-                </div>
+    <div class="page">
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-left" data-reveal="1">
+                <h1>Well, <em>hi there.</em><br>I'm Areeba.</h1>
             </div>
+            <div class="hero-right" data-reveal="2">
+                <div class="hero-pill">
+                    <span class="hero-pill-dot"></span>
+                    Open to collaboration
+                </div>
+                <p class="hero-sub">AI Automation Engineer · DevOps → AI</p>
+            </div>
+        </header>
+
+        <!-- BODY GRID -->
+        <div class="body-grid">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" data-reveal="2">
+                <div class="avatar">AU</div>
+
+                <div>
+                    <p class="sid-name">Areeba Urooj</p>
+                    <p class="sid-role">AI Automation Engineer</p>
+                    <p class="sid-sub">DevOps → AI Evolution</p>
+                </div>
+
+                <div class="sid-divider"></div>
+
+                <div>
+                    <p class="sid-section-label">Find me</p>
+                    <nav class="social-links">
+                        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/Areeba-Urooj" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://x.com/areeba_uro86219" target="_blank">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="mailto:areeba@example.com">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main">
+
+                <div data-reveal="3">
+                    <p class="intro-quote">
+                        "What if our systems could learn and adapt on their own?"
+                    </p>
+
+                    <p class="body-p">
+                        I'm an <span class="hl">AI Automation Engineer</span> who started in DevOps and discovered a passion for building systems that think. I spent two years deep in cloud infrastructure — AWS, Azure, Docker, Kubernetes, CI/CD — before I started asking the question above. It changed everything.
+                    </p>
+
+                    <p class="body-p">
+                        Combining a DevOps foundation with AI capabilities creates something genuinely powerful: automation that doesn't just follow scripts, but <strong>understands context, predicts issues, and optimizes itself</strong>. That's the space I work in now.
+                    </p>
+
+                    <p class="body-p">
+                        My background isn't a past chapter — it's my edge. I don't just build models. I build the entire infrastructure around them so they actually hold up in production.
+                    </p>
+                </div>
+
+                <!-- TIMELINE -->
+                <div class="timeline-wrap" data-reveal="4">
+                    <p class="sec-label">My path</p>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">2022–<br>2024</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">DevOps Foundation</p>
+                            <p class="tl-desc">Built deep expertise in cloud infrastructure across AWS and Azure, containerization with Docker and Kubernetes, CI/CD automation, and Infrastructure as Code with Terraform and Python scripting.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">2024</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">The AI Pivot</p>
+                            <p class="tl-desc">Discovered AI's potential to transform automation. Began integrating machine learning models into deployment pipelines and building the first intelligent monitoring systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">Now</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">AI Automation Engineering</p>
+                            <p class="tl-desc">Building MLOps pipelines, AI-powered chatbots, intelligent process automation, and systems that leverage LLMs to solve complex infrastructure challenges at real scale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOCUS TAGS -->
+                <div class="tags-wrap" data-reveal="5">
+                    <p class="sec-label">Current focus</p>
+                    <div class="tags">
+                        <span class="tag">AI Automation</span>
+                        <span class="tag">MLOps</span>
+                        <span class="tag">LLM Integration</span>
+                        <span class="tag">Chatbot Development</span>
+                        <span class="tag">AWS / Azure AI</span>
+                        <span class="tag">Python / ML</span>
+                        <span class="tag">RAG Systems</span>
+                        <span class="tag">Agent Workflows</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-wrap" data-reveal="6">
+                    <h3>Let's build something intelligent.</h3>
+                    <p>
+                        Whether you're looking to implement MLOps, build intelligent agents, or figure out how to make AI actually hold up in production — I'd love to connect.
+                    </p>
+                    <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="cta-btn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+
+            </main>
         </div>
     </div>
-    
-    <a href="#" class="scroll-to-top" id="scrollToTop">
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-name">Areeba Urooj</span>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Areeba-Urooj" target="_blank">GitHub</a>
+            <a href="mailto:areeba@example.com">Email</a>
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </a>
-    
+
     <script>
-        // Scroll to top functionality
-        const scrollToTop = document.getElementById('scrollToTop');
-        
+        const btn = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTop.classList.add('visible');
-            } else {
-                scrollToTop.classList.remove('visible');
-            }
+            btn.classList.toggle('show', window.pageYOffset > 300);
         });
-        
-        scrollToTop.addEventListener('click', (e) => {
+        btn.addEventListener('click', e => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Interest tags click animation
-        const interestTags = document.querySelectorAll('.interest-tag');
-        
-        interestTags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                tag.style.animation = 'none';
-                tag.offsetHeight;
-                tag.style.animation = 'pulse 0.6s ease';
-            });
-        });
-
-        // Add pulse animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.content-card, .interest-tag').forEach(el => {
-            observer.observe(el);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
+
 </body>
 </html>
