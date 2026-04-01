@@ -23,21 +23,23 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+
+        html, body {
+            height: 100%;
+            overflow: hidden; /* single screen, no scroll */
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg);
             color: var(--ink);
-            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
         }
 
         /* ── NAV ── */
         .nav {
-            position: sticky;
-            top: 0;
-            z-index: 200;
             background: rgba(250,249,247,0.96);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
@@ -45,12 +47,13 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 56px;
-            height: 66px;
+            height: 62px;
+            flex-shrink: 0;
         }
 
         .nav-logo {
             font-family: 'Lora', serif;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: var(--ink);
             text-decoration: none;
@@ -58,11 +61,11 @@
 
         .nav-logo span { color: var(--accent); }
 
-        .nav-links { display: flex; gap: 38px; }
+        .nav-links { display: flex; gap: 36px; }
 
         .nav-links a {
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 500;
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -84,178 +87,39 @@
         .nav-links a:hover { color: var(--ink); }
         .nav-links a:hover::after { width: 100%; }
 
-        /* ── HERO ── */
-        .hero {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 56px;
-            min-height: calc(100vh - 66px);
+        /* ── MAIN AREA (fills remaining height) ── */
+        .main {
+            flex: 1;
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 80px;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
+            grid-template-columns: 260px 1fr 300px;
+            border-top: none;
+            overflow: hidden;
         }
 
-        /* LEFT */
-        .hero-left {}
-
-        .hero-greeting {
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .greeting-line {
-            width: 32px;
-            height: 1.5px;
-            background: var(--accent);
-        }
-
-        .hero-name {
-            font-family: 'Lora', serif;
-            font-size: clamp(3rem, 6vw, 5.2rem);
-            font-weight: 500;
-            line-height: 1.06;
-            letter-spacing: -0.03em;
-            color: var(--ink);
-            margin-bottom: 24px;
-        }
-
-        .hero-name em {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .hero-desc {
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: var(--ink-2);
-            font-weight: 300;
-            max-width: 520px;
-            margin-bottom: 36px;
-        }
-
-        .hero-desc strong {
-            color: var(--ink);
-            font-weight: 600;
-        }
-
-        /* tags */
-        .hero-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 44px;
-        }
-
-        .hero-tag {
-            padding: 6px 16px;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            background: var(--white);
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--ink-2);
-            letter-spacing: 0.02em;
-            transition: all 0.18s;
-        }
-
-        .hero-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-bg);
-        }
-
-        /* CTAs */
-        .hero-ctas {
-            display: flex;
-            gap: 14px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent);
-            color: var(--white);
-            padding: 13px 26px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.84rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            transition: all 0.2s;
-            box-shadow: 0 2px 12px rgba(26,107,60,0.18);
-        }
-
-        .btn-primary:hover {
-            background: #155730;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(26,107,60,0.25);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--ink-2);
-            padding: 13px 26px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.84rem;
-            font-weight: 500;
-            border: 1px solid var(--border);
-            background: var(--white);
-            transition: all 0.2s;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--ink-2);
-            color: var(--ink);
-            transform: translateY(-2px);
-        }
-
-        /* RIGHT — profile card */
-        .hero-right {
+        /* ── LEFT PANEL ── */
+        .panel-left {
+            border-right: 1px solid var(--border);
+            padding: 48px 36px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .profile-card {
-            width: 100%;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 32px 28px;
-            text-align: center;
+            gap: 32px;
         }
 
         .profile-avatar {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            border: 2px solid var(--border);
+            border: 1.5px solid var(--border);
             background: var(--bg-2);
-            margin: 0 auto 18px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Lora', serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: var(--accent);
-            overflow: hidden;
+            flex-shrink: 0;
             transition: border-color 0.2s;
         }
 
@@ -267,112 +131,83 @@
             object-fit: cover;
         }
 
-        .profile-name {
+        .left-name {
             font-family: 'Lora', serif;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 500;
             color: var(--ink);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
-        .profile-role {
-            font-size: 0.75rem;
-            font-weight: 600;
+        .left-role {
+            font-size: 0.72rem;
+            font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
-        .profile-loc {
-            font-size: 0.78rem;
+        .left-loc {
+            font-size: 0.76rem;
             color: var(--muted);
-            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 5px;
         }
 
-        .profile-divider {
+        .left-divider {
             height: 1px;
             background: var(--border);
-            margin-bottom: 20px;
         }
 
-        .profile-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
+        .left-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--border);
+            margin-bottom: 10px;
         }
 
-        .stat {
-            text-align: center;
-            padding: 12px 8px;
-            background: var(--bg);
-            border-radius: 6px;
-        }
-
-        .stat-num {
-            font-family: 'Lora', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--ink);
-            line-height: 1;
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 0.7rem;
-            color: var(--muted);
-            font-weight: 400;
-            letter-spacing: 0.03em;
-        }
-
-        .profile-social {
+        .social-list {
+            list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 8px;
+            flex-direction: column;
+            gap: 2px;
         }
 
-        .profile-social a {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.18s;
-        }
-
-        .profile-social a:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-bg);
-        }
-
-        /* availability row */
-        .avail-row {
-            width: 100%;
+        .social-list a {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 16px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.82rem;
+            transition: all 0.18s;
+        }
+
+        .social-list a i { width: 14px; text-align: center; font-size: 0.8rem; }
+        .social-list a:hover { background: var(--bg-2); color: var(--ink); }
+
+        .avail-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
             background: var(--accent-bg);
             border: 1px solid rgba(26,107,60,0.15);
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.76rem;
             color: var(--accent);
             font-weight: 500;
+            margin-top: auto;
         }
 
         .avail-dot {
-            width: 7px; height: 7px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: var(--accent-mid);
             flex-shrink: 0;
@@ -381,189 +216,275 @@
 
         @keyframes pulse {
             0%,100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.7); }
+            50% { opacity: 0.3; transform: scale(0.7); }
         }
 
-        /* ── POSTS / RECENT SECTION (like Ed Donner's recent posts on homepage) ── */
-        .posts-section {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 80px 56px 100px;
+        /* ── CENTRE PANEL ── */
+        .panel-centre {
+            padding: 52px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--border);
         }
 
-        .sec-label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 36px;
+        .greeting-row {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
         }
 
-        .sec-label::after {
+        .greeting-line {
+            width: 28px; height: 1.5px;
+            background: var(--accent);
+        }
+
+        .hero-name {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-weight: 500;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+            margin-bottom: 22px;
+        }
+
+        .hero-name em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-desc {
+            font-size: 0.97rem;
+            line-height: 1.82;
+            color: var(--ink-2);
+            font-weight: 300;
+            margin-bottom: 28px;
+            max-width: 440px;
+        }
+
+        .hero-desc strong { color: var(--ink); font-weight: 600; }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 32px;
+        }
+
+        .hero-tag {
+            padding: 5px 14px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: var(--ink-2);
+            transition: all 0.18s;
+        }
+
+        .hero-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 11px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.2s;
+            box-shadow: 0 2px 10px rgba(26,107,60,0.18);
+        }
+
+        .btn-primary:hover {
+            background: #155730;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(26,107,60,0.25);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--ink-2);
+            padding: 11px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            background: var(--white);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover { border-color: var(--ink-2); color: var(--ink); }
+
+        /* ── RIGHT PANEL ── */
+        .panel-right {
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            overflow: hidden;
+        }
+
+        .right-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .right-label::after {
             content: '';
             flex: 1;
             height: 1px;
             background: var(--border);
         }
 
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            margin-bottom: 40px;
+        /* mini project cards */
+        .mini-cards {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
-        .post-card {
-            background: var(--white);
-            padding: 32px;
+        .mini-card {
+            flex: 1;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
             text-decoration: none;
             color: inherit;
-            display: block;
-            transition: background 0.18s;
-            position: relative;
-        }
-
-        .post-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.25s;
-        }
-
-        .post-card:hover { background: var(--bg); }
-        .post-card:hover::before { transform: scaleX(1); }
-
-        .post-badge {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 10px;
             display: flex;
-            align-items: center;
-            gap: 6px;
+            flex-direction: column;
+            gap: 5px;
+            transition: background 0.15s;
+            position: relative;
+            padding-right: 20px;
         }
 
-        .post-badge-dot {
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
+        .mini-card:first-child { border-top: 1px solid var(--border); }
 
-        .post-title {
-            font-family: 'Lora', serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            line-height: 1.4;
-            color: var(--ink);
-            margin-bottom: 10px;
-            letter-spacing: -0.01em;
-        }
+        .mini-card:hover { background: var(--bg-2); padding-left: 8px; border-radius: 4px; }
 
-        .post-desc {
-            font-size: 0.87rem;
-            color: var(--muted);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        .post-arrow {
+        .mini-arrow {
             position: absolute;
-            top: 28px; right: 28px;
-            font-size: 0.75rem;
+            right: 0; top: 16px;
+            font-size: 0.65rem;
             color: var(--border);
-            transition: all 0.18s;
+            transition: all 0.15s;
         }
 
-        .post-card:hover .post-arrow {
-            color: var(--accent);
-            transform: translateX(3px);
+        .mini-card:hover .mini-arrow { color: var(--accent); transform: translateX(2px); }
+
+        .mini-badge {
+            font-size: 0.63rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-        /* see all link */
+        .mini-badge.ai { color: var(--accent); }
+        .mini-badge.devops { color: #1d4ed8; }
+
+        .mini-title {
+            font-size: 0.84rem;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.35;
+        }
+
+        .mini-desc {
+            font-size: 0.76rem;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* see all */
         .see-all {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: var(--accent);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 500;
+            padding-top: 16px;
             border-bottom: 1px solid rgba(26,107,60,0.3);
-            padding-bottom: 2px;
+            width: fit-content;
+            padding-bottom: 1px;
             transition: border-color 0.18s;
         }
 
         .see-all:hover { border-color: var(--accent); }
 
-        /* ── FOOTER ── */
+        /* ── FOOTER BAR ── */
         .footer {
             border-top: 1px solid var(--border);
-            padding: 28px 56px;
+            padding: 14px 56px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0;
+            background: var(--white);
         }
 
         .footer-left {
             font-family: 'Lora', serif;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             font-style: italic;
             color: var(--muted);
         }
 
-        .footer-links { display: flex; gap: 24px; }
-
-        .footer-links a {
-            font-size: 0.78rem;
-            color: var(--muted);
-            text-decoration: none;
+        .footer-right {
+            font-size: 0.74rem;
+            color: var(--border);
             letter-spacing: 0.04em;
-            transition: color 0.18s;
         }
-
-        .footer-links a:hover { color: var(--accent); }
 
         /* ── ANIMATIONS ── */
         [data-reveal] {
             opacity: 0;
-            transform: translateY(22px);
-            animation: reveal 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+            transform: translateY(18px);
+            animation: reveal 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
         }
 
         [data-reveal="1"] { animation-delay: 0.05s; }
-        [data-reveal="2"] { animation-delay: 0.15s; }
-        [data-reveal="3"] { animation-delay: 0.25s; }
-        [data-reveal="4"] { animation-delay: 0.35s; }
-        [data-reveal="5"] { animation-delay: 0.45s; }
-        [data-reveal="6"] { animation-delay: 0.20s; }
+        [data-reveal="2"] { animation-delay: 0.12s; }
+        [data-reveal="3"] { animation-delay: 0.19s; }
+        [data-reveal="4"] { animation-delay: 0.26s; }
+        [data-reveal="5"] { animation-delay: 0.33s; }
+        [data-reveal="6"] { animation-delay: 0.08s; }
+        [data-reveal="7"] { animation-delay: 0.16s; }
 
         @keyframes reveal {
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-            .nav { padding: 0 24px; }
-            .hero { grid-template-columns: 1fr; padding: 56px 24px 64px; min-height: auto; gap: 48px; }
-            .hero-right { flex-direction: row; flex-wrap: wrap; }
-            .profile-card { flex: 1; min-width: 260px; }
-            .avail-row { width: auto; flex: 1; min-width: 200px; }
-            .posts-section { padding: 56px 24px 80px; }
-            .posts-grid { grid-template-columns: 1fr; }
-            .footer { flex-direction: column; gap: 10px; padding: 24px; text-align: center; }
-            .nav-links { gap: 18px; }
         }
     </style>
 </head>
@@ -580,10 +501,46 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-left">
-            <p class="hero-greeting" data-reveal="1">
+    <!-- THREE-COLUMN MAIN -->
+    <div class="main">
+
+        <!-- LEFT: profile info -->
+        <aside class="panel-left">
+
+            <div class="profile-avatar" data-reveal="6">
+                <img src="./assets/profile.jpg" alt="Areeba Urooj"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='AU';">
+            </div>
+
+            <div data-reveal="6">
+                <p class="left-name">Areeba Urooj</p>
+                <p class="left-role">AI Automation Engineer</p>
+                <p class="left-loc"><i class="fas fa-map-marker-alt" style="font-size:0.65rem;"></i> Abbottabad, Pakistan</p>
+            </div>
+
+            <div class="left-divider"></div>
+
+            <div data-reveal="7">
+                <p class="left-label">Find me</p>
+                <ul class="social-list">
+                    <li><a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="https://github.com/Areeba-Urooj" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://x.com/areeba_uro86219" target="_blank"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="mailto:cmy61677@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                </ul>
+            </div>
+
+            <div class="avail-badge" data-reveal="7">
+                <span class="avail-dot"></span>
+                Open to opportunities
+            </div>
+
+        </aside>
+
+        <!-- CENTRE: hero text -->
+        <section class="panel-centre">
+
+            <p class="greeting-row" data-reveal="1">
                 <span class="greeting-line"></span>
                 AI Automation Engineer
             </p>
@@ -593,9 +550,7 @@
             </h1>
 
             <p class="hero-desc" data-reveal="3">
-                I started in DevOps — cloud infrastructure, CI/CD, Kubernetes — and kept asking
-                <strong>"what if systems could think for themselves?"</strong>
-                That question led me here: building AI-powered automation that doesn't just follow scripts, but understands context and adapts.
+                I started in DevOps — cloud infrastructure, CI/CD, Kubernetes — and kept asking <strong>"what if systems could think for themselves?"</strong> That question led me here: building AI-powered automation that adapts, predicts, and scales.
             </p>
 
             <div class="hero-tags" data-reveal="4">
@@ -603,124 +558,70 @@
                 <span class="hero-tag">MLOps</span>
                 <span class="hero-tag">LLM Integration</span>
                 <span class="hero-tag">AWS / Azure</span>
-                <span class="hero-tag">DevOps</span>
                 <span class="hero-tag">RAG Systems</span>
+                <span class="hero-tag">DevOps</span>
             </div>
 
             <div class="hero-ctas" data-reveal="5">
                 <a href="projects.html" class="btn-primary">
-                    View my projects <i class="fas fa-arrow-right" style="font-size:0.75rem;"></i>
+                    View projects <i class="fas fa-arrow-right" style="font-size:0.7rem;"></i>
                 </a>
                 <a href="about.html" class="btn-secondary">
                     About me
                 </a>
             </div>
-        </div>
 
-        <div class="hero-right">
-            <div class="profile-card" data-reveal="6">
-                <div class="profile-avatar">
-                    <img src="./assets/profile.jpg" alt="Areeba Urooj"
-                         onerror="this.style.display='none'; this.parentElement.textContent='AU';">
-                </div>
-                <p class="profile-name">Areeba Urooj</p>
-                <p class="profile-role">AI Automation Engineer</p>
-                <p class="profile-loc">
-                    <i class="fas fa-map-marker-alt" style="font-size:0.7rem;"></i>
-                    Abbottabad, Pakistan
-                </p>
+        </section>
 
-                <div class="profile-divider"></div>
+        <!-- RIGHT: recent projects -->
+        <aside class="panel-right">
 
-                <div class="profile-stats">
-                    <div class="stat">
-                        <p class="stat-num">9+</p>
-                        <p class="stat-label">Projects</p>
-                    </div>
-                    <div class="stat">
-                        <p class="stat-num">2+</p>
-                        <p class="stat-label">Years DevOps</p>
-                    </div>
-                    <div class="stat">
-                        <p class="stat-num">3M+</p>
-                        <p class="stat-label">Readers reached</p>
-                    </div>
-                    <div class="stat">
-                        <p class="stat-num">1</p>
-                        <p class="stat-label">OCI Cert</p>
-                    </div>
-                </div>
+            <p class="right-label" data-reveal="6">Recent projects</p>
 
-                <div class="profile-social">
-                    <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/Areeba-Urooj" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://x.com/areeba_uro86219" target="_blank" title="Twitter">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="mailto:cmy61677@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+            <div class="mini-cards">
+
+                <a href="https://github.com/Areeba-Urooj/multi-model-brochure-creator/tree/main/ollama_brochure_agent" class="mini-card" target="_blank" data-reveal="6">
+                    <i class="fas fa-arrow-up-right-from-square mini-arrow"></i>
+                    <span class="mini-badge ai">AI Automation</span>
+                    <p class="mini-title">Website Analyzer & Brochure Generator</p>
+                    <p class="mini-desc">Local LLM · 90% faster · zero API cost</p>
+                </a>
+
+                <a href="https://github.com/Areeba-Urooj/linkedin-authority-builder" class="mini-card" target="_blank" data-reveal="6">
+                    <i class="fas fa-arrow-up-right-from-square mini-arrow"></i>
+                    <span class="mini-badge ai">AI Automation</span>
+                    <p class="mini-title">LinkedIn Authority Builder</p>
+                    <p class="mini-desc">12-node workflow · LLM + image generation</p>
+                </a>
+
+                <a href="https://medium.com/@cmy61677/github-actions-ci-cd-for-a-3-tier-app-on-eks-2d4fc5237a92" class="mini-card" target="_blank" data-reveal="7">
+                    <i class="fas fa-arrow-up-right-from-square mini-arrow"></i>
+                    <span class="mini-badge devops">DevOps & Cloud</span>
+                    <p class="mini-title">Full-Stack CI/CD on EKS</p>
+                    <p class="mini-desc">GitHub Actions · DevSecOps · 90% faster deploys</p>
+                </a>
+
+                <a href="https://medium.com/@cmy61677/building-a-production-ready-devops-pipeline-from-manual-processes-to-automated-excellence-4743b0d71679" class="mini-card" target="_blank" data-reveal="7">
+                    <i class="fas fa-arrow-up-right-from-square mini-arrow"></i>
+                    <span class="mini-badge devops">DevOps & Cloud</span>
+                    <p class="mini-title">Production DevOps Pipeline with Jenkins</p>
+                    <p class="mini-desc">99.9% uptime · zero manual steps</p>
+                </a>
+
             </div>
 
-            <div class="avail-row" data-reveal="6">
-                <span class="avail-dot"></span>
-                Open to collaboration & opportunities
-            </div>
-        </div>
-    </section>
-
-    <!-- RECENT PROJECTS (like Ed's homepage posts) -->
-    <section class="posts-section">
-        <p class="sec-label">Recent projects</p>
-
-        <div class="posts-grid">
-            <a href="https://github.com/Areeba-Urooj/multi-model-brochure-creator/tree/main/ollama_brochure_agent" class="post-card" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-arrow-up-right-from-square post-arrow"></i>
-                <p class="post-badge"><span class="post-badge-dot"></span>AI Automation</p>
-                <h3 class="post-title">AI-Powered Website Analyzer & Brochure Generator</h3>
-                <p class="post-desc">Local LLM pipeline that converts raw web data into marketing collateral — 90% reduction in research time, zero API cost.</p>
+            <a href="projects.html" class="see-all" data-reveal="7">
+                See all projects <i class="fas fa-arrow-right" style="font-size:0.7rem;"></i>
             </a>
 
-            <a href="https://github.com/Areeba-Urooj/linkedin-authority-builder" class="post-card" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-arrow-up-right-from-square post-arrow"></i>
-                <p class="post-badge"><span class="post-badge-dot"></span>AI Automation</p>
-                <h3 class="post-title">AI-Powered LinkedIn Authority Builder</h3>
-                <p class="post-desc">12-node automated workflow combining LLMs and image generation for professional LinkedIn content at scale.</p>
-            </a>
+        </aside>
 
-            <a href="https://medium.com/@cmy61677/github-actions-ci-cd-for-a-3-tier-app-on-eks-2d4fc5237a92" class="post-card" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-arrow-up-right-from-square post-arrow"></i>
-                <p class="post-badge" style="color: #1d4ed8;"><span class="post-badge-dot" style="background:#1d4ed8;"></span>DevOps & Cloud</p>
-                <h3 class="post-title">Full-Stack CI/CD on EKS with GitHub Actions</h3>
-                <p class="post-desc">End-to-end DevSecOps pipeline for a 3-tier app — 90% faster deployments with SonarQube, Trivy, and Gitleaks.</p>
-            </a>
-
-            <a href="https://medium.com/@cmy61677/building-a-production-ready-devops-pipeline-from-manual-processes-to-automated-excellence-4743b0d71679" class="post-card" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-arrow-up-right-from-square post-arrow"></i>
-                <p class="post-badge" style="color: #1d4ed8;"><span class="post-badge-dot" style="background:#1d4ed8;"></span>DevOps & Cloud</p>
-                <h3 class="post-title">Production-Ready DevOps Pipeline with Jenkins & EKS</h3>
-                <p class="post-desc">Manual → fully automated deployment achieving 99.9% availability with zero manual intervention required.</p>
-            </a>
-        </div>
-
-        <a href="projects.html" class="see-all">
-            See all projects <i class="fas fa-arrow-right" style="font-size:0.75rem;"></i>
-        </a>
-    </section>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <span class="footer-left">Areeba Urooj</span>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Areeba-Urooj" target="_blank">GitHub</a>
-            <a href="mailto:cmy61677@gmail.com">Email</a>
-        </div>
+        <span class="footer-left">Areeba Urooj — AI Automation Engineer</span>
+        <span class="footer-right">© 2025 · All rights reserved</span>
     </footer>
 
 </body>
