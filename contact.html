@@ -3,517 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Areeba Urooj</title>
+    <title>Contact | Areeba Urooj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg:        #faf9f7;
+            --bg-2:      #f2f0ec;
+            --ink:       #1a1814;
+            --ink-2:     #3d3a35;
+            --muted:     #8a8680;
+            --border:    #e4e1db;
+            --accent:    #1a6b3c;
+            --accent-bg: #edf7f1;
+            --accent-mid:#2d9e5f;
+            --white:     #ffffff;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
             min-height: 100vh;
-            color: #333;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
         }
-        
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+        /* ── NAV ── */
+        .nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 200;
+            background: rgba(250,249,247,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 56px;
+            height: 66px;
         }
-        
-        .navbar a {
-            margin: 0 30px;
+
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
             text-decoration: none;
-            color: #4a5568;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 38px; }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            color: var(--muted);
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 0; height: 1.5px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--accent); }
+
+        /* ── PAGE ── */
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 56px 120px;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 72px 0 52px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+        }
+
+        .hero-left h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-left h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-right {
+            text-align: right;
+            flex-shrink: 0;
+            padding-bottom: 6px;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--accent-bg);
+            color: var(--accent);
+            border: 1px solid rgba(26,107,60,0.18);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .pill-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent-mid);
+            animation: pulse 2.2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .hero-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── BODY GRID ── */
+        .body-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 80px;
+            padding-top: 64px;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            position: sticky;
+            top: 86px;
+            height: fit-content;
+        }
+
+        .sid-intro {
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--ink-2);
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
+        .sid-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 24px;
+        }
+
+        .sid-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--border);
+            margin-bottom: 12px;
+        }
+
+        .sid-detail {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ── MAIN ── */
+        .main {}
+
+        /* section label */
+        .sec-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .sec-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── CONTACT ROWS ── */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 64px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.18s;
             position: relative;
         }
 
-        .navbar a::after {
-            content: '';
+        .contact-row:first-child { border-top: 1px solid var(--border); }
+
+        .contact-row::after {
+            content: '→';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: linear-gradient(90deg, #667eea, #00ff88);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .navbar a:hover::after,
-        .navbar a.active::after {
-            width: 100%;
-        }
-        
-        .navbar a.active {
-            color: #667eea;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 60px 20px 40px;
-            color: white;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 300;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .contact-container {
-            max-width: 900px;
-            margin: 40px auto 60px;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: slideInUp 1s ease 0.4s both;
-        }
-        
-        .contact-intro {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .contact-intro h3 {
-            font-size: 1.8rem;
-            color: #2d3748;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .contact-intro p {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-        
-        .contact-info {
-            display: grid;
-            gap: 25px;
-        }
-        
-        .contact-row {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-            cursor: pointer;
-        }
-        
-        .contact-row:hover {
-            transform: translateX(10px);
-            background: white;
-            border-left-color: #667eea;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-row a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            width: 100%;
-        }
-        
-        .icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-        }
-        
-        .contact-row:hover .icon {
-            background: linear-gradient(135deg, #00ff88, #667eea);
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .icon i {
-            color: white;
-            font-size: 24px;
-        }
-        
-        .contact-text-wrapper {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-size: 0.85rem;
-            color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        
-        .contact-text {
-            color: #2d3748;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-row:hover .contact-text {
-            color: #667eea;
-        }
-        
-        footer {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            margin-top: 60px;
-        }
-        
-        .visitor-counter {
-            margin-bottom: 30px;
-        }
-        
-        .visitor-counter p:first-child {
-            color: #cbd5e0;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .visitor-counter p:last-child {
-            background: linear-gradient(135deg, #667eea, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-        
-        .social-icons {
-            margin: 40px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-color: transparent;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .social-icon i {
-            color: white;
-            font-size: 22px;
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-            opacity: 0;
-            transform: translateY(100px);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.5);
-        }
-
-        .back-to-top i {
-            font-size: 20px;
-        }
-        
-        .footer-copyright {
-            color: #cbd5e0;
-            margin-top: 30px;
-            font-size: 0.95rem;
-        }
-
-        .footer-tagline {
-            color: #00ff88;
+            right: 0;
             font-size: 1rem;
+            color: var(--border);
+            transition: all 0.2s;
+        }
+
+        .contact-row:hover::after {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .contact-row:hover .contact-platform {
+            color: var(--accent);
+        }
+
+        .contact-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--muted);
+            flex-shrink: 0;
+            transition: all 0.18s;
+        }
+
+        .contact-row:hover .contact-icon-wrap {
+            background: var(--accent-bg);
+            border-color: rgba(26,107,60,0.2);
+            color: var(--accent);
+        }
+
+        .contact-info { flex: 1; }
+
+        .contact-platform {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 3px;
+            transition: color 0.18s;
+        }
+
+        .contact-handle {
+            font-size: 0.83rem;
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        /* ── CLOSING NOTE (Ed Donner style personal sign-off) ── */
+        .closing {
+            border-top: 1px solid var(--border);
+            padding-top: 48px;
+        }
+
+        .closing-quote {
+            font-family: 'Lora', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--ink);
             margin-bottom: 20px;
+            border-left: 3px solid var(--accent);
+            padding-left: 24px;
+        }
+
+        .closing-body {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.8;
+            font-weight: 300;
+            padding-left: 27px;
+        }
+
+        .closing-body a {
+            color: var(--accent);
+            text-decoration: none;
             font-weight: 500;
+            border-bottom: 1px solid rgba(26,107,60,0.3);
+            transition: border-color 0.18s;
         }
 
-        @media (max-width: 768px) {
-            .navbar a {
-                margin: 0 15px;
-                font-size: 12px;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .contact-container {
-                padding: 30px 20px;
-                margin: 20px;
-            }
-
-            .contact-row {
-                padding: 20px;
-            }
-
-            .icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .icon i {
-                font-size: 20px;
-            }
-
-            .contact-text {
-                font-size: 1rem;
-            }
-
-            .social-icons {
-                gap: 15px;
-            }
+        .closing-body a:hover {
+            border-color: var(--accent);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer-name {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--muted);
         }
 
-        .contact-row {
-            animation: fadeInUp 0.6s ease forwards;
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--border);
+            letter-spacing: 0.04em;
         }
 
-        .contact-row:nth-child(1) { animation-delay: 0.5s; }
-        .contact-row:nth-child(2) { animation-delay: 0.6s; }
-        .contact-row:nth-child(3) { animation-delay: 0.7s; }
-        .contact-row:nth-child(4) { animation-delay: 0.8s; }
+        /* ── SCROLL TOP ── */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px; right: 28px;
+            width: 40px; height: 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: all 0.2s;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+        }
+
+        .scroll-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .scroll-top:hover { color: var(--accent); border-color: var(--accent); }
+
+        /* ── ANIMATIONS ── */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(22px);
+            animation: reveal 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
+        }
+
+        [data-reveal="1"] { animation-delay: 0.05s; }
+        [data-reveal="2"] { animation-delay: 0.15s; }
+        [data-reveal="3"] { animation-delay: 0.22s; }
+        [data-reveal="4"] { animation-delay: 0.30s; }
+
+        @keyframes reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 860px) {
+            .nav { padding: 0 24px; }
+            .page { padding: 0 24px 80px; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 48px 0 36px; gap: 20px; }
+            .hero-right { text-align: left; }
+            .body-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+            .sidebar { position: static; }
+            .footer { flex-direction: column; gap: 8px; padding: 24px; text-align: center; }
+            .nav-links { gap: 18px; }
+        }
     </style>
 </head>
 <body>
-   <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="experience.html">EXPERIENCE</a>
-        <a href="contact.html" class="active">CONTACT</a>
-   </nav>
 
-    <div class="hero-section">
-        <h1 class="hero-title">Let's Connect</h1>
-        <p class="hero-subtitle">I'm always interested in discussing AI automation, DevOps, and innovative tech projects</p>
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Areeba <span>Urooj</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page">
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-left" data-reveal="1">
+                <h1>Let's<br><em>connect.</em></h1>
+            </div>
+            <div class="hero-right" data-reveal="2">
+                <div class="hero-pill">
+                    <span class="pill-dot"></span>
+                    Open to opportunities
+                </div>
+                <p class="hero-sub">AI · DevOps · Collaboration</p>
+            </div>
+        </header>
+
+        <div class="body-grid">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" data-reveal="3">
+                <p class="sid-intro">
+                    I'm always happy to talk AI automation, DevOps, or interesting projects.
+                </p>
+
+                <div class="sid-divider"></div>
+
+                <p class="sid-label">Response time</p>
+                <p class="sid-detail">I typically reply within 24–48 hours. LinkedIn is the fastest way to reach me.</p>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main" data-reveal="4">
+
+                <p class="sec-label">Reach me at</p>
+
+                <div class="contact-list">
+
+                    <a href="mailto:cmy61677@gmail.com" class="contact-row">
+                        <div class="contact-icon-wrap">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-platform">Email</p>
+                            <p class="contact-handle">cmy61677@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" class="contact-row" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon-wrap">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-platform">LinkedIn</p>
+                            <p class="contact-handle">areeba-urooj-8a1606279</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Areeba-Urooj" class="contact-row" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon-wrap">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-platform">GitHub</p>
+                            <p class="contact-handle">Areeba-Urooj</p>
+                        </div>
+                    </a>
+
+                    <a href="https://x.com/areeba_uro86219" class="contact-row" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon-wrap">
+                            <i class="fab fa-x-twitter"></i>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-platform">X (Twitter)</p>
+                            <p class="contact-handle">@areeba_uro86219</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- CLOSING NOTE -->
+                <div class="closing">
+                    <p class="closing-quote">
+                        Whether you want to collaborate, exchange ideas, or just say hi — I'd love to hear from you.
+                    </p>
+                    <p class="closing-body">
+                        I'm particularly interested in projects at the intersection of AI and cloud infrastructure. If you're working on something that needs <a href="projects.html">MLOps, intelligent agents, or production-grade AI automation</a>, let's talk.
+                    </p>
+                </div>
+
+            </main>
+        </div>
     </div>
-    
-    <div class="contact-container">
-        <div class="contact-intro">
-            <h3>Get In Touch</h3>
-            <p>Whether you want to collaborate on a project, discuss AI automation opportunities, or just say hello—I'd love to hear from you!</p>
-        </div>
 
-        <div class="contact-info">
-            <div class="contact-row">
-                <a href="mailto:cmy61677@gmail.com">
-                    <div class="icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-text-wrapper">
-                        <div class="contact-label">Email</div>
-                        <div class="contact-text">cmy61677@gmail.com</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="contact-row">
-                <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" rel="noopener noreferrer">
-                    <div class="icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </div>
-                    <div class="contact-text-wrapper">
-                        <div class="contact-label">LinkedIn</div>
-                        <div class="contact-text">Connect with me professionally</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="contact-row">
-                <a href="https://github.com/Areeba-Urooj" target="_blank" rel="noopener noreferrer">
-                    <div class="icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="contact-text-wrapper">
-                        <div class="contact-label">GitHub</div>
-                        <div class="contact-text">Check out my code & projects</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="contact-row">
-                 <a href="https://x.com/areeba_uro86219" target="_blank" rel="noopener noreferrer">
-                    <div class="icon">
-                        <i class="fab fa-x-twitter"></i>
-                    </div>
-                    <div class="contact-text-wrapper">
-                        <div class="contact-label">X (Twitter)</div>
-                        <div class="contact-text">Follow my tech journey</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
-        <p class="footer-tagline">Building the future with AI automation, one project at a time</p>
-        
-        <div class="visitor-counter">
-            <p>You are visitor number:</p>
-            <p>11541</p>
-        </div>
-        
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/Areeba-Urooj" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://x.com/areeba_uro86219" target="_blank" rel="noopener noreferrer" class="social-icon" title="X (Twitter)">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-        </div>
-        
-        <p class="footer-copyright">Copyright © 2025 Areeba Urooj. All Rights Reserved</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-name">Areeba Urooj</span>
+        <span class="footer-copy">© 2025 · All rights reserved</span>
     </footer>
-    
-    <a href="#" class="back-to-top" id="backToTop">
+
+    <a href="#" class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
-        const backToTop = document.getElementById('backToTop');
-        
+        const btn = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
+            btn.classList.toggle('show', window.pageYOffset > 300);
         });
-        
-        backToTop.addEventListener('click', (e) => {
+        btn.addEventListener('click', e => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Add smooth entrance animations
-        const contactRows = document.querySelectorAll('.contact-row');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        contactRows.forEach(row => {
-            observer.observe(row);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
+
 </body>
 </html>
-
-
