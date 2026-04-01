@@ -3,697 +3,731 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Areeba Urooj | AI Automation Engineer Portfolio</title>
+    <title>Projects | Areeba Urooj</title>
     <meta name="description" content="Explore Areeba Urooj's AI Automation and DevOps projects including AI agents, LLM integration, Kubernetes, AWS EKS, CI/CD pipelines, and Terraform.">
-    <meta name="keywords" content="AI Automation, MLOps, DevOps, AWS, Kubernetes, EKS, CI/CD, Terraform, Docker, LLM, AI Agents">
-    <meta name="author" content="Areeba Urooj">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .navbar a {
-            text-decoration: none;
-            color: #64748b;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            margin: 0 1.5rem;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        
-        .navbar a:hover,
-        .navbar a.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
-        }
-        
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: white;
-            margin-bottom: 3rem;
-        }
-        
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
+        :root {
+            --bg:        #faf9f7;
+            --bg-2:      #f2f0ec;
+            --ink:       #1a1814;
+            --ink-2:     #3d3a35;
+            --muted:     #8a8680;
+            --border:    #e4e1db;
+            --accent:    #1a6b3c;
+            --accent-bg: #edf7f1;
+            --accent-mid:#2d9e5f;
+            --white:     #ffffff;
+            --blue:      #1d4ed8;
+            --blue-bg:   #eff6ff;
         }
 
-        /* Category Filter */
-        .category-filter {
-            max-width: 1400px;
-            margin: 0 auto 2rem;
-            padding: 0 2rem;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(250,249,247,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 56px;
+            height: 66px;
+        }
+
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 38px; }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 0; height: 1.5px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--accent); }
+
+        /* ── PAGE ── */
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 56px 120px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 72px 0 52px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+        }
+
+        .hero-left h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-left h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-right {
+            text-align: right;
+            flex-shrink: 0;
+            padding-bottom: 6px;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--accent-bg);
+            color: var(--accent);
+            border: 1px solid rgba(26,107,60,0.18);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hero-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── FILTER BAR ── */
+        .filter-bar {
+            padding: 32px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-right: 4px;
+            white-space: nowrap;
         }
 
         .filter-btn {
-            background: rgba(255, 255, 255, 0.95);
-            color: #667eea;
-            border: 2px solid #667eea;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 600;
+            padding: 7px 18px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--muted);
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: all 0.18s;
+            letter-spacing: 0.02em;
         }
 
-        .filter-btn:hover,
+        .filter-btn:hover {
+            color: var(--ink);
+            border-color: var(--ink-2);
+        }
+
         .filter-btn.active {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
         }
-        
-        /* Projects Container */
-        .projects-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
+
+        /* ── PROJECTS GRID ── */
+        .projects-grid {
+            padding-top: 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
         }
-        
-        /* Project Cards */
+
         .project-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: var(--white);
+            padding: 36px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: background 0.18s;
             position: relative;
-            overflow: hidden;
         }
-        
+
+        .project-card:hover {
+            background: var(--bg);
+        }
+
+        .project-card.hidden { display: none; }
+
+        /* top accent line on hover */
         .project-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #00ff88);
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--accent);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-        }
-        
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .project-link {
-            text-decoration: none;
-            color: inherit;
+            transition: transform 0.25s ease;
         }
 
-        /* Category Badge */
-        .category-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+        .project-card:hover::before { transform: scaleX(1); }
+
+        /* category badge */
+        .card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.68rem;
             font-weight: 700;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
+            width: fit-content;
         }
 
-        .category-badge.ai {
-            background: linear-gradient(135deg, #00ff88, #667eea);
-            color: #1e293b;
+        .card-badge.ai {
+            color: var(--accent);
         }
-        
-        /* Card Content */
-        .project-title {
-            color: #1e293b;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.3;
+
+        .card-badge.devops {
+            color: var(--blue);
         }
-        
-        .project-description {
-            color: #475569;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+
+        .card-badge-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
         }
-        
-        .project-highlights {
-            margin-bottom: 1.5rem;
+
+        .badge-dot-ai { background: var(--accent); }
+        .badge-dot-devops { background: var(--blue); }
+
+        /* card title */
+        .card-title {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.35;
+            letter-spacing: -0.01em;
         }
-        
-        .project-highlights h4 {
-            color: #334155;
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
+
+        /* description */
+        .card-desc {
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: var(--muted);
+            font-weight: 300;
+            flex: 1;
         }
-        
-        .highlights-list {
+
+        /* highlights */
+        .card-highlights {
             list-style: none;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
-        
-        .highlights-list li {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
+
+        .card-highlights li {
+            font-size: 0.83rem;
+            color: var(--ink-2);
+            padding-left: 16px;
             position: relative;
+            line-height: 1.55;
+            font-weight: 400;
         }
-        
-        .highlights-list li::before {
+
+        .card-highlights li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #00ff88;
-            font-weight: bold;
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            top: 1px;
         }
-        
-        /* Tech Stack */
-        .tech-stack {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 1.5rem;
-        }
-        
-        .tech-stack h4 {
-            color: #334155;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .tech-tags {
+
+        /* tech tags */
+        .card-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .tech-tag {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .tech-tag.primary {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(0, 255, 136, 0.15));
-            color: #667eea;
-            border-color: #667eea;
-            font-weight: 600;
-        }
-        
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
+            gap: 6px;
             align-items: center;
+        }
+
+        .tech-tag {
+            padding: 4px 11px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--ink-2);
+            transition: all 0.15s;
+        }
+
+        .tech-tag.primary {
+            border-color: rgba(26,107,60,0.25);
+            color: var(--accent);
+            background: var(--accent-bg);
+            font-weight: 500;
+        }
+
+        .tech-tag.primary-blue {
+            border-color: rgba(29,78,216,0.2);
+            color: var(--blue);
+            background: var(--blue-bg);
+            font-weight: 500;
+        }
+
+        /* external link arrow */
+        .card-link-arrow {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            color: var(--border);
+            font-size: 0.75rem;
+            transition: color 0.18s;
+        }
+
+        .project-card:hover .card-link-arrow {
+            color: var(--accent);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-name {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .footer-links { display: flex; gap: 24px; }
+
+        .footer-links a {
+            font-size: 0.78rem;
+            color: var(--muted);
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
+            letter-spacing: 0.04em;
+            transition: color 0.18s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ── SCROLL TOP ── */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px; right: 28px;
+            width: 40px; height: 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: all 0.2s;
             opacity: 0;
-            transform: translateY(100px);
+            pointer-events: none;
+            transform: translateY(10px);
         }
 
-        .scroll-to-top.visible {
-            opacity: 0.9;
-            transform: translateY(0);
-        }
-        
-        .scroll-to-top:hover {
-            opacity: 1;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                padding: 0 1rem;
-            }
-            
-            .navbar a {
-                margin: 0.25rem 0.75rem;
-                font-size: 0.8rem;
-            }
-            
-            .header {
-                padding: 2rem 1rem;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .projects-container {
-                grid-template-columns: 1fr;
-                padding: 0 1rem 2rem;
-                gap: 1.5rem;
-            }
-            
-            .project-card {
-                padding: 1.5rem;
-            }
-            
-            .scroll-to-top {
-                width: 50px;
-                height: 50px;
-                bottom: 1rem;
-                right: 1rem;
-            }
+        .scroll-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .scroll-top:hover { color: var(--accent); border-color: var(--accent); }
 
-            .category-filter {
-                padding: 0 1rem;
-            }
+        /* ── ANIMATIONS ── */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(22px);
+            animation: reveal 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
+        }
 
-            .filter-btn {
-                font-size: 0.8rem;
-                padding: 0.6rem 1.2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .navbar a {
-                font-size: 0.75rem;
-                margin: 0.25rem 0.5rem;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .header p {
-                font-size: 1rem;
-            }
-        }
-        
-        /* Loading Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .project-card {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        /* Stagger animation for cards */
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-        .project-card:nth-child(4) { animation-delay: 0.4s; }
-        .project-card:nth-child(5) { animation-delay: 0.5s; }
-        .project-card:nth-child(6) { animation-delay: 0.6s; }
-        .project-card:nth-child(7) { animation-delay: 0.7s; }
-        .project-card:nth-child(8) { animation-delay: 0.8s; }
-        .project-card:nth-child(9) { animation-delay: 0.9s; }
-        .project-card:nth-child(10) { animation-delay: 1.0s; }
-        .project-card:nth-child(11) { animation-delay: 1.1s; }
+        [data-reveal="1"] { animation-delay: 0.05s; }
+        [data-reveal="2"] { animation-delay: 0.15s; }
+        [data-reveal="3"] { animation-delay: 0.22s; }
 
-        /* Hide/Show based on filter */
-        .project-card.hidden {
+        @keyframes reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── EMPTY STATE ── */
+        .empty-state {
             display: none;
+            grid-column: 1 / -1;
+            padding: 80px 40px;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .empty-state p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 860px) {
+            .nav { padding: 0 24px; }
+            .page { padding: 0 24px 80px; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 48px 0 36px; gap: 20px; }
+            .hero-right { text-align: left; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .footer { flex-direction: column; gap: 10px; padding: 24px; text-align: center; }
+            .nav-links { gap: 18px; }
+            .filter-bar { flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html">HOME</a>
-            <a href="about.html">ABOUT</a>
-            <a href="projects.html" class="active">PROJECTS</a>
-            <a href="experience.html">EXPERIENCE</a>
-            <a href="contact.html">CONTACT</a>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Areeba <span>Urooj</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
-    
-    <header class="header">
-        <h1>PROJECTS</h1>
-        <p>AI-powered automation and cloud engineering solutions that drive intelligence, scalability, and innovation</p>
-    </header>
 
-    <div class="category-filter">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="ai">AI Automation</button>
-        <button class="filter-btn" data-filter="devops">DevOps & Cloud</button>
+    <div class="page">
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-left" data-reveal="1">
+                <h1>Things I've<br><em>built.</em></h1>
+            </div>
+            <div class="hero-right" data-reveal="2">
+                <div class="hero-pill">
+                    <i class="fas fa-code" style="font-size:0.6rem;"></i>
+                    AI · DevOps · Cloud
+                </div>
+                <p class="hero-sub">11 projects · open source</p>
+            </div>
+        </header>
+
+        <!-- FILTER -->
+        <div class="filter-bar" data-reveal="3">
+            <span class="filter-label">Filter</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI Automation</button>
+            <button class="filter-btn" data-filter="devops">DevOps & Cloud</button>
+        </div>
+
+        <!-- GRID -->
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- AI 1 -->
+            <a href="https://github.com/Areeba-Urooj/multi-model-brochure-creator/tree/main/ollama_brochure_agent" class="project-card" data-category="ai" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge ai"><span class="card-badge-dot badge-dot-ai"></span>AI Automation</span>
+                <h2 class="card-title">AI-Powered Website Analyzer & Brochure Generator</h2>
+                <p class="card-desc">Python-based AI agent that automates the conversion of raw web data into structured marketing collateral using local LLMs — no external API overhead.</p>
+                <ul class="card-highlights">
+                    <li>90% reduction in content research time — 20 min → 30 sec</li>
+                    <li>Zero-cost inference pipeline via Ollama (Llama 3.2)</li>
+                    <li>Strips 80% of redundant HTML, reducing token consumption</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary">Python</span>
+                    <span class="tech-tag primary">Ollama</span>
+                    <span class="tech-tag primary">LLM</span>
+                    <span class="tech-tag">BeautifulSoup4</span>
+                    <span class="tech-tag">Jupyter</span>
+                    <span class="tech-tag">Async</span>
+                </div>
+            </a>
+
+            <!-- AI 2 -->
+            <a href="https://github.com/Areeba-Urooj/linkedin-authority-builder" class="project-card" data-category="ai" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge ai"><span class="card-badge-dot badge-dot-ai"></span>AI Automation</span>
+                <h2 class="card-title">AI-Powered LinkedIn Authority Builder</h2>
+                <p class="card-desc">Automated content generation combining AI language models with image generation to produce professional LinkedIn posts — 85% reduction in manual content effort.</p>
+                <ul class="card-highlights">
+                    <li>Distributed workflow handling 60+ second async operations at 99% success rate</li>
+                    <li>12-node orchestration including LLM and image generation APIs</li>
+                    <li>52–65 seconds per complete end-to-end workflow</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary">Workflow Automation</span>
+                    <span class="tech-tag primary">PHP 7.4+</span>
+                    <span class="tech-tag primary">OpenRouter AI</span>
+                    <span class="tech-tag">Gemini AI</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Webhooks</span>
+                </div>
+            </a>
+
+            <!-- DevOps 1 -->
+            <a href="https://github.com/Areeba-Urooj/CloudNative-k8s-Architecture" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">Cloud-Native Microservices on Kubernetes</h2>
+                <p class="card-desc">Highly scalable microservices application on Kubernetes with auto-scaling, self-healing, service mesh for secure inter-service communication, and full observability.</p>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">Kubernetes</span>
+                    <span class="tech-tag primary-blue">React</span>
+                    <span class="tech-tag primary-blue">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Helm</span>
+                    <span class="tech-tag">ArgoCD</span>
+                    <span class="tech-tag">Tekton</span>
+                </div>
+            </a>
+
+            <!-- DevOps 2 -->
+            <a href="https://medium.com/@cmy61677/github-actions-ci-cd-for-a-3-tier-app-on-eks-2d4fc5237a92" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">Full-Stack CI/CD on EKS with GitHub Actions</h2>
+                <p class="card-desc">Complete DevOps pipeline for a 3-tier web app using GitHub Actions — from code commit to deployment on Amazon EKS with DevSecOps baked in.</p>
+                <ul class="card-highlights">
+                    <li>90% reduction in deployment time with full automation</li>
+                    <li>DevSecOps integrated: SonarQube, Trivy, Gitleaks</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">AWS EKS</span>
+                    <span class="tech-tag primary-blue">GitHub Actions</span>
+                    <span class="tech-tag primary-blue">Terraform</span>
+                    <span class="tech-tag">CloudFormation</span>
+                    <span class="tech-tag">SonarQube</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+            </a>
+
+            <!-- DevOps 3 -->
+            <a href="https://medium.com/@cmy61677/building-a-production-ready-devops-pipeline-from-manual-processes-to-automated-excellence-4743b0d71679" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">Production-Ready DevOps Pipeline with Jenkins & EKS</h2>
+                <p class="card-desc">Transformed a manual deployment workflow into a fully automated production pipeline — Jenkins orchestration, AWS EKS, robust monitoring and zero manual intervention.</p>
+                <ul class="card-highlights">
+                    <li>90% reduction in deployment time</li>
+                    <li>99.9% application availability</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">Jenkins</span>
+                    <span class="tech-tag primary-blue">AWS EKS</span>
+                    <span class="tech-tag primary-blue">Terraform</span>
+                    <span class="tech-tag">Prometheus</span>
+                    <span class="tech-tag">Grafana</span>
+                    <span class="tech-tag">SonarQube</span>
+                </div>
+            </a>
+
+            <!-- DevOps 4 -->
+            <a href="https://github.com/Areeba-Urooj/ScriptingSolutions" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">DevOps Scripting & Automation Solutions</h2>
+                <p class="card-desc">Robust suite of automation scripts for DevOps workflows and infrastructure management — provisioning, security compliance, backup procedures, cross-platform.</p>
+                <ul class="card-highlights">
+                    <li>Cross-platform: Linux and Windows</li>
+                    <li>Comprehensive testing and validation with pytest</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">Python</span>
+                    <span class="tech-tag primary-blue">Bash</span>
+                    <span class="tech-tag primary-blue">PowerShell</span>
+                    <span class="tech-tag">AWS CLI</span>
+                    <span class="tech-tag">Azure CLI</span>
+                    <span class="tech-tag">pytest</span>
+                </div>
+            </a>
+
+            <!-- DevOps 5 -->
+            <a href="https://medium.com/@cmy61677/gitlab-ci-cd-seamlessly-deploying-react-to-aws-s3-f42b0f7612b4" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">Automated React Deployment with GitLab CI/CD</h2>
+                <p class="card-desc">Comprehensive CI/CD pipeline using GitLab automating build, test, and deployment of a React app to AWS S3 with security scanning and approval gates.</p>
+                <ul class="card-highlights">
+                    <li>SAST and DAST security scanning integrated</li>
+                    <li>Approval gates for controlled releases</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">GitLab CI</span>
+                    <span class="tech-tag primary-blue">React</span>
+                    <span class="tech-tag primary-blue">AWS S3</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">SAST</span>
+                    <span class="tech-tag">DAST</span>
+                </div>
+            </a>
+
+            <!-- DevOps 6 -->
+            <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">Terraform Multi-Environment AWS Applications</h2>
+                <p class="card-desc">Infrastructure as Code using Terraform to provision and manage AWS resources across environments — modular configurations with automated state management.</p>
+                <ul class="card-highlights">
+                    <li>Consistent infrastructure across all environments</li>
+                    <li>Modular and fully reusable configurations</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">Terraform</span>
+                    <span class="tech-tag primary-blue">AWS</span>
+                    <span class="tech-tag">EC2</span>
+                    <span class="tech-tag">VPC</span>
+                    <span class="tech-tag">S3</span>
+                    <span class="tech-tag">IAM</span>
+                </div>
+            </a>
+
+            <!-- DevOps 7 -->
+            <a href="https://medium.com/aws-in-plain-english/go-api-ci-cd-pipeline-with-github-actions-and-aws-eks-44bc62274856" class="project-card" data-category="devops" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-arrow-up-right-from-square card-link-arrow"></i>
+                <span class="card-badge devops"><span class="card-badge-dot badge-dot-devops"></span>DevOps & Cloud</span>
+                <h2 class="card-title">Go API CI/CD Pipeline on AWS EKS</h2>
+                <p class="card-desc">End-to-end CI/CD pipeline for a Go backend API with GitHub Actions and a custom GitOps model on EKS — automated and error-free from commit to deploy.</p>
+                <ul class="card-highlights">
+                    <li>Security scanning with Trivy and Gitleaks</li>
+                    <li>Scalable infrastructure provisioned via Terraform</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="tech-tag primary-blue">Go</span>
+                    <span class="tech-tag primary-blue">GitHub Actions</span>
+                    <span class="tech-tag primary-blue">AWS EKS</span>
+                    <span class="tech-tag">Terraform</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Trivy</span>
+                </div>
+            </a>
+
+            <div class="empty-state" id="emptyState">
+                <p>No projects in this category yet.</p>
+            </div>
+
+        </div>
     </div>
-    
-    <main class="projects-container">
-        <a href="https://github.com/Areeba-Urooj/multi-model-brochure-creator/tree/main/ollama_brochure_agent" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="ai">
-                <span class="category-badge ai">AI Automation</span>
-                <h2 class="project-title">AI-Powered Website Analyzer & Brochure Generator</h2>
-                <p class="project-description">
-                    Developed a high-performance Python-based AI agent that automates the conversion of raw web data into structured marketing collateral. By leveraging local LLMs, the system achieves near-instant synthesis of web content without external API overhead.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Achievements & Metrics</h4>
-                    <ul class="highlights-list">
-                        <li>90% Reduction in Content Research Time: Automated manual site-auditing from 20 minutes to under 30 seconds</li>
-                        <li>Zero-Cost Inference Pipeline: Optimized to run on Ollama (Llama 3.2), eliminating API costs while maintaining 95% accuracy</li>
-                        <li>Intelligent Noise Filtering: Strips 80% of redundant HTML elements, reducing token consumption significantly</li>
-                        <li>High-Fidelity Synthesis: Successfully tested across diverse domains (SaaS, Non-Profits, Academia)</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Python</span>
-                        <span class="tech-tag primary">Ollama (Llama 3.2)</span>
-                        <span class="tech-tag primary">LLM</span>
-                        <span class="tech-tag">BeautifulSoup4</span>
-                        <span class="tech-tag">Jupyter</span>
-                        <span class="tech-tag">Markdown</span>
-                        <span class="tech-tag">Async Processing</span>
-                    </div>
-                </div>
-            </article>
-        </a>
 
-        <a href="https://github.com/Areeba-Urooj/linkedin-authority-builder" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="ai">
-                <span class="category-badge ai">AI Automation</span>
-                <h2 class="project-title">AI-Powered LinkedIn Authority Builder Platform</h2>
-                <p class="project-description">
-                    Developed an automated content generation system combining AI language models with image generation to produce professional LinkedIn posts with visuals, strengthening personal authority through intelligent workflow automation.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Technical Achievements</h4>
-                    <ul class="highlights-list">
-                        <li>Built distributed workflow automation handling 60+ second async operations with 99% success rate</li>
-                        <li>Reduced manual content effort by 85%, generating 50+ LinkedIn posts in testing</li>
-                        <li>Orchestrated 12+ node workflow including LLM and image generation APIs</li>
-                        <li>Achieved 95%+ completion rate using retry and recovery logic</li>
-                        <li>Processing time: 52–65 seconds per complete workflow</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Workflow Automation</span>
-                        <span class="tech-tag primary">PHP 7.4+</span>
-                        <span class="tech-tag primary">RESTful API</span>
-                        <span class="tech-tag">MySQL 8.0</span>
-                        <span class="tech-tag">OpenRouter AI</span>
-                        <span class="tech-tag">Gemini AI</span>
-                        <span class="tech-tag">Webhooks</span>
-                        <span class="tech-tag">JavaScript ES6+</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-name">Areeba Urooj</span>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Areeba-Urooj" target="_blank">GitHub</a>
+            <a href="mailto:areeba@example.com">Email</a>
+        </div>
+    </footer>
 
-        <a href="https://github.com/Areeba-Urooj/CloudNative-k8s-Architecture" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">Cloud-Native Microservices on Kubernetes</h2>
-                <p class="project-description">
-                    Engineered a highly scalable microservices application for deployment on Kubernetes. The project implements auto-scaling, self-healing capabilities, and utilizes a service mesh for secure inter-service communication with comprehensive monitoring and logging for full observability.
-                </p>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Kubernetes</span>
-                        <span class="tech-tag primary">React</span>
-                        <span class="tech-tag primary">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Helm</span>
-                        <span class="tech-tag">ArgoCD</span>
-                        <span class="tech-tag">Tekton</span>
-                        <span class="tech-tag">OpenEBS</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+    <a href="#" class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-        <a href="https://medium.com/@cmy61677/github-actions-ci-cd-for-a-3-tier-app-on-eks-2d4fc5237a92" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">Full-Stack CI/CD on EKS with GitHub Actions</h2>
-                <p class="project-description">
-                    Architected and automated a complete DevOps pipeline for a 3-tier web application using GitHub Actions. This end-to-end pipeline handles everything from code commit to deployment on Amazon EKS, resulting in a 90% reduction in deployment time.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Achievements</h4>
-                    <ul class="highlights-list">
-                        <li>90% reduction in deployment time with full automation</li>
-                        <li>Integrated DevSecOps with SonarQube, Trivy, and Gitleaks</li>
-                        <li>Advanced IaC combining Terraform and CloudFormation</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">AWS EKS</span>
-                        <span class="tech-tag primary">GitHub Actions</span>
-                        <span class="tech-tag primary">Terraform</span>
-                        <span class="tech-tag">CloudFormation</span>
-                        <span class="tech-tag">SonarQube</span>
-                        <span class="tech-tag">Trivy</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">React</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+    <script>
+        // scroll top
+        const btn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            btn.classList.toggle('show', window.pageYOffset > 300);
+        });
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-        <a href="https://medium.com/@cmy61677/building-a-production-ready-devops-pipeline-from-manual-processes-to-automated-excellence-4743b0d71679" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">Production-Ready DevOps Pipeline with Jenkins & EKS</h2>
-                <p class="project-description">
-                    Transformed a manual deployment workflow into a fully automated, production-ready DevOps pipeline. This end-to-end solution, orchestrated by Jenkins, integrates an AWS EKS cluster with robust monitoring and security.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Achievements</h4>
-                    <ul class="highlights-list">
-                        <li>90% reduction in deployment time</li>
-                        <li>99.9% application availability</li>
-                        <li>Zero manual intervention required</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Jenkins</span>
-                        <span class="tech-tag primary">AWS EKS</span>
-                        <span class="tech-tag primary">Terraform</span>
-                        <span class="tech-tag">Prometheus</span>
-                        <span class="tech-tag">Grafana</span>
-                        <span class="tech-tag">SonarQube</span>
-                        <span class="tech-tag">Nexus</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+        // filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card');
+        const emptyState = document.getElementById('emptyState');
 
-        <a href="https://github.com/Areeba-Urooj/ScriptingSolutions" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">DevOps Scripting & Automation Solutions</h2>
-                <p class="project-description">
-                    Created a robust suite of automation scripts that streamline DevOps workflows and infrastructure management. These scripts handle everything from environment provisioning to security compliance and backup procedures.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Features</h4>
-                    <ul class="highlights-list">
-                        <li>Significant reduction in manual effort and human error</li>
-                        <li>Cross-platform compatibility (Linux, Windows)</li>
-                        <li>Comprehensive testing and validation</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Python</span>
-                        <span class="tech-tag primary">Bash</span>
-                        <span class="tech-tag primary">PowerShell</span>
-                        <span class="tech-tag">AWS CLI</span>
-                        <span class="tech-tag">Azure CLI</span>
-                        <span class="tech-tag">pytest</span>
-                        <span class="tech-tag">Git</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-        <a href="https://medium.com/@cmy61677/gitlab-ci-cd-seamlessly-deploying-react-to-aws-s3-f42b0f7612b4" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">Automated React Deployment with GitLab CI/CD</h2>
-                <p class="project-description">
-                    Engineered a comprehensive CI/CD pipeline using GitLab to automate the build, test, and deployment of a React application. The pipeline includes automated testing, security scanning, and deployment with approval gates.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Features</h4>
-                    <ul class="highlights-list">
-                        <li>Automated testing and security scanning</li>
-                        <li>Seamless deployment to staging and production</li>
-                        <li>Approval gates for controlled releases</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">GitLab CI</span>
-                        <span class="tech-tag primary">React</span>
-                        <span class="tech-tag primary">AWS S3</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">SAST</span>
-                        <span class="tech-tag">DAST</span>
-                        <span class="tech-tag">AWS CLI</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                const filter = btn.dataset.filter;
+                let visibleCount = 0;
 
-        <a href="https://github.com/Areeba-Urooj/terraform-aws-applications" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">Terraform Multi-Environment AWS Applications</h2>
-                <p class="project-description">
-                    Developed Infrastructure as Code solutions using Terraform to provision and manage AWS resources for scalable applications. Implemented modular configurations with state management and automated deployments.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Features</h4>
-                    <ul class="highlights-list">
-                        <li>Consistent infrastructure across all environments</li>
-                        <li>Modular and reusable Terraform configurations</li>
-                        <li>Automated state management and deployments</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Terraform</span>
-                        <span class="tech-tag primary">AWS</span>
-                        <span class="tech-tag">EC2</span>
-                        <span class="tech-tag">VPC</span>
-                        <span class="tech-tag">S3</span>
-                        <span class="tech-tag">IAM</span>
-                        <span class="tech-tag">Git</span>
-                    </div>
-                </div>
-            </article>
-        </a>
+                cards.forEach(card => {
+                    const match = filter === 'all' || card.dataset.category === filter;
+                    card.classList.toggle('hidden', !match);
+                    if (match) visibleCount++;
+                });
 
-        <a href="https://medium.com/aws-in-plain-english/go-api-ci-cd-pipeline-with-github-actions-and-aws-eks-44bc62274856" class="project-link" target="_blank" rel="noopener noreferrer">
-            <article class="project-card" data-category="devops">
-                <span class="category-badge">DevOps & Cloud</span>
-                <h2 class="project-title">Go API CI/CD Pipeline on AWS EKS</h2>
-                <p class="project-description">
-                    Designed and implemented an end-to-end CI/CD pipeline for a Go backend API, automating the lifecycle from code commit to deployment using GitHub Actions and a custom GitOps model on AWS EKS.
-                </p>
-                <div class="project-highlights">
-                    <h4>Key Achievements</h4>
-                    <ul class="highlights-list">
-                        <li>Automated and error-free deployments</li>
-                        <li>Integrated security with Trivy and Gitleaks</li>
-                        <li>Secure and scalable AWS infrastructure with Terraform</li>
-                    </ul>
-                </div>
-                <div class="tech-stack">
-                    <h4>Technologies</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag primary">Go</span>
-                        <span class="tech-tag primary">GitHub Actions</span>
-                        <span class="tech-tag primary">AWS EKS</span>
-                        <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Trivy</span>
-                        <span class="tech-tag
+                emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
+        });
+    </script>
 
+</body>
+</html>
