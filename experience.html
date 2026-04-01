@@ -3,719 +3,853 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education & Experience - Areeba Urooj</title>
+    <title>Experience | Areeba Urooj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg:         #faf9f7;
+            --bg-2:       #f2f0ec;
+            --ink:        #1a1814;
+            --ink-2:      #3d3a35;
+            --muted:      #8a8680;
+            --border:     #e4e1db;
+            --accent:     #1a6b3c;
+            --accent-bg:  #edf7f1;
+            --accent-mid: #2d9e5f;
+            --white:      #ffffff;
+            --amber:      #b45309;
+            --amber-bg:   #fef3e2;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
             min-height: 100vh;
-            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        /* ── NAV ── */
+        .nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .navbar a {
-            margin: 0 30px;
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: linear-gradient(90deg, #667eea, #00ff88);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .navbar a:hover::after,
-        .navbar a.active::after {
-            width: 100%;
-        }
-
-        .navbar a.active {
-            color: #667eea;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 60px 20px 40px;
-            color: white;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        .content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
+            z-index: 200;
+            background: rgba(250,249,247,0.96);
             backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .section-header {
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
-            margin-bottom: 35px;
-            position: relative;
+            justify-content: space-between;
+            padding: 0 56px;
+            height: 66px;
         }
 
-        .section-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 24px;
-            margin-right: 20px;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        .nav-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: -0.01em;
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 38px; }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .timeline {
+            color: var(--muted);
+            transition: color 0.2s;
             position: relative;
-            padding-left: 30px;
+            padding-bottom: 3px;
         }
 
-        .timeline::before {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #667eea, #00ff88);
-            border-radius: 1px;
+            left: 0; bottom: 0;
+            width: 0; height: 1.5px;
+            background: var(--accent);
+            transition: width 0.25s ease;
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 12px;
-            border-left: 4px solid transparent;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--accent); }
+
+        /* ── PAGE ── */
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 56px 120px;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -45px;
-            top: 30px;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(5px);
-            background: white;
-            border-left-color: #667eea;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-item:hover::before {
-            background: #00ff88;
-            transform: scale(1.3);
-        }
-
-        .certificate-item {
-            border-left-color: #00ff88;
-        }
-
-        .certificate-item::before {
-            background: #00ff88;
-        }
-
-        .certificate-item:hover::before {
-            background: #667eea;
-        }
-
-        .item-header {
+        /* ── HERO ── */
+        .hero {
+            padding: 72px 0 52px;
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
+            align-items: flex-end;
+            gap: 40px;
         }
 
-        .item-title {
-            font-size: 1.1rem;
+        .hero-left h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+        }
+
+        .hero-left h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-right {
+            text-align: right;
+            flex-shrink: 0;
+            padding-bottom: 6px;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--accent-bg);
+            color: var(--accent);
+            border: 1px solid rgba(26,107,60,0.18);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.72rem;
             font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 5px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
-        .item-organization {
-            color: #667eea;
-            font-weight: 500;
-            font-size: 0.95rem;
+        .hero-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            font-weight: 400;
+            letter-spacing: 0.04em;
         }
 
-        .item-date {
-            color: #718096;
-            font-size: 0.9rem;
-            font-weight: 500;
-            background: rgba(102, 126, 234, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-
-        .item-description {
-            color: #4a5568;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .certificate-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover .certificate-image {
-            transform: scale(1.1) rotate(2deg);
-            border-color: #667eea;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-        }
-
-        .skills-grid {
+        /* ── BODY GRID (sidebar + main) ── */
+        .body-grid {
             display: grid;
-            gap: 25px;
+            grid-template-columns: 220px 1fr;
+            gap: 80px;
+            padding-top: 64px;
         }
 
-        .skill-category {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
+        /* ── SIDEBAR ── */
+        .sidebar {
+            position: sticky;
+            top: 86px;
+            height: fit-content;
         }
 
-        .skill-category:hover {
-            background: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-bottom: 36px;
         }
 
-        .skill-category-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 15px;
+        .sidebar-nav a {
             display: flex;
             align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 400;
+            transition: all 0.18s;
         }
 
-        .skill-category-title i {
-            margin-right: 10px;
-            color: #00ff88;
-            font-size: 1.2rem;
+        .sidebar-nav a i {
+            width: 15px;
+            text-align: center;
+            font-size: 0.82rem;
         }
 
-        .skill-tags {
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: var(--bg-2);
+            color: var(--ink);
+        }
+
+        .sidebar-nav a.active {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .sid-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 24px;
+        }
+
+        .sid-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--border);
+            margin-bottom: 12px;
+        }
+
+        .social-links { display: flex; flex-direction: column; gap: 2px; }
+
+        .social-links a {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 400;
+            transition: all 0.18s;
+        }
+
+        .social-links a i { width: 15px; text-align: center; font-size: 0.82rem; }
+        .social-links a:hover { background: var(--bg-2); color: var(--ink); }
+
+        /* ── MAIN ── */
+        .main { min-width: 0; }
+
+        /* section blocks */
+        .exp-section {
+            margin-bottom: 64px;
+        }
+
+        .sec-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .sec-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── TIMELINE ROWS ── */
+        .tl-item {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 0;
+            margin-bottom: 0;
+        }
+
+        .tl-yr-col {
+            padding: 2px 20px 44px 0;
+            text-align: right;
+        }
+
+        .tl-year {
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .tl-body-col {
+            padding: 0 0 44px 28px;
+            border-left: 1.5px solid var(--border);
+            position: relative;
+        }
+
+        .tl-body-col::before {
+            content: '';
+            position: absolute;
+            left: -5px; top: 5px;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--border);
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .tl-item:hover .tl-body-col::before {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .tl-item:last-child .tl-body-col {
+            padding-bottom: 0;
+        }
+
+        .tl-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .tl-org {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .tl-desc {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: var(--muted);
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        /* badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .badge-progress {
+            background: var(--amber-bg);
+            color: var(--amber);
+            border: 1px solid rgba(180,83,9,0.15);
+        }
+
+        .badge-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--amber);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* cert image */
+        .cert-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            object-fit: cover;
+            background: var(--bg-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .cert-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cert-img-placeholder {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--border);
+            font-size: 1.3rem;
+            margin-top: 4px;
+        }
+
+        /* ── SKILLS GRID ── */
+        .skills-block {
+            margin-bottom: 0;
+        }
+
+        .skill-group {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .skill-group-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
             gap: 8px;
         }
 
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .skill-group-title i {
+            color: var(--accent);
+            font-size: 0.82rem;
+            width: 14px;
+            text-align: center;
         }
 
-        .skill-tag:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
-            background: linear-gradient(135deg, #00ff88, #667eea);
-        }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+        .tags {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 18px;
-            text-decoration: none;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(100px);
+            flex-wrap: wrap;
+            gap: 7px;
         }
 
-        .scroll-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
-        }
-
-        .badge-inprogress {
-            background: rgba(251, 191, 36, 0.15);
-            color: #f59e0b;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .tag {
+            padding: 6px 14px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: var(--white);
             font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-left: 10px;
+            font-weight: 400;
+            color: var(--ink-2);
+            letter-spacing: 0.01em;
+            transition: all 0.18s;
+            cursor: default;
         }
 
-        @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 20px;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .section {
-                padding: 30px 20px;
-            }
-
-            .navbar a {
-                margin: 0 15px;
-                font-size: 12px;
-            }
-
-            .item-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        .tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .timeline-item {
-            animation: fadeInUp 0.6s ease forwards;
+        .footer-name {
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--muted);
         }
 
-        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
-        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .footer-links { display: flex; gap: 24px; }
+
+        .footer-links a {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color 0.18s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ── SCROLL TOP ── */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px; right: 28px;
+            width: 40px; height: 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: all 0.2s;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+        }
+
+        .scroll-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .scroll-top:hover { color: var(--accent); border-color: var(--accent); }
+
+        /* ── ANIMATIONS ── */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(22px);
+            animation: reveal 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
+        }
+
+        [data-reveal="1"] { animation-delay: 0.05s; }
+        [data-reveal="2"] { animation-delay: 0.12s; }
+        [data-reveal="3"] { animation-delay: 0.2s; }
+        [data-reveal="4"] { animation-delay: 0.28s; }
+        [data-reveal="5"] { animation-delay: 0.36s; }
+        [data-reveal="6"] { animation-delay: 0.44s; }
+
+        @keyframes reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 860px) {
+            .nav { padding: 0 24px; }
+            .page { padding: 0 24px 80px; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 48px 0 36px; gap: 20px; }
+            .hero-right { text-align: left; }
+            .body-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+            .sidebar { position: static; }
+            .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
+            .footer { flex-direction: column; gap: 10px; padding: 24px; text-align: center; }
+            .nav-links { gap: 18px; }
+            .tl-item { grid-template-columns: 80px 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="experience.html" class="active">EXPERIENCE</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
-    
-    <div class="hero-section">
-        <h1 class="hero-title">My Journey</h1>
-        <p class="hero-subtitle">From DevOps foundations to AI automation — continuous learning and evolution in technology</p>
-    </div>
-    
-    <div class="content">
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h2 class="section-title">Professional Experience</h2>
-            </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Technical Writer</div>
-                            <div class="item-organization">AWS in Plain English</div>
-                        </div>
-                        <div class="item-date">September 2025 - Present</div>
-                    </div>
-                    <div class="item-description">
-                        Contributing technical articles to AWS in Plain English publication, reaching over 3 million monthly readers. Specializing in DevOps practices, AWS automation, and making complex cloud concepts accessible to developers.
-                    </div>
-                </div>
-            </div>
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Areeba <span>Urooj</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="contact.html">Contact</a>
         </div>
-        
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <h2 class="section-title">Certifications</h2>
+    </nav>
+
+    <div class="page">
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-left" data-reveal="1">
+                <h1>Skills &<br><em>Experience.</em></h1>
             </div>
-
-            <div class="timeline">
-                <div class="timeline-item certificate-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">OCI Kubernetes Engine Specialist</div>
-                            <div class="item-organization">Oracle Cloud Infrastructure</div>
-                        </div>
-                        <div class="item-date">February 2025</div>
-                    </div>
-                    <div class="item-description">
-                        Advanced certification in container orchestration and Kubernetes management on Oracle Cloud Infrastructure.
-                    </div>
-                    <img src="assets/oci-badge.png" alt="OCI Kubernetes Certificate" class="certificate-image">
+            <div class="hero-right" data-reveal="2">
+                <div class="hero-pill">
+                    <i class="fas fa-map-marker-alt" style="font-size:0.6rem;"></i>
+                    DevOps → AI Evolution
                 </div>
+                <p class="hero-sub">Continuous learning · Cloud · Automation</p>
+            </div>
+        </header>
 
-                <div class="timeline-item certificate-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">
-                                AWS Certified Cloud Practitioner (CLF-C02)
-                                <span class="badge-inprogress">In Progress</span>
+        <div class="body-grid">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" data-reveal="2">
+                <nav class="sidebar-nav">
+                    <a href="#experience" class="active">
+                        <i class="fas fa-briefcase"></i> Experience
+                    </a>
+                    <a href="#certifications">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </a>
+                    <a href="#education">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </a>
+                    <a href="#skills">
+                        <i class="fas fa-code"></i> Skills
+                    </a>
+                </nav>
+
+                <div class="sid-divider"></div>
+
+                <div>
+                    <p class="sid-label">Find me</p>
+                    <nav class="social-links">
+                        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/Areeba-Urooj" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://x.com/areeba_uro86219" target="_blank">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="mailto:areeba@example.com">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main">
+
+                <!-- EXPERIENCE -->
+                <section class="exp-section" id="experience" data-reveal="3">
+                    <p class="sec-label">Professional Experience</p>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">Sep 2025 –<br>Present</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">Technical Writer</p>
+                            <p class="tl-org">AWS in Plain English</p>
+                            <p class="tl-desc">Contributing technical articles to AWS in Plain English, reaching over 3 million monthly readers. Specializing in DevOps practices, AWS automation, and making complex cloud concepts accessible to developers.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CERTIFICATIONS -->
+                <section class="exp-section" id="certifications" data-reveal="4">
+                    <p class="sec-label">Certifications</p>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">Feb 2025</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">OCI Kubernetes Engine Specialist</p>
+                            <p class="tl-org">Oracle Cloud Infrastructure</p>
+                            <p class="tl-desc">Advanced certification in container orchestration and Kubernetes management on Oracle Cloud Infrastructure.</p>
+                            <div class="cert-img-placeholder">
+                                <i class="fas fa-award"></i>
                             </div>
-                            <div class="item-organization">Amazon Web Services - Udemy</div>
                         </div>
-                        <div class="item-date">2025</div>
                     </div>
-                    <div class="item-description">
-                        Comprehensive preparation course covering cloud concepts, AWS services, security, architecture, and billing. Includes 6 full-length practice tests with 715 unique questions simulating the actual exam experience.
-                    </div>
-                </div>
 
-                <div class="timeline-item certificate-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">
-                                AWS Certified Solutions Architect Associate (SAA-C03)
-                                <span class="badge-inprogress">In Progress</span>
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">2025</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <div class="badge badge-progress">
+                                <span class="badge-dot"></span> In Progress
                             </div>
-                            <div class="item-organization">Amazon Web Services - Udemy</div>
+                            <p class="tl-title">AWS Certified Cloud Practitioner (CLF-C02)</p>
+                            <p class="tl-org">Amazon Web Services · Udemy</p>
+                            <p class="tl-desc">Comprehensive preparation covering cloud concepts, AWS services, security, architecture, and billing — including 6 full-length practice tests with 715 unique questions.</p>
                         </div>
-                        <div class="item-date">2025</div>
                     </div>
-                    <div class="item-description">
-                        Advanced course focusing on designing distributed systems, selecting appropriate AWS services, and implementing scalable, highly available, and fault-tolerant infrastructure on AWS.
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">2025</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <div class="badge badge-progress">
+                                <span class="badge-dot"></span> In Progress
+                            </div>
+                            <p class="tl-title">AWS Solutions Architect Associate (SAA-C03)</p>
+                            <p class="tl-org">Amazon Web Services · Udemy</p>
+                            <p class="tl-desc">Advanced course focused on designing distributed systems, selecting AWS services, and implementing scalable, highly available, fault-tolerant infrastructure.</p>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </section>
+
+                <!-- EDUCATION -->
+                <section class="exp-section" id="education" data-reveal="5">
+                    <p class="sec-label">Education</p>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">2022 –<br>2025</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">BS in Computer Science</p>
+                            <p class="tl-org">Abbottabad University of Science & Technology</p>
+                            <p class="tl-desc">Comprehensive degree covering algorithms, data structures, software engineering, and system design.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">2022 –<br>2023</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">Web Developer Bootcamp</p>
+                            <p class="tl-org">TechCamp</p>
+                            <p class="tl-desc">Intensive full-stack program covering HTML, CSS, React, Node.js, and practical development projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-yr-col">
+                            <span class="tl-year">&nbsp;</span>
+                        </div>
+                        <div class="tl-body-col">
+                            <p class="tl-title">CS50P — Certified Python Developer</p>
+                            <p class="tl-org">Harvard Training Inc</p>
+                            <p class="tl-desc">Harvard's rigorous introduction to programming with Python, covering fundamental computer science concepts.</p>
+                            <div class="cert-img-placeholder">
+                                <i class="fas fa-award"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SKILLS -->
+                <section class="skills-block" id="skills" data-reveal="6">
+                    <p class="sec-label">Technical Skills</p>
+
+                    <div class="skill-group">
+                        <p class="skill-group-title"><i class="fas fa-robot"></i> AI & Automation</p>
+                        <div class="tags">
+                            <span class="tag">LLM Integration</span>
+                            <span class="tag">Ollama</span>
+                            <span class="tag">OpenRouter</span>
+                            <span class="tag">Gemini AI</span>
+                            <span class="tag">Python ML</span>
+                            <span class="tag">Workflow Automation</span>
+                            <span class="tag">AI Agents</span>
+                            <span class="tag">RAG Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group-title"><i class="fas fa-cloud"></i> Cloud & Infrastructure</p>
+                        <div class="tags">
+                            <span class="tag">AWS EC2</span>
+                            <span class="tag">ECS</span>
+                            <span class="tag">Route 53</span>
+                            <span class="tag">Lambda</span>
+                            <span class="tag">CloudFormation</span>
+                            <span class="tag">ECR</span>
+                            <span class="tag">EKS</span>
+                            <span class="tag">RDS</span>
+                            <span class="tag">DynamoDB</span>
+                            <span class="tag">VPC</span>
+                            <span class="tag">CloudFront</span>
+                            <span class="tag">S3</span>
+                            <span class="tag">IAM</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Windows Server</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group-title"><i class="fas fa-cogs"></i> DevOps & CI/CD</p>
+                        <div class="tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">Jenkins</span>
+                            <span class="tag">ArgoCD</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">GitLab CI/CD</span>
+                            <span class="tag">Azure DevOps</span>
+                            <span class="tag">Nagios</span>
+                            <span class="tag">SonarQube</span>
+                            <span class="tag">Nexus</span>
+                            <span class="tag">Ansible</span>
+                            <span class="tag">Terraform</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group-title"><i class="fas fa-code-branch"></i> Development & Scripting</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Bash</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">React.js</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">Webhooks</span>
+                            <span class="tag">HTML / CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group-title"><i class="fas fa-database"></i> Database & Backend</p>
+                        <div class="tags">
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Nginx</span>
+                            <span class="tag">Apache</span>
+                            <span class="tag">SSL Certificates</span>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
         </div>
     </div>
 
-    <div class="content">        
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h2 class="section-title">Education</h2>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Web Developer Bootcamp</div>
-                            <div class="item-organization">TechCamp</div>
-                        </div>
-                        <div class="item-date">2022 - 2023</div>
-                    </div>
-                    <div class="item-description">
-                        Intensive full-stack developer program covering HTML, CSS, React, Node.js, and practical development projects with hands-on experience.
-                    </div>
-                </div>
-                
-                <div class="timeline-item certificate-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">CS50P - Certified Python Developer</div>
-                            <div class="item-organization">Harvard Training Inc</div>
-                        </div>
-                    </div>
-                    <div class="item-description">
-                        Harvard's rigorous introduction to programming with Python, covering fundamental computer science concepts.
-                    </div>
-                    <img src="assets/python-cert.png" alt="Python Certificate" class="certificate-image">
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">BS in Computer Science</div>
-                            <div class="item-organization">Abbottabad University of Science & Technology</div>
-                        </div>
-                        <div class="item-date">2022 - 2025</div>
-                    </div>
-                    <div class="item-description">
-                        Comprehensive computer science degree covering algorithms, data structures, software engineering, and system design.
-                    </div>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-name">Areeba Urooj</span>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Areeba-Urooj" target="_blank">GitHub</a>
+            <a href="mailto:areeba@example.com">Email</a>
         </div>
+    </footer>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-category-title">
-                        <i class="fas fa-robot"></i>
-                        AI & Automation
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">LLM Integration</span>
-                        <span class="skill-tag">Ollama</span>
-                        <span class="skill-tag">OpenRouter</span>
-                        <span class="skill-tag">Gemini AI</span>
-                        <span class="skill-tag">Python ML</span>
-                        <span class="skill-tag">Workflow Automation</span>
-                        <span class="skill-tag">AI Agents</span>
-                        <span class="skill-tag">RAG Systems</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-title">
-                        <i class="fas fa-cloud"></i>
-                        Cloud & Infrastructure
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS EC2</span>
-                        <span class="skill-tag">ECS</span>
-                        <span class="skill-tag">Route 53</span>
-                        <span class="skill-tag">Lambda</span>
-                        <span class="skill-tag">CloudFormation</span>
-                        <span class="skill-tag">ECR</span>
-                        <span class="skill-tag">EKS</span>
-                        <span class="skill-tag">RDS</span>
-                        <span class="skill-tag">DynamoDB</span>
-                        <span class="skill-tag">VPC</span>
-                        <span class="skill-tag">CloudFront</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">IAM</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Windows Server</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-title">
-                        <i class="fas fa-cogs"></i>
-                        DevOps & CI/CD
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Jenkins</span>
-                        <span class="skill-tag">ArgoCD</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                        <span class="skill-tag">GitLab CI/CD</span>
-                        <span class="skill-tag">Azure DevOps</span>
-                        <span class="skill-tag">Nagios</span>
-                        <span class="skill-tag">SonarQube</span>
-                        <span class="skill-tag">Nexus</span>
-                        <span class="skill-tag">Ansible</span>
-                        <span class="skill-tag">Terraform</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-title">
-                        <i class="fas fa-code-branch"></i>
-                        Development & Scripting
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Webhooks</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-title">
-                        <i class="fas fa-database"></i>
-                        Database & Backend
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Nginx</span>
-                        <span class="skill-tag">Apache</span>
-                        <span class="skill-tag">SSL Certificates</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <a href="#" class="scroll-to-top" id="scrollToTop">
+    <a href="#" class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </a>
-    
+
     <script>
-        const scrollToTop = document.getElementById('scrollToTop');
-        
+        // scroll top
+        const btn = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTop.classList.add('visible');
-            } else {
-                scrollToTop.classList.remove('visible');
-            }
+            btn.classList.toggle('show', window.pageYOffset > 300);
         });
-        
-        scrollToTop.addEventListener('click', (e) => {
+        btn.addEventListener('click', e => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        
-        timelineItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.transform = 'translateX(10px) scale(1.02)';
+        // sidebar active link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
             });
-            
-            item.addEventListener('mouseleave', () => {
-                item.style.transform = 'translateX(5px) scale(1)';
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
             });
         });
-
-        const skillTags = document.querySelectorAll('.skill-tag');
-        
-        skillTags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                tag.style.animation = 'none';
-                tag.offsetHeight;
-                tag.style.animation = 'pulse 0.6s ease';
-            });
-        });
-
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
+
 </body>
 </html>
