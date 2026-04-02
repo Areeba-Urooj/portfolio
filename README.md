@@ -1,400 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Areeba Urooj — AI Automation Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areeba Urooj - AI Automation & DevOps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html, body {
-    width: 100%; height: 100%;
-    overflow: hidden;
-    font-family: 'DM Sans', sans-serif;
-    background: #faf9f7;
-    color: #1a1814;
-    -webkit-font-smoothing: antialiased;
-}
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #faf9f7;
+            min-height: 100vh;
+            color: #1a1814;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* NAV */
-nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 62px;
-    background: rgba(250,249,247,0.97);
-    border-bottom: 1px solid #e4e1db;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 52px;
-    z-index: 10;
-    backdrop-filter: blur(8px);
-}
+        /* Navigation */
+        .navbar {
+            background: rgba(250, 249, 247, 0.96);
+            backdrop-filter: blur(10px);
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #e4e1db;
+            height: 66px;
+            display: flex;
+            align-items: center;
+        }
 
-.logo {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #1a1814;
-    text-decoration: none;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 52px;
+            width: 100%;
+        }
 
-.logo span { color: #1a6b3c; }
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1a1814;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
 
-.nav-links { display: flex; gap: 36px; }
+        .logo span {
+            color: #1a6b3c;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: #8a8680;
-    transition: color 0.2s;
-}
+        .logo i { display: none; }
 
-.nav-links a:hover { color: #1a1814; }
+        .nav-links {
+            display: flex;
+            gap: 38px;
+        }
 
-/* PAGE BODY — two columns, fills screen below nav */
-.page {
-    position: fixed;
-    top: 62px; bottom: 0;
-    left: 0; right: 0;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #8a8680;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.07em;
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 3px;
+        }
 
-/* LEFT COLUMN */
-.left {
-    border-right: 1px solid #e4e1db;
-    padding: 52px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 0; height: 1.5px;
+            background: #1a6b3c;
+            transition: width 0.25s ease;
+        }
 
-.avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1.5px solid #e4e1db;
-    background: #f2f0ec;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 1.3rem;
-    color: #1a6b3c;
-    margin-bottom: 20px;
-}
+        .nav-links a:hover { color: #1a1814; }
+        .nav-links a:hover::after { width: 100%; }
 
-.avatar img { width: 100%; height: 100%; object-fit: cover; }
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 66px 52px 0;
+            gap: 80px;
+            position: relative;
+            z-index: 1;
+        }
 
-.l-name {
-    font-family: 'Lora', serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+        .hero-content {
+            flex: 1;
+            animation: slideInLeft 0.8s ease-out;
+        }
 
-.l-role {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: #1a6b3c;
-    margin-bottom: 4px;
-}
+        .hero-image {
+            flex: 0 0 auto;
+            text-align: center;
+            animation: slideInRight 0.8s ease-out;
+            position: relative;
+        }
 
-.l-loc {
-    font-size: 0.76rem;
-    color: #8a8680;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 32px;
-}
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
 
-.divider { height: 1px; background: #e4e1db; margin-bottom: 24px; }
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e4e1db;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
 
-.l-label {
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #c8c4bc;
-    margin-bottom: 10px;
-}
+        .profile-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 24px 70px rgba(26,107,60,0.12);
+            border-color: #1a6b3c;
+        }
 
-.socials { display: flex; flex-direction: column; gap: 2px; margin-bottom: 32px; }
+        /* no glow on light theme */
+        .glow-effect { display: none; }
 
-.socials a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #8a8680;
-    font-size: 0.82rem;
-    transition: all 0.15s;
-}
+        .greeting {
+            font-size: 0.75rem;
+            color: #1a6b3c;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+        }
 
-.socials a i { width: 14px; text-align: center; font-size: 0.8rem; }
-.socials a:hover { background: #f2f0ec; color: #1a1814; }
+        .greeting::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1.5px;
+            background: #1a6b3c;
+        }
 
-.avail {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
-    background: #edf7f1;
-    border: 1px solid rgba(26,107,60,0.15);
-    border-radius: 8px;
-    font-size: 0.76rem;
-    color: #1a6b3c;
-    font-weight: 500;
-}
+        .name {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.8rem, 4.5vw, 4rem);
+            font-weight: 500;
+            color: #1a1814;
+            margin-bottom: 12px;
+            animation: fadeIn 0.8s ease-out 0.4s both;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
 
-.dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: #2d9e5f;
-    flex-shrink: 0;
-    animation: blink 2s ease-in-out infinite;
-}
+        .title-wrapper {
+            margin-bottom: 28px;
+            animation: fadeIn 0.8s ease-out 0.5s both;
+        }
 
-@keyframes blink {
-    0%,100% { opacity:1; } 50% { opacity:0.3; }
-}
+        .title {
+            font-size: 1rem;
+            color: #3d3a35;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
 
-/* RIGHT COLUMN */
-.right {
-    padding: 52px 72px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .subtitle {
+            font-size: 0.88rem;
+            color: #8a8680;
+            font-style: italic;
+            font-family: 'Lora', serif;
+        }
 
-.greeting {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #1a6b3c;
-    margin-bottom: 18px;
-}
+        .tech-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
 
-.greeting-line { width: 28px; height: 1.5px; background: #1a6b3c; }
+        .tag {
+            background: #ffffff;
+            border: 1px solid #e4e1db;
+            color: #3d3a35;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.76rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
 
-h1 {
-    font-family: 'Lora', serif;
-    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-    font-weight: 500;
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    margin-bottom: 24px;
-}
+        .tag:hover {
+            border-color: #1a6b3c;
+            color: #1a6b3c;
+            background: #edf7f1;
+            transform: translateY(-1px);
+        }
 
-h1 em { font-style: italic; color: #1a6b3c; }
+        .description {
+            font-size: 0.97rem;
+            color: #3d3a35;
+            line-height: 1.82;
+            margin-bottom: 32px;
+            max-width: 500px;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+            font-weight: 300;
+        }
 
-.desc {
-    font-size: 0.97rem;
-    line-height: 1.82;
-    color: #3d3a35;
-    font-weight: 300;
-    max-width: 480px;
-    margin-bottom: 28px;
-}
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 32px;
+            animation: fadeIn 0.8s ease-out 0.7s both;
+        }
 
-.desc strong { color: #1a1814; font-weight: 600; }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e4e1db;
+            color: #8a8680;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 36px;
-}
+        .social-link:hover {
+            border-color: #1a6b3c;
+            color: #1a6b3c;
+            background: #edf7f1;
+            transform: translateY(-2px);
+        }
 
-.tag {
-    padding: 5px 14px;
-    border-radius: 4px;
-    border: 1px solid #e4e1db;
-    background: #fff;
-    font-size: 0.76rem;
-    font-weight: 500;
-    color: #3d3a35;
-    transition: all 0.15s;
-}
+        .social-link i { font-size: 16px; }
 
-.tag:hover { border-color: #1a6b3c; color: #1a6b3c; background: #edf7f1; }
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
 
-.btns { display: flex; gap: 12px; }
+        .btn {
+            padding: 12px 26px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-size: 0.83rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
 
-.btn-p {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: #1a6b3c;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 600;
-    transition: all 0.2s;
-    box-shadow: 0 2px 10px rgba(26,107,60,0.2);
-}
+        .btn::before { display: none; }
 
-.btn-p:hover { background: #155730; transform: translateY(-2px); }
+        .btn span { position: relative; z-index: 1; }
 
-.btn-s {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: #3d3a35;
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    border: 1px solid #e4e1db;
-    background: #fff;
-    transition: all 0.2s;
-}
+        .btn-primary {
+            background: #1a6b3c;
+            color: #ffffff;
+            box-shadow: 0 2px 12px rgba(26,107,60,0.2);
+        }
 
-.btn-s:hover { border-color: #3d3a35; }
+        .btn-primary:hover {
+            background: #155730;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26,107,60,0.25);
+        }
 
-/* footer bar */
-footer {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 42px;
-    border-top: 1px solid #e4e1db;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 52px;
-    font-size: 0.74rem;
-    color: #c8c4bc;
-}
+        .btn-secondary {
+            background: #ffffff;
+            color: #3d3a35;
+            border: 1px solid #e4e1db;
+        }
 
-footer a {
-    color: #c8c4bc;
-    text-decoration: none;
-    transition: color 0.15s;
-}
+        .btn-secondary:hover {
+            border-color: #3d3a35;
+            transform: translateY(-2px);
+        }
 
-footer a:hover { color: #1a6b3c; }
+        /* Animations */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
 
-.footer-links { display: flex; gap: 20px; }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
 
-/* push right column up to account for footer */
-.right { padding-bottom: 42px; }
-.left  { padding-bottom: 42px; }
-</style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 24px; }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+                padding: 100px 24px 40px;
+            }
+
+            .hero-content { order: 2; }
+            .hero-image   { order: 1; }
+
+            .greeting { justify-content: center; }
+            .greeting::before { display: none; }
+
+            .name { font-size: 2.5rem; }
+
+            .profile-image { width: 220px; height: 220px; }
+
+            .nav-links { gap: 18px; }
+            .nav-links a { font-size: 0.72rem; }
+
+            .cta-buttons { justify-content: center; }
+            .tech-tags   { justify-content: center; }
+            .social-links { justify-content: center; }
+            .description { margin: 0 auto 32px; }
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="logo">Areeba <span>Urooj</span></a>
-    <div class="nav-links">
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                Areeba <span>&nbsp;Urooj</span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="page">
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="greeting">AI Automation Engineer</div>
+            <h1 class="name">Areeba Urooj</h1>
+            <div class="title-wrapper">
+                <div class="title">Building intelligent systems that think for themselves.</div>
+                <div class="subtitle">DevOps Background → AI-Powered Solutions</div>
+            </div>
 
-    <!-- LEFT -->
-    <aside class="left">
-        <div class="avatar">
-            <img src="./assets/profile.jpg" alt="Areeba Urooj"
-                 onerror="this.style.display='none';this.parentElement.textContent='AU'">
+            <div class="tech-tags">
+                <span class="tag">AI Automation</span>
+                <span class="tag">DevOps</span>
+                <span class="tag">Cloud</span>
+                <span class="tag">MLOps</span>
+            </div>
+
+            <p class="description">
+                I started in DevOps — cloud infrastructure, CI/CD, Kubernetes — and kept asking what if systems could think for themselves? That question led me here: building AI-powered automation that doesn't just follow scripts, but understands context, predicts issues, and optimizes itself.
+            </p>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/areeba-urooj-8a1606279/" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Areeba-Urooj" target="_blank" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/areeba_uro86219" target="_blank" class="social-link" title="Twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="projects.html" class="btn btn-primary">
+                    <span>View Projects</span>
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <span>Let's Collaborate</span>
+                </a>
+            </div>
         </div>
 
-        <p class="l-name">Areeba Urooj</p>
-        <p class="l-role">AI Automation Engineer</p>
-        <p class="l-loc"><i class="fas fa-map-marker-alt" style="font-size:.65rem;"></i>Abbottabad, Pakistan</p>
-
-        <div class="divider"></div>
-
-        <p class="l-label">Find me</p>
-        <nav class="socials">
-            <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://github.com/Areeba-Urooj" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://x.com/areeba_uro86219" target="_blank">
-                <i class="fab fa-x-twitter"></i> Twitter
-            </a>
-            <a href="mailto:cmy61677@gmail.com">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-        </nav>
-
-        <div class="avail">
-            <span class="dot"></span>
-            Open to opportunities
+        <div class="hero-image">
+            <div class="profile-container">
+                <div class="glow-effect"></div>
+                <img src="./assets/profile.jpg" alt="Areeba Urooj" class="profile-image">
+            </div>
         </div>
-    </aside>
-
-    <!-- RIGHT -->
-    <main class="right">
-
-        <p class="greeting">
-            <span class="greeting-line"></span>
-            AI Automation Engineer
-        </p>
-
-        <h1>Well,<br><em>hi there.</em><br>I'm Areeba.</h1>
-
-        <p class="desc">
-            I started in DevOps — cloud infrastructure, CI/CD, Kubernetes — and kept asking <strong>"what if systems could think for themselves?"</strong> That question led me here: building AI-powered automation that adapts, predicts, and scales.
-        </p>
-
-        <div class="tags">
-            <span class="tag">AI Automation</span>
-            <span class="tag">MLOps</span>
-            <span class="tag">LLM Integration</span>
-            <span class="tag">AWS / Azure</span>
-            <span class="tag">RAG Systems</span>
-            <span class="tag">DevOps</span>
-        </div>
-
-        <div class="btns">
-            <a href="projects.html" class="btn-p">
-                View projects <i class="fas fa-arrow-right" style="font-size:.7rem;"></i>
-            </a>
-            <a href="about.html" class="btn-s">About me</a>
-        </div>
-
     </main>
-</div>
-
-<footer>
-    <span>Areeba Urooj — AI Automation Engineer</span>
-    <div class="footer-links">
-        <a href="https://www.linkedin.com/in/areeba-urooj-8a1606279/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Areeba-Urooj" target="_blank">GitHub</a>
-        <a href="mailto:cmy61677@gmail.com">Email</a>
-    </div>
-</footer>
 
 </body>
 </html>
